@@ -79,11 +79,13 @@ h2 {
 	background-size: cover;
 }
 
+
+
 .panel_3 {
 	width:100%;
-	height:210vh;
+	height:150vh;
 	margin: 0% 0% 0% 0%;
-	background-color:#f8f8f8;
+	background-color: red; /*#f8f8f8; */
 	overflow-y: hidden;
 	overflow-x: hidden;
 }
@@ -94,19 +96,20 @@ h2 {
 
 .four_container {
 	text-align: center;
-	max-width: 600px;
-	margin-top:40%;
+	/* max-width: 600px; */
+	margin-top:0%;
 	overflow-x:hidden;
 	float:right;
 	bottom:0%;
-	right:-300px;
+/*	right:-300px; */
+width:600px;
 	position:relative;
 }
 
 .block {
-	width: 300px;
+	width: 50%;
 	margin-right:0px;
-	height: 275px;
+	height: 50%;
 	margin: 0px;
 	display: inline-block;
 	background: #1c1b20;
@@ -114,7 +117,7 @@ h2 {
 }
 
 .block_content {
-	margin: 15% 15% 0% 20%;
+	margin: 50px 50px 50px 50px;
 }
 
 .block_content h3, h4 {
@@ -134,48 +137,36 @@ h2 {
 }
 
 .panel_4 {
-	background: url('window.jpg')no-repeat;
-	position: relative;
-	height:80vh;
-	background-attachment: fixed;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
-.panel_4_inner {
 	width:100%;
-	height:100vh;
+	height:50vh;
 	margin: 0% 0% 0% 0%;
-	background-color:transparent; /* layer owver window */
+	background-color:#f8f8f8;
+	overflow-y: hidden;
+	overflow-x: hidden;
 }
 
-.p4_right {
-	width:50%;
-	height:50vh;
-	background-color: #f8f8f8;;
-	float:right;
-}
-.p4_mid {
+.panel_5 {
 	width:100%;
 	height:50vh;
-	background-color: #f8f8f8;;
-	float:right;
-	text-align:right;
+	margin: 0% 0% 0% 0%;
+	background-color:#f8f8f8;
+	overflow-y: hidden;
+	overflow-x: hidden;
 }
 
-.p_text_overlay {
-	width:25%;
+.text_overlay {
+	width:100%;
 	background-color:transparent;
-	text-align: left;
-	margin-left:15%;
-	margin-top:5%;
-
+	margin-top:0%;
 }
 
-.panel_5 .p_text_overlay {
-	margin-top: -38%;
+.content {
+		margin-left:15%;
+			text-align: left;
 }
+
+
+
 
 .right_float {
 	float:right;
@@ -203,35 +194,23 @@ a:hover.underline_style {
 	margin-bottom:15%;
 }
 
-.panel_5 {
-	width:100%;
-	margin: 0% 0% 0% 0%;
+.panel_6 {
 	background: url('coffeeshop.jpg')no-repeat;
-	position: relative;
-	height:45vh;
+	/* position: relative; */
+	height:40vh;
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	overflow-x: hidden;
 }
-
-#panel_overlay {
-
-}
-
-.panel_6 {
+.panel_7 {
 	width:100%;
-	height:40vh;
-	margin: 0% 0% 10% 0%;
+	height:30vh;
+	margin: 0% 0% 15% 0%;
 	background-color:#f8f8f8;
-	background-attachment: fixed;
-	position: relative;
-}
-.panel_6 .panel_6_content {
-	padding: 100px 6% 0% 6%;
-}
-.panel_6 h3 {
-	margin-top:0;
+	overflow-y: hidden;
+	overflow-x: hidden;
 }
 
 .bottom_overlay {
@@ -247,17 +226,6 @@ h1.footer_arrow {
 
 p.opaque_footer {
 	opacity:.5;
-}
-
-/* panel 7 just might get deleted ! */
-.panel_7 {
-	width:100%;
-	height:10%;
-	padding-top:-1%;
-	margin: 0% 0% 0% 0%;
-	background-color:white;
-	bottom:0;
-	position:fixed;
 }
 
 .navbar{

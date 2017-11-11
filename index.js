@@ -1,7 +1,11 @@
-
+ 
 // delays the page load on refresh 
-$(document).ready(function() {
-$("html,body").animate({scrollTop: 0}, 100); //100ms for example
+ 
+    $(window).on('beforeunload', function() {
+    $('.load_area').css("display", "none");
+     $('#content-panel').css("display", "none");
+     $('.frontpanel-mh').css("display", "none");
+    $(window).scrollTop(0);
 });
 
 // remove all elements except intro animation 
@@ -95,6 +99,7 @@ setTimeout(function(){
 },3000);
 
 // slide in middle services section on scroll 
+/*
 jQuery(window).scroll(function() {
     if (jQuery(this).scrollTop() > 1400) {
         jQuery('.four_container').stop().animate({ right: '0px' }, 80);
@@ -102,26 +107,36 @@ jQuery(window).scroll(function() {
         jQuery('.four_container').stop().animate({ right: '-300px' }, 100);
     }
 });
+*/
 
-// reveal lower left as you scroll down 
+// reveal lower left + right on scroll
 $(document).scroll(function () {
-    var y = $(this).scrollTop();   
-    if (y > 200) {
+    var x = $(this).scrollTop();   
+    if (x > 200 && x < 3450) {
         $('#lower_left').fadeIn();
     } else {
         $('#lower_left').fadeOut();
     }
-});
 
-// reveal lower right as you scroll down 
-$(document).scroll(function () {
-    var y = $(this).scrollTop();   
-    if (y > 100) {
-        $('#lower_right').fadeIn();
+        var y = $(this).scrollTop();   
+    if (y > 200 && y < 3450) {
+        $('#lower_right').show();
     } else {
-        $('#lower_right').fadeOut();
+        $('#lower_right').hide();
     }
 });
+
+// reveal bottom overlay (footer) 
+        $('.bottom_overlay').hide();
+$(document).scroll(function () {
+    var z = $(this).scrollTop();   
+    if (z > 3100) {
+        $('.bottom_overlay').show();
+    }  else {
+        $('.bottom_overlay').hide();
+    }
+});
+
 
 // Change icon interior on hover 
 document.getElementById("icon").onmouseover = function() {
@@ -135,9 +150,11 @@ document.getElementById("icon").onmouseleave = function() {
 // Menu hover animation
 $('#icon').hover(function(){
     $('#content-panel').animate({marginLeft: '10%', width:'87%'}, 500);
+  $('.four_container').animate({right: '-200px'}, 500);
     $('#lower_left').fadeOut();
 }, function(){
     $('#content-panel').animate({width: '94%', marginLeft: '3%'}, 500);
+$('.four_container').animate({right: '0px'}, 500);
     $('#lower_left').fadeIn();
 });
 
