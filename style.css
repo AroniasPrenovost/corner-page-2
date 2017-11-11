@@ -4,12 +4,18 @@ html, body {
 	overflow: hidden;
 }
 
+.load_area {
+	position: relative;
+	text-align: center;
+	width: 90%;
+}
+
 #content-panel {
 	width: 94%;
 	height: 100%;
 	margin: -4% 3% 4% 3%;
 	padding-top:0px;
-	background-color:green;  
+	background-color:transparent;  
 }
 
 .hideMyScroll {
@@ -27,6 +33,10 @@ html, body {
 #content-panel h3 {
 	font-size:3em;
 	font-weight:bold;
+}
+
+h2 {
+	line-height: .9;
 }
 
 .fa {
@@ -60,7 +70,7 @@ html, body {
 }
 
 .panel_2 {
-	background: url('desk.jpg')no-repeat;
+	background: url('coffeeshop.jpg')no-repeat;
 	position: relative;
 	height:80vh;
 	background-attachment: fixed;
@@ -85,7 +95,6 @@ html, body {
 .four_container {
 	text-align: center;
 	max-width: 600px;
-	margin-right:-3%;
 	margin-top:40%;
 	overflow-x:hidden;
 	float:right;
@@ -125,10 +134,20 @@ html, body {
 }
 
 .panel_4 {
+	background: url('window.jpg')no-repeat;
+	position: relative;
+	height:80vh;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.panel_4_inner {
 	width:100%;
 	height:100vh;
 	margin: 0% 0% 0% 0%;
-	background-color:transparent;
+	background-color:transparent; /* layer owver window */
 }
 
 .p4_right {
@@ -142,7 +161,7 @@ html, body {
 	height:50vh;
 	background-color: #f8f8f8;;
 	float:right;
-	text-align:center;
+	text-align:right;
 }
 
 .p_text_overlay {
@@ -151,6 +170,11 @@ html, body {
 	text-align: left;
 	margin-left:15%;
 	margin-top:5%;
+
+}
+
+.panel_5 .p_text_overlay {
+	margin-top: -38%;
 }
 
 .right_float {
@@ -181,9 +205,59 @@ a:hover.underline_style {
 
 .panel_5 {
 	width:100%;
-	height:100vh;
 	margin: 0% 0% 0% 0%;
-	background-color:blue;
+	background: url('coffeeshop.jpg')no-repeat;
+	position: relative;
+	height:45vh;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#panel_overlay {
+
+}
+
+.panel_6 {
+	width:100%;
+	height:40vh;
+	margin: 0% 0% 10% 0%;
+	background-color:#f8f8f8;
+	background-attachment: fixed;
+	position: relative;
+}
+.panel_6 .panel_6_content {
+	padding: 100px 6% 0% 6%;
+}
+.panel_6 h3 {
+	margin-top:0;
+}
+
+.bottom_overlay {
+	position: fixed;
+	bottom: 0;
+	margin-bottom: 5%;
+	width:100%;
+}
+h1.footer_arrow {
+	text-align: right;
+	font-weight:900;
+}
+
+p.opaque_footer {
+	opacity:.5;
+}
+
+/* panel 7 just might get deleted ! */
+.panel_7 {
+	width:100%;
+	height:10%;
+	padding-top:-1%;
+	margin: 0% 0% 0% 0%;
+	background-color:white;
+	bottom:0;
+	position:fixed;
 }
 
 .navbar{
@@ -226,6 +300,7 @@ nav {
 	bottom:0;
 	left: 1.5%;
 	z-index: 1;
+	display:none;
 }
 
 #mid_right {
@@ -233,6 +308,7 @@ nav {
 	top:45%;
 	bottom:0;
 	right: 1%;
+	display:none;
 }
 
 #mid_right ul {
@@ -248,6 +324,7 @@ nav {
 	bottom:3.5%;
 	left: 3%;
 	z-index: 1;
+	display: none;
 }
 
 #lower_right {
@@ -255,14 +332,16 @@ nav {
 	right: 3%;
 	position: fixed;
 	z-index: 1;
+	display:none;
 }
 #bottom_banner {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
-	min-height: 40px;
+	min-height: 50px;
 	background-color:white;
 	z-index: 1;
+	display: none;
 }
 
 a, hover { 
@@ -300,17 +379,6 @@ a, hover {
 #mid_left a:hover, a:visited  {
 	text-decoration: none;
 }
-/*
-#icon {
-font-size:12px;
-}
-*/
-/*
-img {
-height:100%;
-width:100%;
-}
-*/
 
 #rot2 {
 	padding:0;
@@ -353,9 +421,6 @@ width:100%;
 	margin: 4% 4% 4% 4%;
 	overflow: hidden; /* Enable scroll if needed */
 	border: none;
-/*
-background-color: rgb(0,0,0); 
-background-color: rgba(1,1,1,0.0); *//* Black w/ opacity */
 }
 
 /* Add Animation */
@@ -430,5 +495,4 @@ background-color: rgba(1,1,1,0.0); *//* Black w/ opacity */
 span.strike {
 	text-decoration: line-through;
 }
-
 

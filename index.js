@@ -1,17 +1,25 @@
 
+// delays the page load on refresh 
+$(document).ready(function() {
+$("html,body").animate({scrollTop: 0}, 100); //100ms for example
+});
+
 // remove all elements except intro animation 
 $(window).load(function(){
     $('body, html').addClass('hideMyScroll');
     $('.navbar').hide();
     $('.navbar-default').hide();
     $('.navbar-fixed-top').hide();
-    $('#bottom_banner').hide();
-    $('#lower_left').hide();
-    $('#lower_right').hide();
-    $('#mid_left').hide();
-    $('#mid_right').hide();
+    $('.navbar-header').hide();  
+    $('.navbar-nav').hide();
     $('.post_animation_reveal').css("display", "none");
 });
+
+// load in message 
+$('.load_area').css("display", "none");
+setTimeout(function(){ 
+    $('.load_area').fadeIn().css("display", "block");
+},3965);
 
 // reveal navbar and display remaining body content 
 setTimeout(function(){ 
@@ -37,20 +45,44 @@ setTimeout(function(){
             marginLeft: '0%',
             marginTop: '-5%',
             height: '110vh'
-        }, 1000);
+}, 1500); // left masthead slide in
     });
 }, 2500); // length of full page intro
 
 // fade in navigation items 
 setTimeout(function(){ 
     $('.navbar').fadeIn();
-    $('#bottom_banner').fadeIn();
-    $('#mid_left').fadeIn();
-    $('#mid_right').fadeIn();
-    $('#lower_left').fadeIn();
-    $('#lower_right').fadeIn();
+    $('#bottom_banner').fadeIn();               
 },2500);
 
+// nav bar element made ins
+setTimeout(function(){ 
+    $('.navbar-header').fadeIn();
+},3000);
+
+setTimeout(function(){ 
+// $('#mid_left').fadeIn();
+$('#mid_left').fadeIn().css("display", "block");
+},3600);
+
+setTimeout(function(){ 
+// $('#lower_left').fadeIn();
+$('#lower_left').fadeIn().css("display", "block");
+},4200);
+
+setTimeout(function(){ 
+// $('#lower_right').fadeIn();
+$('#lower_right').fadeIn().css("display", "block");
+},4800);
+
+setTimeout(function(){ 
+//   $('#mid_right').fadeIn();
+$('#mid_right').fadeIn().css("display", "block");
+},5600);
+
+setTimeout(function(){ 
+    $('.navbar-nav').fadeIn();
+},6200);
 
 // replace vertical scrollbar 
 $(document).ready(function(){
@@ -60,8 +92,7 @@ setTimeout(function(){
     $(document).ready(function(){
         $('body, html').addClass('showMyScroll');
     });
-},3200);
-
+},3000);
 
 // slide in middle services section on scroll 
 jQuery(window).scroll(function() {
@@ -103,9 +134,11 @@ document.getElementById("icon").onmouseleave = function() {
 
 // Menu hover animation
 $('#icon').hover(function(){
-    $('#content-panel').animate({marginLeft: '10%', width:'86%'}, 500)
+    $('#content-panel').animate({marginLeft: '10%', width:'87%'}, 500);
+    $('#lower_left').fadeOut();
 }, function(){
-    $('#content-panel').animate({width: '94%', marginLeft: '3%'}, 500)
+    $('#content-panel').animate({width: '94%', marginLeft: '3%'}, 500);
+    $('#lower_left').fadeIn();
 });
 
 // Get the modal
@@ -149,7 +182,6 @@ span.onclick = function() {
     $('#content-panel').animate({width: '94%', marginLeft: '3%'}, 0);
     $('#content-panel').fadeIn();
     icon.style.display = "block";
-
     $('#bottom_banner').animate({minHeight: '40px'}, 500);
     $('#lower_left').fadeIn();
     $('#lower_left').animate({fontSize: '14px'}, 0);
