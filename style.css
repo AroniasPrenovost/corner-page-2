@@ -8,6 +8,7 @@ html, body {
 	position: relative;
 	text-align: center;
 	width: 90%;
+	display:none;
 }
 
 #content-panel {
@@ -16,6 +17,11 @@ html, body {
 	margin: -4% 3% 4% 3%;
 	padding-top:0px;
 	background-color:transparent;  
+	position:relative;
+}
+
+.post_animation_reveal {
+	display:none;
 }
 
 .hideMyScroll {
@@ -51,6 +57,7 @@ h2 {
 	background-color:grey;
 	border-top: 1px solid white;
 	border-left:1px solid white;
+	display:none;
 }
 
 .frontpanel-mh {
@@ -73,21 +80,20 @@ h2 {
 	background: url('coffeeshop.jpg')no-repeat;
 	position: relative;
 	height:80vh;
-	background-attachment: fixed;
+	background-attachment: fixed; 
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 
-
-
 .panel_3 {
 	width:100%;
-	height:150vh;
+	height:50vh;
 	margin: 0% 0% 0% 0%;
 	background-color: red; /*#f8f8f8; */
 	overflow-y: hidden;
 	overflow-x: hidden;
+	position: relative;
 }
 
 .panel_3_content {
@@ -101,9 +107,19 @@ h2 {
 	overflow-x:hidden;
 	float:right;
 	bottom:0%;
-/*	right:-300px; */
-width:600px;
+	/*	right:-300px; */
+	width:600px;
 	position:relative;
+}
+
+.panel_4 {
+	width:100%;
+	height:80vh;
+	margin: 0% 0% 0% 0%;
+	background-color: red; /*#f8f8f8; */
+	overflow-y: hidden;
+	overflow-x: hidden;
+	position: relative;
 }
 
 .block {
@@ -136,37 +152,92 @@ width:600px;
 	margin-left:-1%;
 }
 
-.panel_4 {
-	width:100%;
-	height:50vh;
+.panel_5_right {
+	width:50%;
+	height:110vh;
 	margin: 0% 0% 0% 0%;
-	background-color:#f8f8f8;
+	background-color:cyan;
 	overflow-y: hidden;
 	overflow-x: hidden;
+	position: relative;
+	float:right;
 }
 
-.panel_5 {
-	width:100%;
-	height:50vh;
+.panel_5_left {
+	background: url('coffeeshop.jpg')no-repeat;
+	background-size: cover;
+	width:50%;
+	height:110vh;
 	margin: 0% 0% 0% 0%;
-	background-color:#f8f8f8;
 	overflow-y: hidden;
 	overflow-x: hidden;
+	position: relative;
+	float:left;
+	background-attachment: fixed;
+	background-position: center;
+
 }
+
+.top_cover_bar {
+	width:100%;
+	height:45%;
+	margin-top:-4%;
+	top:0;
+	background-color:red;
+	position:relative;
+}
+h2.agnostic {
+	margin: -70px 0 0 0 !important;
+}
+
+.mid_cover_bar {
+	left:0;
+	height:100%;
+	float:right;
+	background-color: red;
+	width:5%;
+}
+
+
+.bottom_cover_bar {
+	width:100%;
+	height:20%;
+	bottom:0;
+	position: absolute;
+	background-color:red;
+}
+
+.img_caption {
+	margin: 5% 5% 0 0;
+	text-align: right;
+}
+
 
 .text_overlay {
-	width:100%;
+	margin-top:10%;
+	width:auto;
 	background-color:transparent;
 	margin-top:0%;
 }
 
-.content {
-		margin-left:15%;
-			text-align: left;
+.panel_5_right .text_overlay .content {
+	width:100%;
 }
 
+.text_overlay_sm {
+	width:auto;
+	background-color:transparent;
+	margin-top:10%;
+	margin-left:20%;
+	margin-right:5%;
+	overflow-y: hidden;
+}
 
-
+.content {
+	margin-left:15%;
+	text-align: left;
+	width:50%;
+}
 
 .right_float {
 	float:right;
@@ -196,21 +267,48 @@ a:hover.underline_style {
 
 .panel_6 {
 	background: url('coffeeshop.jpg')no-repeat;
-	/* position: relative; */
-	height:40vh;
+	width: 100%;
+	height:60vh;
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	overflow-x: hidden;
+	overflow-y: hidden;
 }
+
+.panel_6 .content {
+	margin-top:-5%;
+}
+
+.top_cover_bar_2 {
+	width:100%;
+	background-color:grey;
+	height:200px;
+}
+
 .panel_7 {
 	width:100%;
-	height:30vh;
+	height:auto;
 	margin: 0% 0% 15% 0%;
 	background-color:#f8f8f8;
 	overflow-y: hidden;
 	overflow-x: hidden;
+	position: relative;
+}
+
+.panel_7 .content {
+	margin-top:15%;
+	margin-bottom:15%;
+}
+
+.panel_7 .content h3 {
+	margin-left:60%;
+	width:100%;
+}
+
+.panel_7 p {
+	margin-top:20px;
 }
 
 .bottom_overlay {
@@ -218,12 +316,26 @@ a:hover.underline_style {
 	bottom: 0;
 	margin-bottom: 5%;
 	width:100%;
+	display:none;
+	float:right;
 }
-h1.footer_arrow {
-	text-align: right;
+.footer_arrow {
+	margin-top:0%;
+	margin-right:0%;
 	font-weight:900;
+	float:right;
+	text-align: right;
+	font-size: 3em;
 }
 
+.arrow_text {
+	float:left;
+	text-align: left;
+}
+
+.arrow_text h3 {
+	color:black;
+} 
 p.opaque_footer {
 	opacity:.5;
 }
@@ -262,6 +374,17 @@ nav {
 	right: 3.5%;
 }
 
+.mid_left_bar {
+	width:0px;
+	background-color: white; 
+	height:100%;
+	left:3%;
+	position: fixed;
+	z-index: 10000000;
+	margin-top:3%;
+	margin-bottom:40px;
+}
+
 #mid_left {
 	position: fixed;
 	top:50%;
@@ -269,6 +392,15 @@ nav {
 	left: 1.5%;
 	z-index: 1;
 	display:none;
+}
+
+.offset_1 {
+	font-size: 12px;
+	width:12.5px;
+}
+.offset_2 {
+	font-size: 12px;
+	width:12.5px;
 }
 
 #mid_right {
@@ -306,7 +438,7 @@ nav {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
-	min-height: 50px;
+	min-height: 40px;
 	background-color:white;
 	z-index: 1;
 	display: none;
@@ -329,10 +461,18 @@ a, hover {
 	-o-transform: rotate(-90deg);
 }
 
-.mid_menu_margin {
-	left:30% !important;
-	font-size:12px;
+#rot_mid {
+	padding:0;
+	margin:0;
+	position:relative;
+	right:0;
+	top:0px;
+	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
 }
+
 
 .icon {
 	float:right;
@@ -343,6 +483,8 @@ a, hover {
 	line-height:5px;
 
 }
+
+
 
 #mid_left a:hover, a:visited  {
 	text-decoration: none;
@@ -373,11 +515,11 @@ a, hover {
 }
 
 .modal {
-	display: none; /* Hidden by default */
-	position: fixed; /* Stay in place */
-	z-index: 0; /* Sit on top */
+	display: none;  
+	position: fixed;  
+	z-index: 0;  
 	border:none;
-	padding-top:0px; /* Location of the box */
+	padding-top:0px;  
 	left: 0;
 	top: 0;
 	background-color: grey;
@@ -402,7 +544,6 @@ a, hover {
 	to {top:0; opacity:1}
 }
 
-/* The Close Button */
 .close_modal {
 	float:left;
 	width:5%;

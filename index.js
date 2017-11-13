@@ -1,16 +1,15 @@
- 
+// restores elements 
+$('.backpanel-mh').css("display", "block");
+$('.bottom_overlay').css("display", "block");
 // delays the page load on refresh 
- 
-    $(window).on('beforeunload', function() {
-    $('.load_area').css("display", "none");
-     $('#content-panel').css("display", "none");
-     $('.frontpanel-mh').css("display", "none");
+$(window).on('beforeunload', function() {
     $(window).scrollTop(0);
 });
 
 // remove all elements except intro animation 
 $(window).load(function(){
     $('body, html').addClass('hideMyScroll');
+    $('.load_area').css("display", "none");
     $('.navbar').hide();
     $('.navbar-default').hide();
     $('.navbar-fixed-top').hide();
@@ -26,6 +25,7 @@ setTimeout(function(){
 },3965);
 
 // reveal navbar and display remaining body content 
+
 setTimeout(function(){ 
     $('#content-panel').css("marginTop", "4%"); 
 },2700);
@@ -98,46 +98,27 @@ setTimeout(function(){
     });
 },3000);
 
-// slide in middle services section on scroll 
-/*
-jQuery(window).scroll(function() {
-    if (jQuery(this).scrollTop() > 1400) {
-        jQuery('.four_container').stop().animate({ right: '0px' }, 80);
-    } else {
-        jQuery('.four_container').stop().animate({ right: '-300px' }, 100);
-    }
-});
-*/
-
-// reveal lower left + right on scroll
+// hide left icon prior to footer reveal
 $(document).scroll(function () {
     var x = $(this).scrollTop();   
-    if (x > 200 && x < 3450) {
-        $('#lower_left').fadeIn();
-    } else {
+    if (x > 3000 || x < 200) {
+        $('#lower_right').fadeOut();
         $('#lower_left').fadeOut();
-    }
-
-        var y = $(this).scrollTop();   
-    if (y > 200 && y < 3450) {
-        $('#lower_right').show();
-    } else {
-        $('#lower_right').hide();
+    }  else {
+        $('#lower_right').fadeIn();
+        $('#lower_left').fadeIn();
     }
 });
-
 // reveal bottom overlay (footer) 
-        $('.bottom_overlay').hide();
+$('.bottom_overlay').hide();
 $(document).scroll(function () {
     var z = $(this).scrollTop();   
-    if (z > 3100) {
+    if (z > 3200) {
         $('.bottom_overlay').show();
     }  else {
         $('.bottom_overlay').hide();
     }
 });
-
-
 // Change icon interior on hover 
 document.getElementById("icon").onmouseover = function() {
     document.getElementById("rot3").innerHTML = "____<br>_____<br>___";
@@ -149,13 +130,15 @@ document.getElementById("icon").onmouseleave = function() {
 
 // Menu hover animation
 $('#icon').hover(function(){
-    $('#content-panel').animate({marginLeft: '10%', width:'87%'}, 500);
-  $('.four_container').animate({right: '-200px'}, 500);
-    $('#lower_left').fadeOut();
+
+ //   $('#content-panel').animate({marginLeft: '10%', width:'87%'}, 500);
+    $('.mid_left_bar').animate({width:'4%'}, 500);
+ //   $('.four_container').animate({right: '-100px'}, 500);
 }, function(){
-    $('#content-panel').animate({width: '94%', marginLeft: '3%'}, 500);
-$('.four_container').animate({right: '0px'}, 500);
-    $('#lower_left').fadeIn();
+ //   $('#content-panel').animate({width: '94%', marginLeft: '3%'}, 500);
+  $('.mid_left_bar').animate({width:'0%'}, 500);
+ //  $('.four_container').animate({right: '0px'}, 500);
+
 });
 
 // Get the modal
@@ -205,6 +188,8 @@ span.onclick = function() {
     $('#lower_right').fadeIn();
 
 document.body.style.overflow = 'visible'; // restore scroll bar 
+// remove horizontal scrollbar  
+$('body').css("overflow-x", "hidden");
 modal.style.display = "none";
 }
 
