@@ -111,12 +111,6 @@ $('#icon').hover(function(){
     document.getElementById("rot3").innerHTML = "<span style=\"margin-right:0px; font-size:1.3em\">__</span><br><span style=\"margin-left:0px; font-size:1.3em\">__</span><br><span style=\"margin-right:0px; font-size:1.3em\">__</span>";
 });
 
-
-
-
-
-// end feisty-ness
-
 // Get the modal
 var modal = document.getElementById('myModal');
 
@@ -132,31 +126,37 @@ var close_modal = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal 
 icon.onclick = function() {
-    $('.close_modal').css("display", "none");
-    $('#lower_right').fadeOut();
-    $('#lower_left').fadeOut();
-    $('#content-panel').animate({width: '94%', marginLeft: '3%'}, 1000);
-    $('#content-panel').animate({display: 'hidden'}, 1000);
-    $('.container-fluid').animate({paddingTop: '6%', paddingLeft: '6%'}, 500);
-    $('.nav.navbar-nav').animate({marginRight: '6%'}, 500);
-    $('#bottom_banner').animate({minHeight: '60px'}, 500);
-    $('#lower_left').animate({fontSize: '0px'}, 0);
-    icon.style.display = "none";
-    close_modal.style.display = "none";
-
+    modal.style.backgroundColor = "white";
+    $('.modal').css("background-color", 'white', 'height', '20%');
+    $('.bottom_overlay').css("display", 'none');
     setTimeout(function(){
-        $('.modal-body').animate({width: '94%', paddingLeft: '10%'}, 350);
-        $('.modal_content').fadeIn();
-        modal.style.display = "block";
-        c_panel.style.display = "none";
-        modal.style.height = "90vh";
-document.body.style.overflow = 'hidden';  // hide scroll bar 
-}, 20);
+        $('.close_modal').css("display", "none");
+        $('#lower_right').fadeOut();
+        $('#lower_left').fadeOut();
+        $('#content-panel').animate({width: '94%', marginLeft: '3%'}, 1000);
+        $('#content-panel').animate({display: 'hidden'}, 1000);
+        $('.container-fluid').animate({paddingTop: '6%', paddingLeft: '6%'}, 500);
+        $('.nav.navbar-nav').animate({marginRight: '6%'}, 500);
+        $('#bottom_banner').animate({minHeight: '60px'}, 500);
+        $('#lower_left').animate({fontSize: '0px'}, 0);
+        icon.style.display = "none";
+        close_modal.style.display = "none";
+        setTimeout(function(){
+            $('.modal-body').animate({width: '94%', paddingLeft: '10%'}, 350);
+            $('.modal_content').fadeIn();
+            modal.style.display = "block";
+            modal.style.backgroundColor = "grey";
+            c_panel.style.display = "none";
+            modal.style.height = "90vh";
+            document.body.style.overflow = 'hidden';   
+        }, 20);
 
-    setTimeout(function(){
-        close_modal.style.display = "block";
-        $('.close_modal').css("display", "block");
-    }, 1000); // allow elements to fade out behind the scenes 
+        setTimeout(function(){
+            close_modal.style.display = "block";
+            $('.close_modal').css("display", "block");
+}, 4500); // allow elements to fade out behind the scenes 
+
+}, 100); // modal load delay
 }
 
 // When the user clicks on <close_modal> (x), close the modal
@@ -167,12 +167,13 @@ close_modal.onclick = function() {
 $('body').css("overflow-x", "hidden");
 document.body.style.overflow = 'visible'; 
 },490);
-
     $('.load_area').css("display", "none");
     close_modal.style.display = "block";
     $('.close_modal').css("display", "none");
     $('.modal_content').css("display", "none");
     $('.modal-body').animate({width: '0%', paddingLeft: '0%'}, 500);
+    $('.modal').animate({backgroundColor: 'white'}, 500);
+    $('.modal').css("background-color", 'white');
 $('.modal_content').fadeOut(); //.animate({marginRight: '0%'}, 500);
 $('.container-fluid').animate({paddingTop: '0%', paddingLeft: '0%'}, 500);
 $('.nav.navbar-nav').animate({marginRight: '0%'}, 500);
@@ -183,7 +184,6 @@ $('#bottom_banner').animate({minHeight: '40px'}, 550);
 $('#lower_left').fadeIn();
 $('#lower_left').animate({fontSize: '14px'}, 0);
 $('#lower_right').fadeIn();
-// modal.style.display = "none";
 }
 
 // When the user clicks anywhere outside of the modal, close it

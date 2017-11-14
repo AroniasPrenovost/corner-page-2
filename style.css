@@ -124,8 +124,6 @@ h2 {
 	margin-top:20%;
 }
 
-
-
 .panel_4 {
 	width:100%;
 	height:80vh;
@@ -223,7 +221,6 @@ h2.agnostic {
 	width:5%;
 }
 
-
 .bottom_cover_bar {
 	width:100%;
 	height:20%;
@@ -240,14 +237,12 @@ h2.agnostic {
 	width:100%;
 }
 
-
 .text_overlay {
 	margin-top:10%;
 	width:auto;
 	background-color:transparent;
 	margin-top:0%;
 }
-
 
 .text_overlay_sm {
 	width:auto;
@@ -343,6 +338,7 @@ a:hover.underline_style {
 	width:100%;
 	display:none;
 	float:right;
+	background-color:white;
 }
 .footer_arrow {
 	margin-top:0%;
@@ -484,7 +480,6 @@ a, hover {
 	-o-transform: rotate(-90deg);
 }
 
-
 .icon {
 	float:left;
 	text-align:right;
@@ -494,12 +489,11 @@ a, hover {
 	line-height:5px;
 
 }
+
 #icon {
 	width:auto;
 	height:auto;
 }
-
-
 
 #mid_left a:hover, a:visited  {
 	text-decoration: none;
@@ -525,13 +519,6 @@ a, hover {
 	-o-transform: rotate(-180deg);
 }
 
-
-
-
-#my_model {
-	border:none;
-}
-
 .modal {
 	display: none;  
 	position: fixed;  
@@ -540,7 +527,7 @@ a, hover {
 	padding-top:0px;  
 	left: 0;
 	top: 0;
-	background-color: grey;
+	background-color: white;
 	margin: auto;
 	padding: none
 	border: none;
