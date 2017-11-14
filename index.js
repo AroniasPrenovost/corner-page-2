@@ -1,6 +1,7 @@
 // restores elements 
 $('.backpanel-mh').css("display", "block");
 $('.bottom_overlay').css("display", "block");
+
 // delays the page load on refresh 
 $(window).on('beforeunload', function() {
     $(window).scrollTop(0);
@@ -24,14 +25,9 @@ setTimeout(function(){
     $('.load_area').fadeIn().css("display", "block");
 },3965);
 
-// reveal navbar and display remaining body content 
-
-setTimeout(function(){ 
-    $('#content-panel').css("marginTop", "4%"); 
-},2700);
 setTimeout(function(){ 
     $('.post_animation_reveal').css("display", "block");
-},3000);
+},3300);
 
 // intro full screen 
 $(function() {
@@ -42,61 +38,41 @@ $(function() {
         height: '110vh'
     }, 0);
 });
+
 setTimeout(function(){ 
     $(function() {
         $('.frontpanel-mh').animate({
             width: '50%',
             marginLeft: '0%',
-            marginTop: '-5%',
+            marginTop: '-10%',
             height: '110vh'
-}, 1500); // left masthead slide in
+}, 550); // left masthead slide in
     });
+
 }, 2500); // length of full page intro
 
 // fade in navigation items 
 setTimeout(function(){ 
     $('.navbar').fadeIn();
-    $('#bottom_banner').fadeIn();               
+    $('#bottom_banner').fadeIn();  
+    $('.navbar-header').fadeIn();  
+    $('#mid_left').fadeIn().css("display", "block");     
+    $('#lower_left').fadeIn().css("display", "block");   
+    $('#lower_right').fadeIn().css("display", "block"); 
+    $('#mid_right').fadeIn().css("display", "block");  
+    $('.navbar-nav').fadeIn();
 },2500);
 
-// nav bar element made ins
-setTimeout(function(){ 
-    $('.navbar-header').fadeIn();
-},3000);
-
-setTimeout(function(){ 
-// $('#mid_left').fadeIn();
-$('#mid_left').fadeIn().css("display", "block");
-},3600);
-
-setTimeout(function(){ 
-// $('#lower_left').fadeIn();
-$('#lower_left').fadeIn().css("display", "block");
-},4200);
-
-setTimeout(function(){ 
-// $('#lower_right').fadeIn();
-$('#lower_right').fadeIn().css("display", "block");
-},4800);
-
-setTimeout(function(){ 
-//   $('#mid_right').fadeIn();
-$('#mid_right').fadeIn().css("display", "block");
-},5600);
-
-setTimeout(function(){ 
-    $('.navbar-nav').fadeIn();
-},6200);
-
-// replace vertical scrollbar 
+// initialize vertical scrollbar 
 $(document).ready(function(){
     $('body, html').removeClass('hideMyScroll');
 });
+
 setTimeout(function(){ 
-    $(document).ready(function(){
+    $(document).ready(function(){  
         $('body, html').addClass('showMyScroll');
     });
-},3000);
+}, 2350);
 
 // hide left icon prior to footer reveal
 $(document).scroll(function () {
@@ -109,6 +85,7 @@ $(document).scroll(function () {
         $('#lower_left').fadeIn();
     }
 });
+
 // reveal bottom overlay (footer) 
 $('.bottom_overlay').hide();
 $(document).scroll(function () {
@@ -119,26 +96,19 @@ $(document).scroll(function () {
         $('.bottom_overlay').hide();
     }
 });
-// Change icon interior on hover 
-document.getElementById("icon").onmouseover = function() {
-    document.getElementById("rot3").innerHTML = "____<br>_____<br>___";
-}
-
-document.getElementById("icon").onmouseleave = function() {
-    document.getElementById("rot3").innerHTML = "___<br>___<br>___";
-}
 
 // Menu hover animation
-$('#icon').hover(function(){
+$('#icon').hover(function(){   
+    document.getElementById("rot3").innerHTML = "<span style=\"margin-left:-4px; font-size:1.3em\">__</span><br><span style=\"margin-right:-6px; font-size:1.3em\">__</span><br><span style=\"margin-left:-4px; font-size:1.3em\">__</span>";
+    $('.mid_left_bar').animate({width:'4%'}, 220);
+    $('.offset_2').css("verticalAlign", 'bottom'); 
+    $('.offset_1').css("verticalAlign", 'top'); 
 
- //   $('#content-panel').animate({marginLeft: '10%', width:'87%'}, 500);
-    $('.mid_left_bar').animate({width:'4%'}, 500);
- //   $('.four_container').animate({right: '-100px'}, 500);
 }, function(){
- //   $('#content-panel').animate({width: '94%', marginLeft: '3%'}, 500);
-  $('.mid_left_bar').animate({width:'0%'}, 500);
- //  $('.four_container').animate({right: '0px'}, 500);
-
+    $('.mid_left_bar').animate({width:'0%'}, 220);
+    $('.offset_2').css("verticalAlign", 'middle'); 
+    $('.offset_1').css("verticalAlign", 'middle'); 
+    document.getElementById("rot3").innerHTML = "<span style=\"margin-right:0px; font-size:1.3em\">__</span><br><span style=\"margin-left:0px; font-size:1.3em\">__</span><br><span style=\"margin-right:0px; font-size:1.3em\">__</span>";
 });
 
 // Get the modal
@@ -149,48 +119,65 @@ var icon = document.getElementById("icon");
 
 var b_banner = document.getElementById('bottom_banner');
 
-var c_banner = document.getElementById('content-panel');
+var c_panel = document.getElementById('content-panel');
 
 // Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+var close_modal = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal 
 icon.onclick = function() {
+    $('.close_modal').css("display", "none");
     $('#lower_right').fadeOut();
     $('#lower_left').fadeOut();
-    $('#content-panel').animate({width: '94%', marginLeft: '3%'}, 500);
-    $('#content-panel').animate({display: 'hidden'}, 500);
+    $('#content-panel').animate({width: '94%', marginLeft: '3%'}, 1000);
+    $('#content-panel').animate({display: 'hidden'}, 1000);
     $('.container-fluid').animate({paddingTop: '6%', paddingLeft: '6%'}, 500);
     $('.nav.navbar-nav').animate({marginRight: '6%'}, 500);
     $('#bottom_banner').animate({minHeight: '60px'}, 500);
     $('#lower_left').animate({fontSize: '0px'}, 0);
     icon.style.display = "none";
+    close_modal.style.display = "none";
+
     setTimeout(function(){
-        $('.modal-body').animate({width: '94%'}, 350); 
+        $('.modal-body').animate({width: '94%', paddingLeft: '10%'}, 350);
+        $('.modal_content').fadeIn();
         modal.style.display = "block";
-        c_banner.style.display = "none";
+        c_panel.style.display = "none";
         modal.style.height = "90vh";
-document.body.style.overflow = 'hidden'; // hide scroll bar 
+document.body.style.overflow = 'hidden';  // hide scroll bar 
 }, 20);
+
+    setTimeout(function(){
+        close_modal.style.display = "block";
+        $('.close_modal').css("display", "block");
+    }, 200);
 }
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    $('.modal-body').animate({width: '40%'}, 500); 
-    $('.container-fluid').animate({paddingTop: '0%', paddingLeft: '0%'}, 500);
-    $('.nav.navbar-nav').animate({marginRight: '0%'}, 500);
-    $('#content-panel').animate({width: '94%', marginLeft: '3%'}, 0);
-    $('#content-panel').fadeIn();
-    icon.style.display = "block";
-    $('#bottom_banner').animate({minHeight: '40px'}, 500);
-    $('#lower_left').fadeIn();
-    $('#lower_left').animate({fontSize: '14px'}, 0);
-    $('#lower_right').fadeIn();
+// When the user clicks on <close_modal> (x), close the modal
+close_modal.onclick = function() {
 
-document.body.style.overflow = 'visible'; // restore scroll bar 
-// remove horizontal scrollbar  
+    setTimeout(function(){
+// restore scroll bar and remove horizontal scrollbar  
 $('body').css("overflow-x", "hidden");
-modal.style.display = "none";
+document.body.style.overflow = 'visible'; 
+},490);
+
+    $('.load_area').css("display", "none");
+    close_modal.style.display = "block";
+    $('.close_modal').css("display", "none");
+    $('.modal_content').css("display", "none");
+    $('.modal-body').animate({width: '0%', paddingLeft: '0%'}, 500);
+$('.modal_content').fadeOut(); //.animate({marginRight: '0%'}, 500);
+$('.container-fluid').animate({paddingTop: '0%', paddingLeft: '0%'}, 500);
+$('.nav.navbar-nav').animate({marginRight: '0%'}, 500);
+$('#content-panel').animate({width: '94%', marginLeft: '3%'}, 0);
+$('#content-panel').fadeIn();
+icon.style.display = "block";
+$('#bottom_banner').animate({minHeight: '40px'}, 550);
+$('#lower_left').fadeIn();
+$('#lower_left').animate({fontSize: '14px'}, 0);
+$('#lower_right').fadeIn();
+// modal.style.display = "none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
