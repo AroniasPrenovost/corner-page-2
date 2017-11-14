@@ -111,6 +111,12 @@ $('#icon').hover(function(){
     document.getElementById("rot3").innerHTML = "<span style=\"margin-right:0px; font-size:1.3em\">__</span><br><span style=\"margin-left:0px; font-size:1.3em\">__</span><br><span style=\"margin-right:0px; font-size:1.3em\">__</span>";
 });
 
+
+
+
+
+// end feisty-ness
+
 // Get the modal
 var modal = document.getElementById('myModal');
 
@@ -150,7 +156,7 @@ document.body.style.overflow = 'hidden';  // hide scroll bar
     setTimeout(function(){
         close_modal.style.display = "block";
         $('.close_modal').css("display", "block");
-    }, 200);
+    }, 1000); // allow elements to fade out behind the scenes 
 }
 
 // When the user clicks on <close_modal> (x), close the modal
