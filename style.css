@@ -2,6 +2,12 @@
 html, body {
 	overflow-x: hidden; 
 	overflow: hidden;
+		font-family: sans-serif;
+}
+
+p {
+	color: #606060;
+	font-size:1.4rem;
 }
 
 .navbar {
@@ -27,12 +33,14 @@ nav {
 	display:none;
 }
 
+/*
 .load_area {
 	position: relative;
 	text-align: center;
 	width: 90%;
 	display:none;
 }
+*/
 
 #content-panel {
 	width: 94%;
@@ -85,7 +93,7 @@ h2 {
 }
 
 .frontpanel-mh {
-	width:50%;
+ 	/* width:50%; */
 	height:100%;
 	margin-top:-0% !important;
 	background-color:red;
@@ -186,6 +194,14 @@ h2 {
 	float:right;
 }
 
+.panel_5_right .text_overlay {
+	margin-top:55%;
+}
+
+.panel_5_right h3 {
+	margin-bottom:20%;
+}
+
 .panel_5_left {
 	background: url(images/cof.jpg)no-repeat;
 	background-size: cover;
@@ -251,6 +267,10 @@ h2.agnostic {
 	margin-left:20%;
 	margin-right:5%;
 	overflow-y: hidden;
+}
+
+.panel_4 .text_overlay_sm .content p {
+	margin:20% 0 20% 0;
 }
 
 .content {

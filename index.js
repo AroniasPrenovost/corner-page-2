@@ -27,7 +27,7 @@ setTimeout(function(){
 
 setTimeout(function(){ 
     $('.post_animation_reveal').css("display", "block");
-},3300);
+},2600); // post intro animation transition
 
 // intro full screen 
 $(function() {
@@ -50,6 +50,47 @@ setTimeout(function(){
     });
 
 }, 2500); // length of full page intro
+
+//____________________________________________________________________________
+// scroll triggers 100% scroll
+
+/*
+$(function() {
+$('.frontpanel-mh').animate({
+width: '110%',
+marginLeft: '-4%',
+marginTop: '-10%',
+height: '110vh'
+}, 0);
+});
+*/
+
+
+$(document).scroll(function () {
+
+    var s = $(this).scrollTop();
+// console.log(typeof s) to double checks value type
+var str_Number = s.toString();
+// convert to string for sanity's sake
+//  console.log(str_Number);
+if (str_Number == 8) {
+//  console.log(s + " is above 10.")
+$('.frontpanel-mh').animate({width: '50%'}, 550);
+// break;
+}
+
+if (str_Number == 12) {
+//  console.log(s + " is above 10.")
+$('.frontpanel-mh').animate({width: '100%'}, 550);
+// break;
+}
+});
+
+// scroll pushes intro message to the right 
+
+/// message in left bar scrolls in (because it's fixed to .frontpanel-mh)
+
+//____________________________________________________________________________
 
 // fade in navigation items 
 setTimeout(function(){ 
