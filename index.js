@@ -1,6 +1,5 @@
 // restores elements 
 $('.backpanel-mh').css("display", "block");
-$('.bottom_overlay').css("display", "block");
 
 // delays the page load on refresh 
 $(window).on('beforeunload', function() {
@@ -48,49 +47,8 @@ setTimeout(function(){
             height: '110vh'
 }, 550); // left masthead slide in
     });
-
 }, 2500); // length of full page intro
 
-//____________________________________________________________________________
-// scroll triggers 100% scroll
-
-/*
-$(function() {
-$('.frontpanel-mh').animate({
-width: '110%',
-marginLeft: '-4%',
-marginTop: '-10%',
-height: '110vh'
-}, 0);
-});
-*/
-
-
-$(document).scroll(function () {
-
-    var s = $(this).scrollTop();
-// console.log(typeof s) to double checks value type
-var str_Number = s.toString();
-// convert to string for sanity's sake
-//  console.log(str_Number);
-if (str_Number == 8) {
-//  console.log(s + " is above 10.")
-$('.frontpanel-mh').animate({width: '50%'}, 550);
-// break;
-}
-
-if (str_Number == 12) {
-//  console.log(s + " is above 10.")
-$('.frontpanel-mh').animate({width: '100%'}, 550);
-// break;
-}
-});
-
-// scroll pushes intro message to the right 
-
-/// message in left bar scrolls in (because it's fixed to .frontpanel-mh)
-
-//____________________________________________________________________________
 
 // fade in navigation items 
 setTimeout(function(){ 
@@ -102,7 +60,8 @@ setTimeout(function(){
     $('#lower_right').fadeIn().css("display", "block"); 
     $('#mid_right').fadeIn().css("display", "block");  
     $('.navbar-nav').fadeIn();
-},2500);
+    $('.bottom_overlay').css("display", "block");
+},2750);
 
 // initialize vertical scrollbar 
 $(document).ready(function(){
@@ -128,18 +87,15 @@ $(document).scroll(function () {
 });
 
 // reveal bottom overlay (footer) 
-$('.bottom_overlay').hide();
 $(document).scroll(function () {
     var z = $(this).scrollTop();   
-    if (z > 3200) {
-        $('.bottom_overlay').show();
-    }  else {
-        $('.bottom_overlay').hide();
-    }
+    if (z < 250) {
+        $('.bottom_overlay').css("display", "none"); 
+    }  
 });
 
-// Menu hover animation
-$('#icon').hover(function(){   
+// Menu hover animation (previously ('#icon')
+$('#mid_left').hover(function(){   
     document.getElementById("rot3").innerHTML = "<span style=\"margin-left:-4px; font-size:1.3em\">__</span><br><span style=\"margin-right:-6px; font-size:1.3em\">__</span><br><span style=\"margin-left:-4px; font-size:1.3em\">__</span>";
     $('.mid_left_bar').animate({width:'4%'}, 220);
     $('.offset_2').css("verticalAlign", 'bottom'); 
@@ -152,57 +108,59 @@ $('#icon').hover(function(){
     document.getElementById("rot3").innerHTML = "<span style=\"margin-right:0px; font-size:1.3em\">__</span><br><span style=\"margin-left:0px; font-size:1.3em\">__</span><br><span style=\"margin-right:0px; font-size:1.3em\">__</span>";
 });
 
-// Get the modal
 var modal = document.getElementById('myModal');
 
-// Get the button that opens the modal
+// open modal 
 var icon = document.getElementById("icon");
 
 var b_banner = document.getElementById('bottom_banner');
 
 var c_panel = document.getElementById('content-panel');
 
-// Get the <span> element that closes the modal
 var close_modal = document.getElementsByClassName("close")[0];
 
-// When the user clicks the button, open the modal 
+// open modal 
 icon.onclick = function() {
-    modal.style.backgroundColor = "white";
-    $('.modal').css("background-color", 'white', 'height', '20%');
-    $('.bottom_overlay').css("display", 'none');
+
+$('.mid_left_bar').animate({height: '70vh'}, 500); // animates bar down as nav elements fade down 
+//  close_modal.style.display = "none";
+modal.style.backgroundColor = "white";
+$('.modal').css("background-color", 'white', 'height', '20%');
+$('.bottom_overlay').css("display", 'none');
+setTimeout(function(){
+    $('.close_modal').css("display", "none");
+    $('#lower_right').fadeOut();
+    $('#lower_left').fadeOut();
+    $('#content-panel').animate({width: '94%', marginLeft: '3%'}, 1000);
+    $('#content-panel').animate({display: 'hidden'}, 1000);
+    $('.container-fluid').animate({paddingTop: '6%', paddingLeft: '6%'}, 500);
+    $('.nav.navbar-nav').animate({marginRight: '6%'}, 500);
+    $('#bottom_banner').animate({minHeight: '60px'}, 500);
+    $('#lower_left').animate({fontSize: '0px'}, 0);
+    icon.style.display = "none";
+
     setTimeout(function(){
-        $('.close_modal').css("display", "none");
-        $('#lower_right').fadeOut();
-        $('#lower_left').fadeOut();
-        $('#content-panel').animate({width: '94%', marginLeft: '3%'}, 1000);
-        $('#content-panel').animate({display: 'hidden'}, 1000);
-        $('.container-fluid').animate({paddingTop: '6%', paddingLeft: '6%'}, 500);
-        $('.nav.navbar-nav').animate({marginRight: '6%'}, 500);
-        $('#bottom_banner').animate({minHeight: '60px'}, 500);
-        $('#lower_left').animate({fontSize: '0px'}, 0);
-        icon.style.display = "none";
-        close_modal.style.display = "none";
-        setTimeout(function(){
-            $('.modal-body').animate({width: '94%', paddingLeft: '10%'}, 350);
-            $('.modal_content').fadeIn();
-            modal.style.display = "block";
-            modal.style.backgroundColor = "grey";
-            c_panel.style.display = "none";
-            modal.style.height = "90vh";
-            document.body.style.overflow = 'hidden';   
-        }, 20);
+        $('.modal-body').animate({width: '94%', paddingLeft: '10%'}, 350);
+        $('.modal_content').fadeIn();
+        modal.style.display = "block";
+        modal.style.backgroundColor = "grey";
+        c_panel.style.display = "none";
+        modal.style.height = "90vh";
+        document.body.style.overflow = 'hidden';   
+    }, 20);
 
-        setTimeout(function(){
-            close_modal.style.display = "block";
-            $('.close_modal').css("display", "block");
-}, 4500); // allow elements to fade out behind the scenes 
+    setTimeout(function(){
+        close_modal.style.display = "block";
+        $('.close_modal').css("display", "block");
 
-}, 100); // modal load delay
+}, 250); // allow elements to fade out behind the scenes 
+
+}, 0); // modal load delay
 }
 
-// When the user clicks on <close_modal> (x), close the modal
+// close the modal 
 close_modal.onclick = function() {
-
+    $('.bottom_overlay').css("display", "none");
     setTimeout(function(){
 // restore scroll bar and remove horizontal scrollbar  
 $('body').css("overflow-x", "hidden");
@@ -220,11 +178,17 @@ $('.container-fluid').animate({paddingTop: '0%', paddingLeft: '0%'}, 500);
 $('.nav.navbar-nav').animate({marginRight: '0%'}, 500);
 $('#content-panel').animate({width: '94%', marginLeft: '3%'}, 0);
 $('#content-panel').fadeIn();
-icon.style.display = "block";
 $('#bottom_banner').animate({minHeight: '40px'}, 550);
-$('#lower_left').fadeIn();
-$('#lower_left').animate({fontSize: '14px'}, 0);
-$('#lower_right').fadeIn();
+setTimeout(function(){
+    $('.bottom_overlay').css("display", "block");
+}, 1800);
+setTimeout(function(){
+    $('.mid_left_bar').css("height", '95vh');
+    $('#lower_left').fadeIn();
+    $('#lower_left').animate({fontSize: '14px'}, 0);
+    $('#lower_right').fadeIn();
+    icon.style.display = "block";
+}, 950);
 }
 
 // When the user clicks anywhere outside of the modal, close it
