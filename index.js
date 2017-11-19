@@ -86,23 +86,14 @@ $(document).scroll(function () {
     }
 });
 
-// reveal bottom overlay (footer) 
-$(document).scroll(function () {
-    var z = $(this).scrollTop();   
-    if (z < 250) {
-        $('.bottom_overlay').css("display", "none"); 
-    }  
-});
-
 // Menu hover animation (previously ('#icon')
 $('#mid_left').hover(function(){   
     document.getElementById("rot3").innerHTML = "<span style=\"margin-left:-4px; font-size:1.3em\">__</span><br><span style=\"margin-right:-6px; font-size:1.3em\">__</span><br><span style=\"margin-left:-4px; font-size:1.3em\">__</span>";
-    $('.mid_left_bar').animate({width:'4%'}, 220);
+$('.mid_left_bar').css('width', '4%');
     $('.offset_2').css("verticalAlign", 'bottom'); 
     $('.offset_1').css("verticalAlign", 'top'); 
-
 }, function(){
-    $('.mid_left_bar').animate({width:'0%'}, 220);
+  $('.mid_left_bar').css('width', '0%');
     $('.offset_2').css("verticalAlign", 'middle'); 
     $('.offset_1').css("verticalAlign", 'middle'); 
     document.getElementById("rot3").innerHTML = "<span style=\"margin-right:0px; font-size:1.3em\">__</span><br><span style=\"margin-left:0px; font-size:1.3em\">__</span><br><span style=\"margin-right:0px; font-size:1.3em\">__</span>";

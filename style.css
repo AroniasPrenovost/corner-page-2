@@ -144,13 +144,12 @@ h2 {
 
 .four_container {
 	text-align: center;
-	margin-right: -.5%;
+margin-left: 50%;
 	margin-top:0%;
 	overflow-x:hidden;
-	float:right;
 	bottom:0%;
 	width:600px;
-	position:relative;
+	position:absolute;
 }
 
 .block {
@@ -381,7 +380,6 @@ p.opaque_footer {
 	opacity:.5;
 }
 
-
 #upper_left {
 	position: fixed;
 	top: 1.5%;
@@ -398,10 +396,18 @@ p.opaque_footer {
 	background-color: white; 
 	height:95vh;
 	bottom: 0;
-		width:0;
+    width:0;
 	left:3%;
 	position: fixed;
-	z-index: 10000000;
+	z-index: 10000000; /* hack to place above all other elements */
+	-webkit-transition: width .5s; /* For Safari 3.1 to 6.0 */
+    transition: width .5s;
+}
+
+.mid_left:hover .mid_left_bar {
+	width: 4%;
+	-webkit-transition: width .5s; /* For Safari 3.1 to 6.0 */
+    transition: width .5s;
 }
 
 #mid_left {
@@ -409,7 +415,7 @@ p.opaque_footer {
 	top:50%;
 	height:35px;
 	bottom:0;
-	left: 3%;
+	left: 2%;
 	z-index: 1;
 	display:none;
 	font-weight:900;
@@ -537,10 +543,10 @@ a, hover {
 	cursor:default;
 	-webkit-transform: rotate(-180deg);
 	-moz-transform: rotate(-180deg);
-	-ms-transform: rotate(-180deg);
+	-ms-transform: rotate(-180deg); 
 	-o-transform: rotate(-180deg);
-	transform: translate3d(0,0,0);
--webkit-transform: translate3d(0,0,0);
+	 transform: translate3d(0,0,0); 	/* safari patch, improves performance by forcing IOS to use hardware-acceleration */
+-webkit-transform: translate3d(0,0,0); /* safari patch, improves performance by forcing IOS to use hardware-acceleration */
 }
 
 .modal {
