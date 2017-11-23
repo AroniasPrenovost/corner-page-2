@@ -134,7 +134,7 @@ setTimeout(function(){
         $('.modal-body').animate({width: '94%', paddingLeft: '10%'}, 350);
         $('.modal_content').fadeIn();
         modal.style.display = "block";
-        modal.style.backgroundColor = "grey";
+        modal.style.backgroundColor = "#ECF0F1";
         c_panel.style.display = "none";
         modal.style.height = "90vh";
         document.body.style.overflow = 'hidden';   
