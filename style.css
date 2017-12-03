@@ -77,7 +77,11 @@ h2 {
 	height:110vh;
 	margin: 0 0 0 0;
 	padding-top:0px;
-	background-color:#ecf0f1;
+	background: url(images/bag2.jpg)no-repeat;
+ 
+	background-position: center;
+ 
+	background-size: cover;
 	border-top: 1px solid white;
 	border-left:1px solid white;
 	display:none;
@@ -88,14 +92,24 @@ h2 {
 	margin-top:-0% !important;
 	background-color:#e0afa0;
 	background-size:cover;
+	margin:0 auto;
+	opacity:1;
 }
 
-.frontpanel-mh h1 {
+.mh_text_1 {
+  background:none;
+  position:absolute;
+  color:#fff;
+  margin-top:30%;
+  left:50%;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+.frontpanel-mh h2 {
 	text-align: left;
-	margin-left:40%;
-	margin-top:20vh;
-	font-size:12em;
-	font-weight:900;
+	line-height: 100%; 
 }
 
 .panel_2 {
@@ -134,7 +148,7 @@ h2 {
 
 .four_container {
 	text-align: center;
-margin-left: 55%;
+margin-left: 50%;
 	margin-top:0%;
 	overflow-x:hidden;
 	bottom:0%;
@@ -173,7 +187,7 @@ margin-left: 55%;
 }
 
 .panel_5_right {
-	width:50%;
+	width:51%;
 	height:110vh;
 	margin: 0% 0% 0% 0%;
 	background-color:#ecf0f1;
@@ -194,7 +208,7 @@ margin-left: 55%;
 .panel_5_left {
 	background: url(images/testy.jpg)no-repeat;
 	background-size: cover;
-	width:50%;
+	width:49%;
 	height:110vh;
 	margin: 0% 0% 0% 0%;
 	overflow-y: hidden;
@@ -356,9 +370,11 @@ a:hover.underline_style {
 	bottom: 0;
 	margin-bottom: 5%;
 	width:100%;
-	display:block;
+	display:none;
 	float:right;
 	background-color:white;
+	 transform: translate3d(0,0,0); 	/* safari patch, improves performance by forcing IOS to use hardware-acceleration */
+-webkit-transform: translate3d(0,0,0); /* safari patch, improves performance by forcing IOS to use hardware-acceleration */
 }
 .footer_arrow {
 	margin-top:0%;
@@ -568,6 +584,7 @@ a, hover {
 	overflow: hidden; /* Enable scroll if needed */
 	border: none;
 }
+
 
 /* Add Animation */
 @-webkit-keyframes animatetop {

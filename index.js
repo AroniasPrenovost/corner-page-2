@@ -1,6 +1,6 @@
+
 // restores elements 
 $('.backpanel-mh').css("display", "block");
-
 // delays the page load on refresh 
 $(window).on('beforeunload', function() {
     $(window).scrollTop(0);
@@ -41,6 +41,7 @@ $(function() {
 setTimeout(function(){ 
     $(function() {
         $('.frontpanel-mh').animate({
+            opacity: '.8',
             width: '50%',
             marginLeft: '0%',
             marginTop: '-10%',
@@ -49,6 +50,11 @@ setTimeout(function(){
     });
 }, 2500); // length of full page intro
 
+// add 2nd animation elements to .frontpanel-mh
+
+      
+ 
+ 
 
 // fade in navigation items 
 setTimeout(function(){ 
@@ -60,9 +66,12 @@ setTimeout(function(){
     $('#lower_right').fadeIn().css("display", "block"); 
     $('#mid_right').fadeIn().css("display", "block");  
     $('.navbar-nav').fadeIn();
-    $('.bottom_overlay').css("display", "block");
 },2750);
-
+/*
+setTimeout(function(){ 
+    $('.bottom_overlay').css("display", "block");
+},3000);
+*/
 // initialize vertical scrollbar 
 $(document).ready(function(){
     $('body, html').removeClass('hideMyScroll');
@@ -78,12 +87,21 @@ setTimeout(function(){
 $(document).scroll(function () {
     var x = $(this).scrollTop();   
     if (x > 3000 || x < 200) {
-        $('#lower_right').fadeOut();
-        $('#lower_left').fadeOut();
+        $('#lower_right').hide();
+        $('#lower_left').hide();
     }  else {
         $('#lower_right').fadeIn();
         $('#lower_left').fadeIn();
     }
+
+        var b = $(this).scrollTop();   
+    if (b < 1000) {
+        $('.bottom_overlay').css("display", 'none');
+    }  else {
+        $('.bottom_overlay').css("display", 'block');
+    }
+
+
 });
 
 // Menu hover animation (previously ('#icon')
@@ -110,6 +128,7 @@ var c_panel = document.getElementById('content-panel');
 
 var close_modal = document.getElementsByClassName("close")[0];
 
+
 // open modal 
 icon.onclick = function() {
 
@@ -134,7 +153,7 @@ setTimeout(function(){
         $('.modal-body').animate({width: '94%', paddingLeft: '10%'}, 350);
         $('.modal_content').fadeIn();
         modal.style.display = "block";
-        modal.style.backgroundColor = "#ECF0F1";
+        modal.style.backgroundImage = "url('images/bag2.jpg')";        
         c_panel.style.display = "none";
         modal.style.height = "90vh";
         document.body.style.overflow = 'hidden';   
@@ -151,9 +170,9 @@ setTimeout(function(){
 
 // close the modal 
 close_modal.onclick = function() {
+        c_panel.style.marginTop = "0%"; // removes edge case overflow 
     $('.bottom_overlay').css("display", "none");
-    setTimeout(function(){
-// restore scroll bar and remove horizontal scrollbar  
+    setTimeout(function(){ // restore scroll bar and remove horizontal scrollbar  
 $('body').css("overflow-x", "hidden");
 document.body.style.overflow = 'visible'; 
 },490);
