@@ -1,8 +1,7 @@
-
 html, body {
 	overflow-x: hidden; 
 	overflow: hidden;
-		font-family: sans-serif;
+	font-family: sans-serif;
 }
 
 p {
@@ -18,6 +17,17 @@ p {
 	overflow: hidden;
 	position:fixed;
 	width:100%;
+	/* performance improvement */
+	transition: .15s ease-in-out;
+
+	transition-property: background-position;
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+
+	-webkit-transition-property: background-position;
+	-moz-transition-property: background-position;
+	-o-transition-property: background-position;
 }
 
 .navbar-brand {
@@ -62,6 +72,7 @@ h2 {
 
 .post_animation_reveal {
 	display:none;
+	background-color:cyan; /* hacky cover up */
 }
 
 .hideMyScroll {
@@ -78,13 +89,22 @@ h2 {
 	margin: 0 0 0 0;
 	padding-top:0px;
 	background: url(images/bag2.jpg)no-repeat;
- 
 	background-position: center;
- 
 	background-size: cover;
 	border-top: 1px solid white;
 	border-left:1px solid white;
 	display:none;
+	/* performance improvement */
+	transition: .15s ease-in-out;
+
+	transition-property: background-position;
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+
+	-webkit-transition-property: background-position;
+	-moz-transition-property: background-position;
+	-o-transition-property: background-position;
 }
 
 .frontpanel-mh {
@@ -94,17 +114,28 @@ h2 {
 	background-size:cover;
 	margin:0 auto;
 	opacity:1;
+	/* performance improvement */
+	transition: .15s ease-in-out;
+
+	transition-property: background-position;
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+
+	-webkit-transition-property: background-position;
+	-moz-transition-property: background-position;
+	-o-transition-property: background-position;
 }
 
 .mh_text_1 {
-  background:none;
-  position:absolute;
-  color:#fff;
-  margin-top:30%;
-  left:50%;
-  -ms-transform: translateX(-50%) translateY(-50%);
-  -webkit-transform: translate(-50%,-50%);
-  transform: translate(-50%,-50%);
+	background:none;
+	position:absolute;
+	color:#fff;
+	margin-top:30%;
+	left:50%;
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-webkit-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
 }
 
 .frontpanel-mh h2 {
@@ -120,6 +151,20 @@ h2 {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+
+	transform: translate3d(0,0,0); 	/* safari patch, improves performance by forcing IOS to use hardware-acceleration */
+	-webkit-transform: translate3d(0,0,0); /* safari patch, improves performance by forcing IOS to use hardware-acceleration */
+	/* performance improvement */
+	transition: .1s ease-in-out;
+
+	transition-property: background-position;
+	-webkit-transition: .1s ease-in-out;
+	-moz-transition: .1s ease-in-out;
+	-o-transition: .1s ease-in-out;
+
+	-webkit-transition-property: background-position;
+	-moz-transition-property: background-position;
+	-o-transition-property: background-position;
 }
 
 .panel_3 {
@@ -130,6 +175,18 @@ h2 {
 	overflow-y: hidden;
 	overflow-x: hidden;
 	position: relative;
+
+	/* performance improvement */
+	transition: .15s ease-in-out;
+
+	transition-property: background-position;
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+
+	-webkit-transition-property: background-position;
+	-moz-transition-property: background-position;
+	-o-transition-property: background-position;
 }
 
 .panel_3_content {
@@ -148,7 +205,7 @@ h2 {
 
 .four_container {
 	text-align: center;
-margin-left: 50%;
+	margin-left: 50%;
 	margin-top:0%;
 	overflow-x:hidden;
 	bottom:0%;
@@ -195,6 +252,17 @@ margin-left: 50%;
 	overflow-x: hidden;
 	position: relative;
 	float:right;
+	/* performance improvement */
+	transition: .15s ease-in-out;
+
+	transition-property: background-position;
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+
+	-webkit-transition-property: background-position;
+	-moz-transition-property: background-position;
+	-o-transition-property: background-position;
 }
 
 .panel_5_right .text_overlay {
@@ -209,7 +277,7 @@ margin-left: 50%;
 	background: url(images/testy.jpg)no-repeat;
 	background-size: cover;
 	width:49%;
-	height:110vh;
+	height:108vh; /* hacky cover up (*see 'post_animation_reveal') */
 	margin: 0% 0% 0% 0%;
 	overflow-y: hidden;
 	overflow-x: hidden;
@@ -218,6 +286,17 @@ margin-left: 50%;
 	background-attachment: fixed;
 	background-position: center;
 
+	/* performance improvement */
+	transition: 0s ease-in-out;
+
+	transition-property: background-position;
+	-webkit-transition: 0s ease-in-out;
+	-moz-transition: 0s ease-in-out;
+	-o-transition: 0s ease-in-out;
+
+	-webkit-transition-property: background-position;
+	-moz-transition-property: background-position;
+	-o-transition-property: background-position;
 }
 
 .top_cover_bar {
@@ -254,7 +333,7 @@ h2.agnostic {
 }
 
 .img_caption p {
-font-size:1.2rem;
+	font-size:1.2rem;
 }
 .panel_5_right .text_overlay .content {
 	width:100%;
@@ -329,6 +408,17 @@ a:hover.underline_style {
 	background-size: cover;
 	overflow-x: hidden;
 	overflow-y: hidden;
+	/* performance improvement */
+	transition: 0s ease-in-out;
+
+	transition-property: background-position;
+	-webkit-transition: 0s ease-in-out;
+	-moz-transition: 0s ease-in-out;
+	-o-transition: 0s ease-in-out;
+
+	-webkit-transition-property: background-position;
+	-moz-transition-property: background-position;
+	-o-transition-property: background-position;
 }
 
 .panel_6 .content {
@@ -349,16 +439,27 @@ a:hover.underline_style {
 	overflow-y: hidden;
 	overflow-x: hidden;
 	position: relative;
+	/* performance improvement */
+	transition: .15s ease-in-out;
+
+	transition-property: background-position;
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+
+	-webkit-transition-property: background-position;
+	-moz-transition-property: background-position;
+	-o-transition-property: background-position;
 }
 
 .panel_7 .content {
 	margin-top:15%;
 	margin-bottom:15%;
-		margin-left:15%;
+	margin-left:15%;
 }
 
 .panel_7 .content:nth-child(1) {
-		margin-left:50%;
+	margin-left:50%;
 }
 
 .panel_7 p {
@@ -373,8 +474,19 @@ a:hover.underline_style {
 	display:none;
 	float:right;
 	background-color:white;
-	 transform: translate3d(0,0,0); 	/* safari patch, improves performance by forcing IOS to use hardware-acceleration */
--webkit-transform: translate3d(0,0,0); /* safari patch, improves performance by forcing IOS to use hardware-acceleration */
+	/* performance improvement */
+	transition: .15s ease-in-out;
+
+	transition-property: background-position;
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+
+	-webkit-transition-property: background-position;
+	-moz-transition-property: background-position;
+	-o-transition-property: background-position;
+	transform: translate3d(0,0,0); 	/* safari patch, improves performance by forcing IOS to use hardware-acceleration */
+	-webkit-transform: translate3d(0,0,0); /* safari patch, improves performance by forcing IOS to use hardware-acceleration */
 }
 .footer_arrow {
 	margin-top:0%;
@@ -413,18 +525,18 @@ p.opaque_footer {
 	background-color: white; 
 	height:95vh;
 	bottom: 0;
-    width:0;
+	width:0;
 	left:3%;
 	position: fixed;
 	z-index: 10000000; /* hack to place above all other elements */
 	-webkit-transition: width .5s; /* For Safari 3.1 to 6.0 */
-    transition: width .5s;
+	transition: width .5s;
 }
 
 .mid_left:hover .mid_left_bar {
 	width: 4%;
 	-webkit-transition: width .5s; /* For Safari 3.1 to 6.0 */
-    transition: width .5s;
+	transition: width .5s;
 }
 
 #mid_left {
@@ -436,6 +548,17 @@ p.opaque_footer {
 	z-index: 1;
 	display:none;
 	font-weight:900;
+	/* performance improvement */
+	transition: .15s ease-in-out;
+
+	transition-property: background-position;
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+
+	-webkit-transition-property: background-position;
+	-moz-transition-property: background-position;
+	-o-transition-property: background-position;
 }
 
 .offset_1 {
@@ -458,6 +581,17 @@ p.opaque_footer {
 	bottom:0;
 	right: 1%;
 	display:none;
+	/* performance improvement */
+	transition: .15s ease-in-out;
+
+	transition-property: background-position;
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+
+	-webkit-transition-property: background-position;
+	-moz-transition-property: background-position;
+	-o-transition-property: background-position;
 }
 
 #mid_right ul {
@@ -474,6 +608,17 @@ p.opaque_footer {
 	left: 3%;
 	z-index: 1;
 	display: none;
+	/* performance improvement */
+	transition: .15s ease-in-out;
+
+	transition-property: background-position;
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+
+	-webkit-transition-property: background-position;
+	-moz-transition-property: background-position;
+	-o-transition-property: background-position;
 }
 
 #lower_right {
@@ -482,6 +627,17 @@ p.opaque_footer {
 	position: fixed;
 	z-index: 1;
 	display:none;
+	/* performance improvement */
+	transition: .15s ease-in-out;
+
+	transition-property: background-position;
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+
+	-webkit-transition-property: background-position;
+	-moz-transition-property: background-position;
+	-o-transition-property: background-position;
 }
 #bottom_banner {
 	position: fixed;
@@ -491,6 +647,17 @@ p.opaque_footer {
 	background-color:white;
 	z-index: 1;
 	display: none;
+	/* performance improvement */
+	transition: .15s ease-in-out;
+
+	transition-property: background-position;
+	-webkit-transition: .15s ease-in-out;
+	-moz-transition: .15s ease-in-out;
+	-o-transition: .15s ease-in-out;
+
+	-webkit-transition-property: background-position;
+	-moz-transition-property: background-position;
+	-o-transition-property: background-position;
 }
 
 a, hover { 
@@ -516,7 +683,7 @@ a, hover {
 	margin:0;
 	position:relative;
 	left:10%;
-	    margin-top: 8px;
+	margin-top: 8px;
 	top:0;
 	float: right;
 	-webkit-transform: rotate(-90deg);
@@ -528,8 +695,7 @@ a, hover {
 .icon {
 	float:left;
 	text-align:right;
-	width:6px;
-	/* margin-top:60%; */ 
+	width:6px; 
 	height:0px;
 	line-height:5px;
 
@@ -562,8 +728,8 @@ a, hover {
 	-moz-transform: rotate(-180deg);
 	-ms-transform: rotate(-180deg); 
 	-o-transform: rotate(-180deg);
-	 transform: translate3d(0,0,0); 	/* safari patch, improves performance by forcing IOS to use hardware-acceleration */
--webkit-transform: translate3d(0,0,0); /* safari patch, improves performance by forcing IOS to use hardware-acceleration */
+	transform: translate3d(0,0,0); 	/* safari patch, improves performance by forcing IOS to use hardware-acceleration */
+	-webkit-transform: translate3d(0,0,0); /* safari patch, improves performance by forcing IOS to use hardware-acceleration */
 }
 
 .modal {
@@ -584,7 +750,6 @@ a, hover {
 	overflow: hidden; /* Enable scroll if needed */
 	border: none;
 }
-
 
 /* Add Animation */
 @-webkit-keyframes animatetop {

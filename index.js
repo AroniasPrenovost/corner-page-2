@@ -1,4 +1,3 @@
-
 // restores elements 
 $('.backpanel-mh').css("display", "block");
 // delays the page load on refresh 
@@ -45,16 +44,36 @@ setTimeout(function(){
             width: '50%',
             marginLeft: '0%',
             marginTop: '-10%',
-            height: '110vh'
-}, 550); // left masthead slide in
+            height: '200vh'
+}, 650); // left masthead slide in
     });
-}, 2500); // length of full page intro
+}, 2850); // length of full page intro
 
 // add 2nd animation elements to .frontpanel-mh
+$('.frontpanel-mh').css("height", "200vh");    
+$('.backpanel-mh').css("height", "200vh"); 
 
-      
- 
- 
+/* this could be the winning approach */
+/*
+(function($) {
+$(document).ready(function() {
+var animScroll;
+$(window).scroll(function() {
+
+if ($(this).scrollTop() > 300) {
+
+$('#toplogo').addClass("smaller");
+
+
+} else if ($(this).scrollTop() < 300) {
+
+$('#toplogo').removeClass("smaller");
+
+}
+});
+});
+})(jQuery);
+*/  
 
 // fade in navigation items 
 setTimeout(function(){ 
@@ -67,11 +86,7 @@ setTimeout(function(){
     $('#mid_right').fadeIn().css("display", "block");  
     $('.navbar-nav').fadeIn();
 },2750);
-/*
-setTimeout(function(){ 
-    $('.bottom_overlay').css("display", "block");
-},3000);
-*/
+
 // initialize vertical scrollbar 
 $(document).ready(function(){
     $('body, html').removeClass('hideMyScroll');
@@ -94,7 +109,7 @@ $(document).scroll(function () {
         $('#lower_left').fadeIn();
     }
 
-        var b = $(this).scrollTop();   
+    var b = $(this).scrollTop();   
     if (b < 1000) {
         $('.bottom_overlay').css("display", 'none');
     }  else {
@@ -107,11 +122,11 @@ $(document).scroll(function () {
 // Menu hover animation (previously ('#icon')
 $('#mid_left').hover(function(){   
     document.getElementById("rot3").innerHTML = "<span style=\"margin-left:-4px; font-size:1.3em\">__</span><br><span style=\"margin-right:-6px; font-size:1.3em\">__</span><br><span style=\"margin-left:-4px; font-size:1.3em\">__</span>";
-$('.mid_left_bar').css('width', '4%');
+    $('.mid_left_bar').css('width', '4%');
     $('.offset_2').css("verticalAlign", 'bottom'); 
     $('.offset_1').css("verticalAlign", 'top'); 
 }, function(){
-  $('.mid_left_bar').css('width', '0%');
+    $('.mid_left_bar').css('width', '0%');
     $('.offset_2').css("verticalAlign", 'middle'); 
     $('.offset_1').css("verticalAlign", 'middle'); 
     document.getElementById("rot3").innerHTML = "<span style=\"margin-right:0px; font-size:1.3em\">__</span><br><span style=\"margin-left:0px; font-size:1.3em\">__</span><br><span style=\"margin-right:0px; font-size:1.3em\">__</span>";
@@ -170,19 +185,19 @@ setTimeout(function(){
 
 // close the modal 
 close_modal.onclick = function() {
-        c_panel.style.marginTop = "0%"; // removes edge case overflow 
-    $('.bottom_overlay').css("display", "none");
-    setTimeout(function(){ // restore scroll bar and remove horizontal scrollbar  
-$('body').css("overflow-x", "hidden");
-document.body.style.overflow = 'visible'; 
+c_panel.style.marginTop = "0%"; // removes edge case overflow 
+$('.bottom_overlay').css("display", "none");
+setTimeout(function(){ // restore scroll bar and remove horizontal scrollbar  
+    $('body').css("overflow-x", "hidden");
+    document.body.style.overflow = 'visible'; 
 },490);
-    $('.load_area').css("display", "none");
-    close_modal.style.display = "block";
-    $('.close_modal').css("display", "none");
-    $('.modal_content').css("display", "none");
-    $('.modal-body').animate({width: '0%', paddingLeft: '0%'}, 500);
-    $('.modal').animate({backgroundColor: 'white'}, 500);
-    $('.modal').css("background-color", 'white');
+$('.load_area').css("display", "none");
+close_modal.style.display = "block";
+$('.close_modal').css("display", "none");
+$('.modal_content').css("display", "none");
+$('.modal-body').animate({width: '0%', paddingLeft: '0%'}, 500);
+$('.modal').animate({backgroundColor: 'white'}, 500);
+$('.modal').css("background-color", 'white');
 $('.modal_content').fadeOut(); //.animate({marginRight: '0%'}, 500);
 $('.container-fluid').animate({paddingTop: '0%', paddingLeft: '0%'}, 500);
 $('.nav.navbar-nav').animate({marginRight: '0%'}, 500);
