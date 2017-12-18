@@ -1,4 +1,4 @@
-console.log("main.js <--")
+console.log("main.js <--");
 
 // restores elements 
 $('.backpanel-mh').css("display", "block");
@@ -51,31 +51,40 @@ setTimeout(function(){
     });
 }, 2850); // length of full page intro
 
+
+
 // add 2nd animation elements to .frontpanel-mh
 $('.frontpanel-mh').css("height", "200vh");    
 $('.backpanel-mh').css("height", "200vh"); 
 
-/* this could be the winning approach */
-/*
-(function($) {
-$(document).ready(function() {
-var animScroll;
-$(window).scroll(function() {
+// on scroll animation
+var fullwidth = '100%';
+var smallwidth = '50%';
 
-if ($(this).scrollTop() > 300) {
+$(window).scroll( $.throttle( 425, animate ) )
 
-$('#toplogo').addClass("smaller");
-
-
-} else if ($(this).scrollTop() < 300) {
-
-$('#toplogo').removeClass("smaller");
-
+function animate() {
+    var frontpanel = $('.frontpanel-mh');
+    var test = $('.ani_bar_right');
+//we're adding .wide class to avoid multiple runs of this animation.
+if (window.pageYOffset > 0 && !frontpanel.hasClass('wide')) {
+    frontpanel.addClass("wide").stop().animate({width: fullwidth}, 1000);
+    test.addClass("wide").stop().animate({width: fullwidth}, 1000);
 }
+
+if (window.pageYOffset == 0 ) {
+    console.clear();
+
+//  console.log(smallwidth);
+frontpanel.stop().animate({width: smallwidth}, 1000, function() {
+    $(this).removeClass('wide');
 });
+//  console.log(smallwidth);
+test.stop().animate({width: smallwidth}, 1000, function() {
+    $(this).removeClass('wide');
 });
-})(jQuery);
-*/  
+}        
+}
 
 // fade in navigation items 
 setTimeout(function(){ 
@@ -170,11 +179,12 @@ setTimeout(function(){
         $('.modal-body').animate({width: '94%', paddingLeft: '10%'}, 350);
         $('.modal_content').fadeIn();
         modal.style.display = "block";
-        modal.style.backgroundImage = "url('images/bag2.jpg')";        
-        c_panel.style.display = "none";
-        modal.style.height = "90vh";
-        document.body.style.overflow = 'hidden';   
-    }, 20);
+        modal.style.backgroundColor = '#ecf0f1';
+//  modal.style.backgroundImage = "url('images/bag2.jpg')";        
+c_panel.style.display = "none";
+modal.style.height = "90vh";
+document.body.style.overflow = 'hidden';   
+}, 20);
 
     setTimeout(function(){
         close_modal.style.display = "block";
