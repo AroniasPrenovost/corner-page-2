@@ -93,10 +93,25 @@ h2 {
   display: inline; }
 
 .ani_bar_right {
-  width: 50%; }
+  width: 50%;
+  background-color: transparent; }
 
 .ani_bar_left {
-  width: 40%; }
+  width: 40%;
+  margin-left: 8%;
+  margin-top: 5%; }
+
+.mm {
+  float: right;
+  font-size: 8em;
+  font-weight: 900; }
+
+.intro_animation_2 {
+  display: none;
+  float: left;
+  width: 500px !important;
+  margin-left: 10%;
+  background-color: magenta; }
 
 #left_ani {
   float: left; }

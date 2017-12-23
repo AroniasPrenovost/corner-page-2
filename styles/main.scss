@@ -106,16 +106,34 @@ width:50%;
 float:left;
 text-align:right;
 }
+
 .ani_bar .ani {
 display: inline;
 }
 
 .ani_bar_right {
 width:50%;
+background-color:transparent;
 }
 
 .ani_bar_left {
-width:40%;
+width: 40%;
+margin-left: 8%;
+margin-top:5%;
+}
+
+.mm {
+float:right;
+font-size:8em;
+font-weight:900;
+}
+
+.intro_animation_2 {
+display:none;
+float: left;
+width: 500px !important;
+margin-left:10%;
+background-color: magenta;
 }
 
 #left_ani {
@@ -300,8 +318,6 @@ margin-top:55%;
 .panel_5_right h3 {
 margin-bottom:20%;
 }
-
-
 
 .panel_5_left {
 background: url(../images/testy.jpg)no-repeat;

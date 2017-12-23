@@ -1,5 +1,4 @@
 console.log("main.js <--");
-
 // restores elements 
 $('.backpanel-mh').css("display", "block");
 // delays the page load on refresh 
@@ -35,7 +34,7 @@ $(function() {
         width: '110%',
         marginLeft: '-4%',
         marginTop: '-10%',
-        height: '110vh'
+        height: '300vh'
     }, 0);
 });
 
@@ -46,12 +45,10 @@ setTimeout(function(){
             width: '50%',
             marginLeft: '0%',
             marginTop: '-10%',
-            height: '200vh'
+            height: '300vh'
 }, 650); // left masthead slide in
     });
 }, 2850); // length of full page intro
-
-
 
 // add 2nd animation elements to .frontpanel-mh
 $('.frontpanel-mh').css("height", "200vh");    
@@ -62,28 +59,32 @@ var fullwidth = '100%';
 var smallwidth = '50%';
 
 $(window).scroll( $.throttle( 425, animate ) )
-
 function animate() {
     var frontpanel = $('.frontpanel-mh');
-    var test = $('.ani_bar_right');
-//we're adding .wide class to avoid multiple runs of this animation.
-if (window.pageYOffset > 0 && !frontpanel.hasClass('wide')) {
-    frontpanel.addClass("wide").stop().animate({width: fullwidth}, 1000);
-    test.addClass("wide").stop().animate({width: fullwidth}, 1000);
-}
+    var anibar = $('.ani_bar_right');
+    var intromessage = $('.mm');
+    if (window.pageYOffset > 0 && !frontpanel.hasClass('wide')) {
+        frontpanel.addClass("wide").stop().animate({width: fullwidth}, 1000);
+        anibar.addClass("wide").stop().animate({width: fullwidth}, 1000);
+        intromessage.fadeTo( "slow", 0.0 );
+        setTimeout(function(){
+            $('.intro_animation_2').css("display", "block");
+        }, 1200);
+    }
+    if (window.pageYOffset == 0 ) {
+        console.clear();
+        setTimeout(function(){
+            $('.intro_animation_2').css("display", "none");
+        }, 1);
+        frontpanel.stop().animate({width: smallwidth}, 1000, function() {
+            $(this).removeClass('wide');
 
-if (window.pageYOffset == 0 ) {
-    console.clear();
-
-//  console.log(smallwidth);
-frontpanel.stop().animate({width: smallwidth}, 1000, function() {
-    $(this).removeClass('wide');
-});
-//  console.log(smallwidth);
-test.stop().animate({width: smallwidth}, 1000, function() {
-    $(this).removeClass('wide');
-});
-}        
+        });
+        intromessage.fadeTo( "slow", 1.0 );
+        anibar.stop().animate({width: smallwidth}, 1000, function() {
+            $(this).removeClass('wide');
+        });
+    }        
 }
 
 // fade in navigation items 
@@ -144,16 +145,10 @@ $('#mid_left').hover(function(){
 });
 
 var modal = document.getElementById('myModal');
-
-// open modal 
 var icon = document.getElementById("icon");
-
 var b_banner = document.getElementById('bottom_banner');
-
 var c_panel = document.getElementById('content-panel');
-
 var close_modal = document.getElementsByClassName("close")[0];
-
 
 // open modal 
 icon.onclick = function() {
