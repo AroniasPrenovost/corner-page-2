@@ -18,11 +18,42 @@ $(window).load(function(){
     $('.post_animation_reveal').css("display", "none");
 });
 
-// load in message 
-$('.load_area').css("display", "none");
-setTimeout(function(){ 
-    $('.load_area').fadeIn().css("display", "block");
-},3965);
+// on scroll animation
+var fullwidth = '100%';
+var smallwidth = '52%';
+var anibar = $('.ani_bar_right');
+
+setTimeout(function(){
+    anibar.addClass("wide").stop().animate({width: '100%'}, 500);
+    anibar.stop().animate({width: smallwidth}, 500, function() {
+        $(this).removeClass('wide');
+    });
+}, 1); 
+
+$(window).scroll( $.throttle( 425, animate ) )
+function animate() {
+    var frontpanel = $('.frontpanel-mh');
+
+    var intromessage = $('.mm');
+    if (window.pageYOffset > 0 && !frontpanel.hasClass('wide')) {
+        frontpanel.addClass("wide").stop().animate({width: fullwidth}, 1000);
+        anibar.addClass("wide").stop().animate({width: '95%'}, 1000);
+        intromessage.fadeTo( "medium", 0.0 );
+        setTimeout(function(){
+        anibar.addClass("wide").stop().animate({width: '75%'}, 1000);
+    }, 850);
+    }
+    if (window.pageYOffset == 0 ) {
+        console.clear();
+        frontpanel.stop().animate({width: smallwidth}, 1000, function() {
+            $(this).removeClass('wide');
+        });
+        intromessage.fadeTo( "medium", 1.0 );
+        anibar.stop().animate({width: smallwidth}, 1000, function() {
+            $(this).removeClass('wide');
+        });
+    }        
+}
 
 setTimeout(function(){ 
     $('.post_animation_reveal').css("display", "block");
@@ -34,7 +65,7 @@ $(function() {
         width: '110%',
         marginLeft: '-4%',
         marginTop: '-10%',
-        height: '300vh'
+        height: '200vh'
     }, 0);
 });
 
@@ -45,47 +76,23 @@ setTimeout(function(){
             width: '50%',
             marginLeft: '0%',
             marginTop: '-10%',
-            height: '300vh'
+            height: '200vh'
 }, 650); // left masthead slide in
     });
 }, 2850); // length of full page intro
 
-// add 2nd animation elements to .frontpanel-mh
-$('.frontpanel-mh').css("height", "200vh");    
+// 2nd animation elements to .frontpanel-mh 
 $('.backpanel-mh').css("height", "200vh"); 
 
-// on scroll animation
-var fullwidth = '100%';
-var smallwidth = '50%';
 
-$(window).scroll( $.throttle( 425, animate ) )
-function animate() {
-    var frontpanel = $('.frontpanel-mh');
-    var anibar = $('.ani_bar_right');
-    var intromessage = $('.mm');
-    if (window.pageYOffset > 0 && !frontpanel.hasClass('wide')) {
-        frontpanel.addClass("wide").stop().animate({width: fullwidth}, 1000);
-        anibar.addClass("wide").stop().animate({width: fullwidth}, 1000);
-        intromessage.fadeTo( "slow", 0.0 );
-        setTimeout(function(){
-            $('.intro_animation_2').css("display", "block");
-        }, 1200);
-    }
-    if (window.pageYOffset == 0 ) {
-        console.clear();
-        setTimeout(function(){
-            $('.intro_animation_2').css("display", "none");
-        }, 1);
-        frontpanel.stop().animate({width: smallwidth}, 1000, function() {
-            $(this).removeClass('wide');
-
-        });
-        intromessage.fadeTo( "slow", 1.0 );
-        anibar.stop().animate({width: smallwidth}, 1000, function() {
-            $(this).removeClass('wide');
-        });
-    }        
+$(document).scroll(function () {
+    var b = $(this).scrollTop();   
+    if (b > 400 && b < 900) {
+$('.intro_animation_2').fadeIn();  
+} else {
+$('.intro_animation_2').fadeOut();  
 }
+});
 
 // fade in navigation items 
 setTimeout(function(){ 
@@ -127,8 +134,6 @@ $(document).scroll(function () {
     }  else {
         $('.bottom_overlay').css("display", 'block');
     }
-
-
 });
 
 // Menu hover animation (previously ('#icon')

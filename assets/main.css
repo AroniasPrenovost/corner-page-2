@@ -16,11 +16,11 @@ p {
   position: fixed;
   width: 100%;
   /* performance improvement */
-  transition: .15s ease-in-out;
+  transition: .00005s ease-in-out;
   transition-property: background-position;
-  -webkit-transition: .15s ease-in-out;
-  -moz-transition: .15s ease-in-out;
-  -o-transition: .15s ease-in-out;
+  -webkit-transition: .00005s ease-in-out;
+  -moz-transition: .00005s ease-in-out;
+  -o-transition: .00005s ease-in-out;
   -webkit-transition-property: background-position;
   -moz-transition-property: background-position;
   -o-transition-property: background-position; }
@@ -70,12 +70,12 @@ h2 {
 
 .ani_bar_wrap {
   z-index: 9999999999999999999;
-  position: fixed;
+  position: absolute;
   margin-top: 25%;
-  margin-left: 10%;
+  margin-left: 5%;
   margin-right: 0%;
-  width: 90%;
-  height: 400px;
+  width: 85%;
+  height: 200vh;
   background-color: transparent;
   opacity: 1;
   float: left; }
@@ -93,13 +93,16 @@ h2 {
   display: inline; }
 
 .ani_bar_right {
-  width: 50%;
-  background-color: transparent; }
+  width: 52%;
+  left: 20%;
+  background-color: transparent;
+  position: fixed; }
 
 .ani_bar_left {
   width: 40%;
   margin-left: 8%;
-  margin-top: 5%; }
+  margin-top: 45%;
+  color: black; }
 
 .mm {
   float: right;
@@ -110,8 +113,20 @@ h2 {
   display: none;
   float: left;
   width: 500px !important;
+  margin-top: 65%;
   margin-left: 10%;
-  background-color: magenta; }
+  color: black;
+  background-color: transparent; }
+
+.intro_animation_2 h5 {
+  font-weight: bold; }
+
+.intro_animation_2 h4 {
+  font-size: 2.5rem;
+  font-weight: bold; }
+
+.ani_bar_black {
+  color: black; }
 
 #left_ani {
   float: left; }
@@ -132,11 +147,11 @@ background: url(../images/bag2.jpg)no-repeat;
   display: none;
   z-index: 6;
   /* performance improvement */
-  transition: .15s ease-in-out;
+  transition: .00005s ease-in-out;
   transition-property: background-position;
-  -webkit-transition: .15s ease-in-out;
-  -moz-transition: .15s ease-in-out;
-  -o-transition: .15s ease-in-out;
+  -webkit-transition: .00005s ease-in-out;
+  -moz-transition: .00005s ease-in-out;
+  -o-transition: .00005s ease-in-out;
   -webkit-transition-property: background-position;
   -moz-transition-property: background-position;
   -o-transition-property: background-position; }
@@ -150,11 +165,11 @@ background: url(../images/bag2.jpg)no-repeat;
   z-index: 9;
   opacity: 1;
   /* performance improvement */
-  transition: .15s ease-in-out;
+  transition: .00005s ease-in-out;
   transition-property: background-position;
-  -webkit-transition: .15s ease-in-out;
-  -moz-transition: .15s ease-in-out;
-  -o-transition: .15s ease-in-out;
+  -webkit-transition: .00005s ease-in-out;
+  -moz-transition: .00005s ease-in-out;
+  -o-transition: .00005s ease-in-out;
   -webkit-transition-property: background-position;
   -moz-transition-property: background-position;
   -o-transition-property: background-position; }
@@ -172,11 +187,11 @@ background: url(../images/bag2.jpg)no-repeat;
   -webkit-transform: translate3d(0, 0, 0);
   /* safari patch, improves performance by forcing IOS to use hardware-acceleration */
   /* performance improvement */
-  transition: 1s ease-in-out;
+  transition: .00005s ease-in-out;
   transition-property: background-position;
-  -webkit-transition: 1s ease-in-out;
-  -moz-transition: 1s ease-in-out;
-  -o-transition: 1s ease-in-out;
+  -webkit-transition: .00005s ease-in-out;
+  -moz-transition: .00005s ease-in-out;
+  -o-transition: .00005s ease-in-out;
   -webkit-transition-property: background-position;
   -moz-transition-property: background-position;
   -o-transition-property: background-position; }
@@ -190,11 +205,11 @@ background: url(../images/bag2.jpg)no-repeat;
   overflow-x: hidden;
   position: relative;
   /* performance improvement */
-  transition: .15s ease-in-out;
+  transition: .00005s ease-in-out;
   transition-property: background-position;
-  -webkit-transition: .15s ease-in-out;
-  -moz-transition: .15s ease-in-out;
-  -o-transition: .15s ease-in-out;
+  -webkit-transition: .00005s ease-in-out;
+  -moz-transition: .00005s ease-in-out;
+  -o-transition: .00005s ease-in-out;
   -webkit-transition-property: background-position;
   -moz-transition-property: background-position;
   -o-transition-property: background-position; }
@@ -254,11 +269,11 @@ background: url(../images/bag2.jpg)no-repeat;
   position: relative;
   float: right;
   /* performance improvement */
-  transition: .15s ease-in-out;
+  transition: .00005s ease-in-out;
   transition-property: background-position;
-  -webkit-transition: .15s ease-in-out;
-  -moz-transition: .15s ease-in-out;
-  -o-transition: .15s ease-in-out;
+  -webkit-transition: .00005s ease-in-out;
+  -moz-transition: .00005s ease-in-out;
+  -o-transition: .00005s ease-in-out;
   -webkit-transition-property: background-position;
   -moz-transition-property: background-position;
   -o-transition-property: background-position; }
@@ -283,11 +298,11 @@ background: url(../images/bag2.jpg)no-repeat;
   background-attachment: fixed;
   background-position: center;
   /* performance improvement */
-  transition: 1s ease-in-out;
+  transition: .00005s ease-in-out;
   transition-property: background-position;
-  -webkit-transition: 1s ease-in-out;
-  -moz-transition: 1s ease-in-out;
-  -o-transition: 1s ease-in-out;
+  -webkit-transition: .00005s ease-in-out;
+  -moz-transition: .00005s ease-in-out;
+  -o-transition: .00005s ease-in-out;
   -webkit-transition-property: background-position;
   -moz-transition-property: background-position;
   -o-transition-property: background-position; }
@@ -385,11 +400,11 @@ a:hover.underline_style {
   overflow-x: hidden;
   overflow-y: hidden;
   /* performance improvement */
-  transition: 0s ease-in-out;
+  transition: .00005s ease-in-out;
   transition-property: background-position;
-  -webkit-transition: 0s ease-in-out;
-  -moz-transition: 0s ease-in-out;
-  -o-transition: 0s ease-in-out;
+  -webkit-transition: .00005s ease-in-out;
+  -moz-transition: .00005s ease-in-out;
+  -o-transition: .00005s ease-in-out;
   -webkit-transition-property: background-position;
   -moz-transition-property: background-position;
   -o-transition-property: background-position; }
@@ -411,11 +426,11 @@ a:hover.underline_style {
   overflow-x: hidden;
   position: relative;
   /* performance improvement */
-  transition: .15s ease-in-out;
+  transition: .00005s ease-in-out;
   transition-property: background-position;
-  -webkit-transition: .15s ease-in-out;
-  -moz-transition: .15s ease-in-out;
-  -o-transition: .15s ease-in-out;
+  -webkit-transition: .00005s ease-in-out;
+  -moz-transition: .00005s ease-in-out;
+  -o-transition: .00005s ease-in-out;
   -webkit-transition-property: background-position;
   -moz-transition-property: background-position;
   -o-transition-property: background-position; }
@@ -440,11 +455,11 @@ a:hover.underline_style {
   float: right;
   background-color: white;
   /* performance improvement */
-  transition: .15s ease-in-out;
+  transition: .00005s ease-in-out;
   transition-property: background-position;
-  -webkit-transition: .15s ease-in-out;
-  -moz-transition: .15s ease-in-out;
-  -o-transition: .15s ease-in-out;
+  -webkit-transition: .00005s ease-in-out;
+  -moz-transition: .00005s ease-in-out;
+  -o-transition: .00005s ease-in-out;
   -webkit-transition-property: background-position;
   -moz-transition-property: background-position;
   -o-transition-property: background-position;
@@ -510,11 +525,11 @@ p.opaque_footer {
   display: none;
   font-weight: 900;
   /* performance improvement */
-  transition: .15s ease-in-out;
+  transition: .00005s ease-in-out;
   transition-property: background-position;
-  -webkit-transition: .15s ease-in-out;
-  -moz-transition: .15s ease-in-out;
-  -o-transition: .15s ease-in-out;
+  -webkit-transition: .00005s ease-in-out;
+  -moz-transition: .00005s ease-in-out;
+  -o-transition: .00005s ease-in-out;
   -webkit-transition-property: background-position;
   -moz-transition-property: background-position;
   -o-transition-property: background-position; }
@@ -538,11 +553,11 @@ p.opaque_footer {
   right: 1%;
   display: none;
   /* performance improvement */
-  transition: .15s ease-in-out;
+  transition: .00005s ease-in-out;
   transition-property: background-position;
-  -webkit-transition: .15s ease-in-out;
-  -moz-transition: .15s ease-in-out;
-  -o-transition: .15s ease-in-out;
+  -webkit-transition: .00005s ease-in-out;
+  -moz-transition: .00005s ease-in-out;
+  -o-transition: .00005s ease-in-out;
   -webkit-transition-property: background-position;
   -moz-transition-property: background-position;
   -o-transition-property: background-position; }
@@ -560,11 +575,11 @@ p.opaque_footer {
   z-index: 1;
   display: none;
   /* performance improvement */
-  transition: .15s ease-in-out;
+  transition: .00005s ease-in-out;
   transition-property: background-position;
-  -webkit-transition: .15s ease-in-out;
-  -moz-transition: .15s ease-in-out;
-  -o-transition: .15s ease-in-out;
+  -webkit-transition: .00005s ease-in-out;
+  -moz-transition: .00005s ease-in-out;
+  -o-transition: .00005s ease-in-out;
   -webkit-transition-property: background-position;
   -moz-transition-property: background-position;
   -o-transition-property: background-position; }
@@ -576,11 +591,11 @@ p.opaque_footer {
   z-index: 1;
   display: none;
   /* performance improvement */
-  transition: .15s ease-in-out;
+  transition: .00005s ease-in-out;
   transition-property: background-position;
-  -webkit-transition: .15s ease-in-out;
-  -moz-transition: .15s ease-in-out;
-  -o-transition: .15s ease-in-out;
+  -webkit-transition: .00005s ease-in-out;
+  -moz-transition: .00005s ease-in-out;
+  -o-transition: .00005s ease-in-out;
   -webkit-transition-property: background-position;
   -moz-transition-property: background-position;
   -o-transition-property: background-position; }
@@ -594,11 +609,11 @@ p.opaque_footer {
   z-index: 1;
   display: none;
   /* performance improvement */
-  transition: .15s ease-in-out;
+  transition: .00005s ease-in-out;
   transition-property: background-position;
-  -webkit-transition: .15s ease-in-out;
-  -moz-transition: .15s ease-in-out;
-  -o-transition: .15s ease-in-out;
+  -webkit-transition: .00005s ease-in-out;
+  -moz-transition: .00005s ease-in-out;
+  -o-transition: .00005s ease-in-out;
   -webkit-transition-property: background-position;
   -moz-transition-property: background-position;
   -o-transition-property: background-position; }
@@ -665,8 +680,7 @@ a, hover {
   -o-transform: rotate(-180deg);
   transform: translate3d(0, 0, 0);
   /* safari patch, improves performance by forcing IOS to use hardware-acceleration */
-  -webkit-transform: translate3d(0, 0, 0);
-  /* safari patch, improves performance by forcing IOS to use hardware-acceleration */ }
+  -webkit-transform: translate3d(0, 0, 0); }
 
 .modal {
   display: none;
