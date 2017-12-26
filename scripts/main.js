@@ -40,15 +40,15 @@ function animate() {
         anibar.addClass("wide").stop().animate({width: '95%'}, 1000);
         intromessage.fadeTo( "medium", 0.0 );
         setTimeout(function(){
-        anibar.addClass("wide").stop().animate({width: '75%'}, 1000);
-    }, 850);
+            anibar.addClass("wide").stop().animate({width: '75%'}, 1000);
+        }, 850);
     }
     if (window.pageYOffset == 0 ) {
         console.clear();
         frontpanel.stop().animate({width: smallwidth}, 1000, function() {
             $(this).removeClass('wide');
         });
-        intromessage.fadeTo( "medium", 1.0 );
+        intromessage.fadeTo( "slow", 1.0 );
         anibar.stop().animate({width: smallwidth}, 1000, function() {
             $(this).removeClass('wide');
         });
@@ -84,14 +84,13 @@ setTimeout(function(){
 // 2nd animation elements to .frontpanel-mh 
 $('.backpanel-mh').css("height", "200vh"); 
 
-
 $(document).scroll(function () {
     var b = $(this).scrollTop();   
     if (b > 400 && b < 900) {
-$('.intro_animation_2').fadeIn();  
-} else {
-$('.intro_animation_2').fadeOut();  
-}
+        $('.intro_animation_2').fadeIn();  
+    } else {
+        $('.intro_animation_2').fadeOut();  
+    }
 });
 
 // fade in navigation items 
@@ -155,9 +154,14 @@ var b_banner = document.getElementById('bottom_banner');
 var c_panel = document.getElementById('content-panel');
 var close_modal = document.getElementsByClassName("close")[0];
 
+// eliminates overlay bug in modal 
+$('.modal-body, .modal_content, .strike, .footer_arrow, .modal_cta, .arrow_text').css({
+    pointerEvents: 'auto'
+});
+modal.style.pointerEvents = "none";
+
 // open modal 
 icon.onclick = function() {
-
 $('.mid_left_bar').animate({height: '70vh'}, 500); // animates bar down as nav elements fade down 
 //  close_modal.style.display = "none";
 modal.style.backgroundColor = "white";
@@ -176,7 +180,7 @@ setTimeout(function(){
     icon.style.display = "none";
 
     setTimeout(function(){
-        $('.modal-body').animate({width: '94%', paddingLeft: '10%'}, 350);
+        $('.modal-body').animate({width: '84%', paddingLeft: '10%'}, 350);
         $('.modal_content').fadeIn();
         modal.style.display = "block";
         modal.style.backgroundColor = '#ecf0f1';
@@ -189,15 +193,14 @@ document.body.style.overflow = 'hidden';
     setTimeout(function(){
         close_modal.style.display = "block";
         $('.close_modal').css("display", "block");
-
 }, 250); // allow elements to fade out behind the scenes 
-
 }, 0); // modal load delay
 }
 
 // close the modal 
 close_modal.onclick = function() {
-c_panel.style.marginTop = "0%"; // removes edge case overflow 
+c_panel.style.marginTop = "0%"; // removes edge case overflow
+$('.ani_bar_wrap').css("margin-top", "20%"); // weird edge case on reload 
 $('.bottom_overlay').css("display", "none");
 setTimeout(function(){ // restore scroll bar and remove horizontal scrollbar  
     $('body').css("overflow-x", "hidden");
@@ -216,9 +219,7 @@ $('.nav.navbar-nav').animate({marginRight: '0%'}, 500);
 $('#content-panel').animate({width: '94%', marginLeft: '3%'}, 0);
 $('#content-panel').fadeIn();
 $('#bottom_banner').animate({minHeight: '40px'}, 550);
-setTimeout(function(){
-    $('.bottom_overlay').css("display", "block");
-}, 1800);
+
 setTimeout(function(){
     $('.mid_left_bar').css("height", '95vh');
     $('#lower_left').fadeIn();
