@@ -9,6 +9,7 @@ $(window).on('beforeunload', function() {
 // remove all elements except intro animation 
 $(window).load(function(){
     $('body, html').addClass('hideMyScroll');
+    $('.mid_right_bar').css("display", "none");
     $('.load_area').css("display", "none");
     $('.navbar').hide();
     $('.navbar-default').hide();
@@ -37,22 +38,20 @@ function animate() {
     var intromessage = $('.mm');
     if (window.pageYOffset > 0 && !frontpanel.hasClass('wide')) {
         frontpanel.addClass("wide").stop().animate({width: fullwidth}, 1000);
+        $('.intro_animation_2').fadeIn(4000); 
         anibar.addClass("wide").stop().animate({width: '95%'}, 1000);
-        intromessage.fadeTo( "medium", 0.0 );
-        setTimeout(function(){
-            anibar.addClass("wide").stop().animate({width: '75%'}, 1000);
-        }, 850);
-    }
-    if (window.pageYOffset == 0 ) {
-        console.clear();
-        frontpanel.stop().animate({width: smallwidth}, 1000, function() {
-            $(this).removeClass('wide');
-        });
-        intromessage.fadeTo( "slow", 1.0 );
-        anibar.stop().animate({width: smallwidth}, 1000, function() {
-            $(this).removeClass('wide');
-        });
-    }        
+
+//   $('.mid_right_bar').animate({diplay:: '%', marginLeft: '3%'}, 1000);
+}
+if (window.pageYOffset == 0 ) {
+    console.clear();
+    frontpanel.stop().animate({width: smallwidth}, 1000, function() {
+        $(this).removeClass('wide');
+    });
+    anibar.stop().animate({width: smallwidth}, 1000, function() {
+        $(this).removeClass('wide');
+    });
+}        
 }
 
 setTimeout(function(){ 
@@ -81,17 +80,26 @@ setTimeout(function(){
     });
 }, 2850); // length of full page intro
 
+
+setTimeout(function(){ 
+    $('.mid_right_bar').css("display", "block");
+}, 2750);
+
+
+
+
 // 2nd animation elements to .frontpanel-mh 
 $('.backpanel-mh').css("height", "200vh"); 
-
+/*
 $(document).scroll(function () {
-    var b = $(this).scrollTop();   
-    if (b > 400 && b < 900) {
-        $('.intro_animation_2').fadeIn();  
-    } else {
-        $('.intro_animation_2').fadeOut();  
-    }
+var b = $(this).scrollTop();   
+if (b > 300 && b < 900) {
+$('.intro_animation_2').fadeIn();  
+} else {
+$('.intro_animation_2').fadeOut();  
+}
 });
+*/
 
 // fade in navigation items 
 setTimeout(function(){ 
