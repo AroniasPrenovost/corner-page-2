@@ -1,4 +1,5 @@
 console.log("main.js <--");
+
 // restores elements 
 $('.backpanel-mh').css("display", "block");
 // delays the page load on refresh 
@@ -36,23 +37,48 @@ function animate() {
     var frontpanel = $('.frontpanel-mh');
 
     var intromessage = $('.mm');
-    if (window.pageYOffset > 0 && !frontpanel.hasClass('wide')) {
+    if (window.pageYOffset > 150 && !frontpanel.hasClass('wide')) {
         frontpanel.addClass("wide").stop().animate({width: fullwidth}, 1000);
-        $('.intro_animation_2').fadeIn(4000); 
-        anibar.addClass("wide").stop().animate({width: '95%'}, 1000);
+        $('.intro_animation_2').fadeIn(2000); 
 
-//   $('.mid_right_bar').animate({diplay:: '%', marginLeft: '3%'}, 1000);
+        $(document).scroll(function () {
+            var t = $(this).scrollTop();   
+            if (t > 1050) {
+                $('.ani_bar_wrap').fadeOut(500); 
+            } else {
+                $('.ani_bar_wrap').fadeIn(500); 
+            }
+        });
+        anibar.addClass("wide").stop().animate({width: '95%'}, 1000);
+    }
+    if (window.pageYOffset == 0 ) {
+        console.clear();
+        frontpanel.stop().animate({width: smallwidth}, 1000, function() {
+            $(this).removeClass('wide');
+        });
+        $('.intro_animation_2').fadeOut(1000); 
+        anibar.stop().animate({width: smallwidth}, 1000, function() {
+            $(this).removeClass('wide');
+        });
+    }        
 }
-if (window.pageYOffset == 0 ) {
-    console.clear();
-    frontpanel.stop().animate({width: smallwidth}, 1000, function() {
-        $(this).removeClass('wide');
-    });
-    anibar.stop().animate({width: smallwidth}, 1000, function() {
-        $(this).removeClass('wide');
-    });
-}        
-}
+
+$(document).scroll(function () {
+    var x = $(this).scrollTop();   
+    if (x > 3000 || x < 200) {
+        $('#lower_right').hide();
+        $('#lower_left').hide();
+    }  else {
+        $('#lower_right').fadeIn();
+        $('#lower_left').fadeIn();
+    }
+ 
+    if (x < 1000) {
+        $('.bottom_overlay').css("display", 'none');
+    }  else {
+        $('.bottom_overlay').css("display", 'block');
+    }
+});
 
 setTimeout(function(){ 
     $('.post_animation_reveal').css("display", "block");
@@ -75,7 +101,7 @@ setTimeout(function(){
             width: '50%',
             marginLeft: '0%',
             marginTop: '-10%',
-            height: '200vh'
+            height: '250vh'
 }, 650); // left masthead slide in
     });
 }, 2850); // length of full page intro
@@ -85,21 +111,8 @@ setTimeout(function(){
     $('.mid_right_bar').css("display", "block");
 }, 2750);
 
-
-
-
 // 2nd animation elements to .frontpanel-mh 
-$('.backpanel-mh').css("height", "200vh"); 
-/*
-$(document).scroll(function () {
-var b = $(this).scrollTop();   
-if (b > 300 && b < 900) {
-$('.intro_animation_2').fadeIn();  
-} else {
-$('.intro_animation_2').fadeOut();  
-}
-});
-*/
+$('.backpanel-mh').css("height", "250vh"); 
 
 // fade in navigation items 
 setTimeout(function(){ 
@@ -123,25 +136,6 @@ setTimeout(function(){
         $('body, html').addClass('showMyScroll');
     });
 }, 2350);
-
-// hide left icon prior to footer reveal
-$(document).scroll(function () {
-    var x = $(this).scrollTop();   
-    if (x > 3000 || x < 200) {
-        $('#lower_right').hide();
-        $('#lower_left').hide();
-    }  else {
-        $('#lower_right').fadeIn();
-        $('#lower_left').fadeIn();
-    }
-
-    var b = $(this).scrollTop();   
-    if (b < 1000) {
-        $('.bottom_overlay').css("display", 'none');
-    }  else {
-        $('.bottom_overlay').css("display", 'block');
-    }
-});
 
 // Menu hover animation (previously ('#icon')
 $('#mid_left').hover(function(){   
@@ -177,8 +171,7 @@ $('.modal').css("background-color", 'white', 'height', '20%');
 $('.bottom_overlay').css("display", 'none');
 setTimeout(function(){
     $('.close_modal').css("display", "none");
-    $('#lower_right').fadeOut();
-    $('#lower_left').fadeOut();
+    $('#lower_right, #lower_left').fadeOut();
     $('#content-panel').animate({width: '94%', marginLeft: '3%'}, 1000);
     $('#content-panel').animate({display: 'hidden'}, 1000);
     $('.container-fluid').animate({paddingTop: '6%', paddingLeft: '6%'}, 500);
@@ -216,8 +209,7 @@ setTimeout(function(){ // restore scroll bar and remove horizontal scrollbar
 },490);
 $('.load_area').css("display", "none");
 close_modal.style.display = "block";
-$('.close_modal').css("display", "none");
-$('.modal_content').css("display", "none");
+$('.close_modal, modal_content').css("display", "none");
 $('.modal-body').animate({width: '0%', paddingLeft: '0%'}, 500);
 $('.modal').animate({backgroundColor: 'white'}, 500);
 $('.modal').css("background-color", 'white');
@@ -230,9 +222,8 @@ $('#bottom_banner').animate({minHeight: '40px'}, 550);
 
 setTimeout(function(){
     $('.mid_left_bar').css("height", '95vh');
-    $('#lower_left').fadeIn();
+    $('#lower_left, #lower_right').fadeIn();
     $('#lower_left').animate({fontSize: '14px'}, 0);
-    $('#lower_right').fadeIn();
     icon.style.display = "block";
 }, 950);
 }
