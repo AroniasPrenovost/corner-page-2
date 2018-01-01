@@ -31,7 +31,7 @@ transition-property: background-position;
 }
 
 .navbar-brand {
-margin-left:3.5% !important;
+margin-left: 10% !important;
 }
 
 .navbar-nav {
@@ -91,7 +91,7 @@ margin-top:25%;
 margin-left:5%;
 margin-right:0%;
 width:85%;
-height:200vh;
+height:250vh;
 background-color:transparent;
 opacity:1;
 float:left;
@@ -156,13 +156,8 @@ font-size:2.5rem;
 font-weight:bold;
 }
 
-
 .ani_bar_black {
 color:black;
-}
-
-#left_ani {
-float:left;
 }
 
 .backpanel-mh {
@@ -848,7 +843,7 @@ font-size: 24px;
 font-weight: 200;
 bottom:0;
 opacity:1;
-display:none;
+display:block;
 }
 
 .close:hover,
@@ -859,17 +854,25 @@ font-weight: 400;
 cursor: pointer;
 }
 .modal-body {
-margin: 0% 0% 10% 0%;
-padding-left:10%;
+margin: 0% 0% 0% 0%;
+padding-left:0%;
 height:100%;
-color:black;
+width:0%;
 background-color: white;
 }
+
+
+#modal_t_1, #modal_t_2, #modal_t_3, #modal_t_4, #modal_t_5,
+#modal_t_6, #modal_t_7 {
+	visibility:hidden;
+	color:black;
+}
+
 
 .modal_content {
 float:left;
 margin-top:10%;
-margin-left:10%;
+margin-left:0%;
 }
 
 .modal_square {

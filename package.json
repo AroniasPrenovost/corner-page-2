@@ -7,6 +7,5 @@
     "gulp-uglify": "latest",
     "gulp-concat": "latest",
     "gulp-connect": "latest",
-    "gulp-open": "^2.1.0"
   },
 }

@@ -40,13 +40,12 @@ function animate() {
     if (window.pageYOffset > 150 && !frontpanel.hasClass('wide')) {
         frontpanel.addClass("wide").stop().animate({width: fullwidth}, 1000);
         $('.intro_animation_2').fadeIn(2000); 
-
         $(document).scroll(function () {
             var t = $(this).scrollTop();   
             if (t > 1050) {
-                $('.ani_bar_wrap').fadeOut(500); 
+                $('.ani_bar_right, .ani_bar_left').fadeOut(500); 
             } else {
-                $('.ani_bar_wrap').fadeIn(500); 
+                $('.ani_bar_right, .ani_bar_left').fadeIn(500); 
             }
         });
         anibar.addClass("wide").stop().animate({width: '95%'}, 1000);
@@ -72,7 +71,7 @@ $(document).scroll(function () {
         $('#lower_right').fadeIn();
         $('#lower_left').fadeIn();
     }
- 
+
     if (x < 1000) {
         $('.bottom_overlay').css("display", 'none');
     }  else {
@@ -164,8 +163,21 @@ modal.style.pointerEvents = "none";
 
 // open modal 
 icon.onclick = function() {
+
+// generate modal elements 
+var modal_elements = ['modal_t_1', 'modal_t_2', 'modal_t_3', 'modal_t_4', 'modal_t_5', 'modal_t_6', 'modal_t_7'];
+for (var n = 0; n < modal_elements.length; n++){
+    (function(n){
+        setTimeout(function(){
+            var elem = modal_elements[n];
+            document.getElementById(elem).style.visibility = 'visible';
+        }, 500 * n);
+    }(n));
+}
+
 $('.mid_left_bar').animate({height: '70vh'}, 500); // animates bar down as nav elements fade down 
-//  close_modal.style.display = "none";
+$('.backpanel-mh').css("display", "block");
+$('.backpanel-mh').css("marginLeft", "0%");
 modal.style.backgroundColor = "white";
 $('.modal').css("background-color", 'white', 'height', '20%');
 $('.bottom_overlay').css("display", 'none');
@@ -181,20 +193,20 @@ setTimeout(function(){
     icon.style.display = "none";
 
     setTimeout(function(){
-        $('.modal-body').animate({width: '84%', paddingLeft: '10%'}, 350);
-        $('.modal_content').fadeIn();
-        modal.style.display = "block";
-        modal.style.backgroundColor = '#ecf0f1';
+        $('.modal-body').animate({width: '84%', paddingLeft: '10%'}, 250);
+// $('.modal_content').fadeIn();
+modal.style.display = "block";
+modal.style.backgroundColor = '#ecf0f1';
 //  modal.style.backgroundImage = "url('images/bag2.jpg')";        
 c_panel.style.display = "none";
 modal.style.height = "90vh";
 document.body.style.overflow = 'hidden';   
-}, 20);
+}, 2);
 
     setTimeout(function(){
         close_modal.style.display = "block";
         $('.close_modal').css("display", "block");
-}, 250); // allow elements to fade out behind the scenes 
+}, 20); // allow elements to fade out behind the scenes 
 }, 0); // modal load delay
 }
 
