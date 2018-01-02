@@ -78,7 +78,196 @@ h2 {
   height: 250vh;
   background-color: transparent;
   opacity: 1;
-  float: left; }
+  float: left;
+  display: none; }
+
+.code_load {
+  z-index: 9999999999999999999;
+  position: absolute;
+  margin-top: 20%;
+  margin-left: 38%;
+  width: 300px;
+  height: 700px;
+  background-color: transparent;
+  display: block;
+  overflow: hidden; }
+
+#bar1, #bar2, #bar3, #bar4, #bar5, #bar6, #bar7, #bar8, #bar9, #bar10, #bar11, #bar12, #bar13, #bar14, #bar15, #bar16, #bar17, #bar18, #bar19, #bar20, #bar21, #bar22, #bar23, #bar24, #bar25, #bar26, #bar27, #bar28, #bar29,
+#bar30, #bar31, #bar32, #bar33, #bar34, #bar35,
+#bar36, #bar37, #bar38, #bar39, #bar40, #bar41 {
+  width: 0%;
+  height: 5px;
+  margin-bottom: 2px;
+  margin-left: 4px;
+  background-color: #bdc3c7; }
+
+#bar2 {
+  margin-left: 10px;
+  background-color: #efc88b; }
+
+#bar3 {
+  margin-left: 30px;
+  margin-top: -7px; }
+
+#bar4 {
+  background-color: #7FB069;
+  margin-left: 20px; }
+
+#bar5 {
+  float: left;
+  margin-left: 58px;
+  margin-top: -7px;
+  background-color: #cf5c36; }
+
+#bar6 {
+  margin-left: 30px; }
+
+#bar7 {
+  margin-left: 30px;
+  background-color: #efc88b; }
+
+#bar8 {
+  margin-left: 50px;
+  margin-top: -7px;
+  background-color: #cf5c36; }
+
+#bar9 {
+  margin-left: 20px;
+  background-color: #efc88b; }
+
+#bar10 {
+  margin-left: 10px; }
+
+#bar11 {
+  margin-left: 20px;
+  background-color: #efc88b; }
+
+#bar12 {
+  margin-top: -7px;
+  margin-left: 52px;
+  background-color: #7FB069; }
+
+#bar13 {
+  margin-left: 30px;
+  background-color: #cf5c36; }
+
+#bar14 {
+  margin-left: 40px;
+  background-color: #efc88b; }
+
+#bar15 {
+  margin-top: -7px;
+  margin-left: 60px;
+  background-color: #cf5c36; }
+
+#bar16 {
+  margin-top: -7px;
+  margin-left: 77px;
+  background-color: #efc88b; }
+
+#bar17 {
+  margin-left: 50px;
+  background-color: #7FB069; }
+
+#bar18 {
+  margin-top: -7px;
+  margin-left: 64px; }
+
+#bar19 {
+  margin-left: 60px;
+  background-color: #efc88b; }
+
+#bar20 {
+  margin-top: -7px;
+  margin-left: 74px; }
+
+#bar21 {
+  margin-top: -7px;
+  margin-left: 100px;
+  background-color: #efc88b; }
+
+#bar22 {
+  margin-left: 50px;
+  background-color: #7FB069; }
+
+#bar23 {
+  margin-top: -7px;
+  margin-left: 76px;
+  background-color: #cf5c36; }
+
+#bar24 {
+  margin-left: 40px; }
+
+#bar25 {
+  margin-left: 20px;
+  background-color: #efc88b; }
+
+#bar26 {
+  margin-left: 10px; }
+
+#bar27 {
+  margin-left: 20px;
+  background-color: #efc88b; }
+
+#bar28 {
+  margin-top: -7px;
+  margin-left: 52px;
+  background-color: #7FB069; }
+
+#bar29 {
+  margin-left: 30px;
+  background-color: #cf5c36; }
+
+#bar30 {
+  margin-left: 40px;
+  background-color: #efc88b; }
+
+#bar31 {
+  margin-top: -7px;
+  margin-left: 51px;
+  background-color: #cf5c36; }
+
+#bar32 {
+  margin-top: -7px;
+  margin-left: 65px;
+  background-color: #efc88b; }
+
+#bar33 {
+  margin-left: 40px;
+  background-color: #7FB069; }
+
+#bar34 {
+  margin-top: -7px;
+  margin-left: 63px; }
+
+#bar35 {
+  margin-left: 50px;
+  background-color: #efc88b; }
+
+#bar36 {
+  margin-top: -7px;
+  margin-left: 70px;
+  background-color: #efc88b; }
+
+#bar37 {
+  margin-left: 40px;
+  background-color: #efc88b; }
+
+#bar38 {
+  margin-top: -7px;
+  margin-left: 66px;
+  background-color: #7FB069; }
+
+#bar39 {
+  margin-left: 30px;
+  background-color: #cf5c36; }
+
+#bar40 {
+  margin-left: 15px; }
+
+#bar41 {
+  margin-left: 5px;
+  background-color: #efc88b; }
 
 .ani_bar {
   z-index: 9999999999999999999;
@@ -491,6 +680,9 @@ a:hover.underline_style {
 p.opaque_footer {
   opacity: .5; }
 
+#modal_t_7 {
+  margin-top: 20%; }
+
 #upper_left {
   position: fixed;
   top: 1.5%;
@@ -752,8 +944,7 @@ a, hover {
   width: 0%;
   background-color: white; }
 
-#modal_t_1, #modal_t_2, #modal_t_3, #modal_t_4, #modal_t_5,
-#modal_t_6, #modal_t_7 {
+#modal_t_1, #modal_t_2, #modal_t_3, #modal_t_4, #modal_t_5, #modal_t_6, #modal_t_7 {
   visibility: hidden;
   color: black; }
 
@@ -761,6 +952,9 @@ a, hover {
   float: left;
   margin-top: 10%;
   margin-left: 0%; }
+
+.modal_text {
+  margin-left: -20px; }
 
 .modal_square {
   height: 100%;
