@@ -20,7 +20,6 @@ $(window).scroll(function() {
   scrollLink.each(function() {
 
     var sectionOffset = $(this.hash).offset().top - 20;
-
     if ( sectionOffset <= scrollbarLocation ) {
       $(this).parent().addClass('active');
       $(this).parent().siblings().removeClass('active');
@@ -39,7 +38,6 @@ $('.backpanel-mh').css("display", "block");
 $(window).on('beforeunload', function() {
   $(window).scrollTop(0);
 });
-
 
 // intro masthead animation
 var fullwidth = '100%';
@@ -190,7 +188,20 @@ $(function () {
       $('#lower_right').fadeOut();
       $('#lower_left').fadeOut();
     } 
-  });
+
+// middle arrow
+if ($(this).scrollTop() == 0) {
+  setTimeout(function() {
+    $('#middle_left').fadeIn();
+  }, 800);
+
+} 
+if ($(this).scrollTop() > 1) {
+  $('#middle_left').fadeOut();
+} 
+
+
+});
 })
 
 setTimeout(function(){ 
@@ -216,6 +227,8 @@ setTimeout(function(){
       height: '250vh'
 }, 650); // left masthead slide in
   });
+
+  $('#middle_left').fadeIn();
 }, 2850); // length of full page intro
 
 // 2nd animation elements to .frontpanel-mh 
@@ -273,8 +286,10 @@ open_modal.addEventListener('click', toggle(function () {
 $('#rot3').toggleClass('open');
 $('#rot_mid').fadeOut();
 
-// add height to bottom-nav 
+// add height to bottom-nav, top nav 
+$('.top-nav p').animate({'margin-left': '20%'}, 350);
 $('.bottom-nav').animate({'height': '80px'}, 350);
+$('.top-nav').animate({'height': '80px'}, 350);
 
 // add margin to icon 
 $('#mid_left').animate({'margin-left': '8%'}, 350);
@@ -333,8 +348,10 @@ $(".mid_left_modal_outline").animate({'width': '0%'}, 80);
 $(".modal-content-shape").animate({'width': '0%'}, 80);
 $(".mid_left_bar").animate({'width': '3%'}, 200)
 $('#mid_left').animate({'margin-left': '0%'}, 400);
-// add height to bottom-nav 
-$('.bottom-nav').animate({'height': '40px'}, 400);
+// remove top and bottom margin overlay 
+$('.top-nav p').animate({'margin-left': '3%'}, 350);
+$('.bottom-nav').animate({'height': '40px'}, 350);
+$('.top-nav').animate({'height': '40px'}, 350);
 enable_scroll();
 }, 600)
   setTimeout(function(){
