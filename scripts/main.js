@@ -156,16 +156,13 @@ _window.scroll(function() {
 
 // hides footer section elements
 var t = $(this).scrollTop();   
-if (t < 3000) {
+if (t < 4025) {
   footerMargin.hide()
   footerMenu.hide();
 }  else {
   footerMargin.fadeIn();
-  footerMenu.fadeIn();
+  footerMenu.show();
 }
-
-
-
 
 });
 
@@ -199,6 +196,27 @@ if ($(this).scrollTop() == 0) {
 if ($(this).scrollTop() > 1) {
   $('#middle_left').fadeOut();
 } 
+
+// intro txt animations 
+if ($(this).scrollTop() > 1570) {
+$('.intro-txt-right').hide();
+$('.intro-txt-left').hide();
+} else {
+  $('.intro-txt-right').show();
+$('.intro-txt-left').show();
+}
+
+// outro footer text 
+/*
+if ($(this).scrollTop() < 4785) {
+$('.footer-menu').hide();
+} 
+
+if ($(this).scrollTop() > 4585) {
+  $('.footer-menu').fadeIn();
+}
+*/
+
 
 
 });
@@ -261,7 +279,6 @@ $('#mid_left').hover(function(){
 });
 
 var open_modal = document.getElementById("nav-button");
-var test = document.getElementById("rot3");
 
 // hide the modal content unless the mobile button gets pressed 
 $('#modal_content_1').hide();
@@ -276,7 +293,6 @@ return (togg = !togg) ? a() : b();
 };
 
 open_modal.addEventListener('click', toggle(function () {
-
   $('#lower_right').fadeOut();
   $('#lower_left').hide();
   $('#nav-button').css('pointer-events', 'none');
@@ -298,7 +314,7 @@ $(".mid_left_modal_outline").animate({'width': '80%'}, 200);
 $(".modal-content-shape").css('width', '80%');
 
 // left side 
-$(".test").animate({'width': '20%'}, 500);
+$(".right_modal_overlay").animate({'width': '20%'}, 500);
 
 // elements load in 
 setTimeout(function(){
@@ -317,11 +333,13 @@ setTimeout(function(){
 
 // 2 bottom elements 
 setTimeout(function(){
+
   $('#modal_content_1').fadeIn();  
   $('#modal_content_2').fadeIn();  
   $('#nav-button').css('pointer-events', 'auto');
 }, 1050);
 }, function () { 
+ 
   $('#nav-button').css('pointer-events', 'none');
   var modal_elementss = ['#modal_t_4', '#modal_t_3', '#modal_t_2', '#modal_t_1'];
   for (var nn = 0; nn < modal_elementss.length; nn++){
@@ -341,7 +359,7 @@ setTimeout(function(){
     setTimeout(function(){
       $('#rot_mid').fadeIn();
     }, 80);
-    $(".test").animate({'width': '0%'}, 500);
+    $(".right_modal_overlay").animate({'width': '0%'}, 500);
 
 // right and left side 
 $(".mid_left_modal_outline").animate({'width': '0%'}, 80);
@@ -352,10 +370,13 @@ $('#mid_left').animate({'margin-left': '0%'}, 400);
 $('.top-nav p').animate({'margin-left': '3%'}, 350);
 $('.bottom-nav').animate({'height': '40px'}, 350);
 $('.top-nav').animate({'height': '40px'}, 350);
+
 enable_scroll();
 }, 600)
+
   setTimeout(function(){
     $('#nav-button').css('pointer-events', 'auto');
+
   }, 1050)
 }));
 
