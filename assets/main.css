@@ -16,7 +16,8 @@ p {
   z-index: 999999; }
 
 .top-nav p {
-  color: red;
+  color: black;
+  font-weight: 900;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -417,11 +418,6 @@ nav {
   position: fixed;
   font-weight: bold; }
 
-/* 
-increase margin top of intro-txt-left as you scroll down 
-
-.panel_7 margin-bottom should end up being 18 MAX
-*/
 .left-txt-animation {
   display: none;
   float: left;
@@ -541,32 +537,46 @@ a.strikethrough {
   overflow-y: hidden;
   overflow-x: hidden;
   position: relative;
+  /*z-index:99999; */
   height: 500px;
   background-attachment: fixed;
   background-position: center; }
 
 .background-color {
-  background-color: red;
+  background-color: #ecf0f1;
   width: 100%;
   height: 300px; }
 
 .background-color-bottom {
   background-color: green;
   width: 50%;
-  height: 300px;
+  height: 150px;
   float: right; }
+
+.background-color-bottom-full {
+  background-color: #ecf0f1;
+  width: 100%;
+  height: 200px;
+  float: right;
+  bottom: 0; }
 
 .panel_3_content {
   margin-top: 20%; }
 
 .panel_4 {
   width: 100%;
-  height: 100vh;
+  height: 85vh;
+  background: url(../images/bag2.jpg) no-repeat;
+  background-size: cover;
   margin: 0% 0% 0% 0%;
-  background-color: #ecf0f1;
   overflow-y: hidden;
   overflow-x: hidden;
-  position: relative; }
+  background-attachment: fixed;
+  background-position: center; }
+
+.content-layer {
+  height: 100%;
+  width: 100%; }
 
 .four-block {
   text-align: center;
@@ -575,8 +585,6 @@ a.strikethrough {
   overflow-x: hidden;
   bottom: -20%;
   width: 650px;
-  /*
-position: relative; */
   margin-right: 3%;
   /* 0 on mobile */
   position: absolute;
@@ -620,17 +628,16 @@ position: relative; */
 
 .panel_5 {
   width: 100%;
-  height: 100%;
+  height: 85vh;
+  background: url(../images/testy.jpg) no-repeat;
+  background-size: cover;
   margin: 0% 0% 0% 0%;
-  background-color: #ecf0f1;
   overflow-y: hidden;
   overflow-x: hidden;
-  position: relative; }
+  background-attachment: fixed;
+  background-position: center; }
 
-.panel_6_content {
-  margin-top: 0%; }
-
-.panel_7 {
+.panel_6 {
   width: 100%;
   height: 30vh;
   margin: 0% 0% 18% 0%;
@@ -639,22 +646,10 @@ position: relative; */
   overflow-x: hidden;
   position: relative; }
 
-.panel-7-txt {
+.panel-6-txt {
   margin-top: 5%;
   margin-left: -18%;
   text-align: left; }
-
-.panel_8 {
-  width: 100%;
-  height: 100vh;
-  margin: 0% 0% 0% 0%;
-  background-color: #ecf0f1;
-  overflow-y: hidden;
-  overflow-x: hidden;
-  position: relative; }
-
-.panel_8_content {
-  margin-top: 20%; }
 
 .footer_arrow {
   margin-top: 0%;
@@ -706,7 +701,7 @@ position: relative; */
   transition: width .5s;
   position: fixed; }
 
-.test {
+.right_modal_overlay {
   width: 0%;
   right: 0;
   top: 0;
