@@ -130,16 +130,10 @@ $(window).scroll(function(){
 // footer margin-top animation 
 var _window = $(window),
 footerMargin = $('.footer-top-margin'),
-footerMenu = $('.footer-menu'),
 max = 8,
 padding = parseFloat(footerMargin.css('padding-top')),
 currentPadding = padding,
 scrollPos = _window.scrollTop();
-
-
-// hide until user reaches page bottom
-footerMargin.hide()
-footerMenu.hide();
 
 _window.scroll(function() {  
 
@@ -153,17 +147,6 @@ _window.scroll(function() {
     footerMargin.css('padding', padding + 'px 0');
 
   scrollPos = _window.scrollTop();
-
-// hides footer section elements
-var t = $(this).scrollTop();   
-if (t < 4025) {
-  footerMargin.hide()
-  footerMenu.hide();
-}  else {
-  footerMargin.fadeIn();
-  footerMenu.show();
-}
-
 });
 
 $(function () {
@@ -199,25 +182,12 @@ if ($(this).scrollTop() > 1) {
 
 // intro txt animations 
 if ($(this).scrollTop() > 1570) {
-$('.intro-txt-right').hide();
-$('.intro-txt-left').hide();
+  $('.intro-txt-right').hide();
+  $('.intro-txt-left').hide();
 } else {
   $('.intro-txt-right').show();
-$('.intro-txt-left').show();
+  $('.intro-txt-left').show();
 }
-
-// outro footer text 
-/*
-if ($(this).scrollTop() < 4785) {
-$('.footer-menu').hide();
-} 
-
-if ($(this).scrollTop() > 4585) {
-  $('.footer-menu').fadeIn();
-}
-*/
-
-
 
 });
 })
@@ -307,6 +277,10 @@ $('.top-nav p').animate({'margin-left': '20%'}, 350);
 $('.bottom-nav').animate({'height': '80px'}, 350);
 $('.top-nav').animate({'height': '80px'}, 350);
 
+// right nav items
+$('.right-bar').animate({'width': '50px'}, 350);
+$('#mid_right').animate({'margin-right': '.5%'}, 350);
+
 // add margin to icon 
 $('#mid_left').animate({'margin-left': '8%'}, 350);
 
@@ -339,7 +313,7 @@ setTimeout(function(){
   $('#nav-button').css('pointer-events', 'auto');
 }, 1050);
 }, function () { 
- 
+
   $('#nav-button').css('pointer-events', 'none');
   var modal_elementss = ['#modal_t_4', '#modal_t_3', '#modal_t_2', '#modal_t_1'];
   for (var nn = 0; nn < modal_elementss.length; nn++){
@@ -371,6 +345,11 @@ $('.top-nav p').animate({'margin-left': '3%'}, 350);
 $('.bottom-nav').animate({'height': '40px'}, 350);
 $('.top-nav').animate({'height': '40px'}, 350);
 
+// right nav items
+$('.right-bar').animate({'width': '40px'}, 350);
+$('#mid_right').animate({'margin-right': '0%'}, 350);
+
+
 enable_scroll();
 }, 600)
 
@@ -389,3 +368,5 @@ mouseleave: function () {
   $('.footer-arrow h2').animate({'margin-left': '0%'}, 350);
 }
 });
+
+
