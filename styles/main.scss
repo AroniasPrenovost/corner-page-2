@@ -15,7 +15,7 @@ p {
   position:fixed;
   height:0px;
   background-color:white;
-  z-index:999999;
+  z-index:99999999;
 }
 
 .top-nav p {
@@ -153,12 +153,12 @@ right: 0;
   position:fixed;
   color:black;
   margin:30% 0% 0% 0%;
+  z-index:-1;
 }
 
 .footer-arrow {
-/* float:right; */
-margin-right:10%;
-position:relative;
+  margin-right:10%;
+  position:relative;
 }
 
 .footer-arrow h2 {
@@ -636,6 +636,7 @@ position: relative;
 }
 
 
+
 .panel_2 {
   background: url(../images/mobile.jpg)no-repeat center center;
   background-attachment: fixed;
@@ -663,14 +664,17 @@ margin: 0% 0% 0% 0%;
 overflow-y: hidden;
 overflow-x: hidden;
 position: relative;
- /*z-index:99999; */
+/*z-index:99999; */
 height:500px;
 background-attachment: fixed;
 background-position: center;
 
 }
 
- 
+
+
+
+
 .background-color {
   background-color:#ecf0f1;
   width:100%;
@@ -699,11 +703,11 @@ background-position: center;
   height:85vh;
   background: url(../images/bag2.jpg)no-repeat;
   background-size: cover;
-margin: 0% 0% 0% 0%;
-overflow-y: hidden;
-overflow-x: hidden;
-background-attachment: fixed;
-background-position: center;
+  margin: 0% 0% 0% 0%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 .content-layer {
@@ -770,22 +774,23 @@ display: block;
 
 .panel_5 {
   width:100%;
-  height:85vh;
+  height:50vh;
   background: url(../images/testy.jpg)no-repeat;
   background-size: cover;
-margin: 0% 0% 0% 0%;
-overflow-y: hidden;
-overflow-x: hidden;
-background-attachment: fixed;
-background-position: center;
+  margin: 0% 0% 0% 0%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 
 
 .panel_6 {
   width:100%;
-  height:30vh;
+  height:40vh;
   margin: 0% 0% 18% 0%;
+  padding-top: 6%;
   background-color: #ecf0f1; 
   overflow-y: hidden;
   overflow-x: hidden;
@@ -814,7 +819,7 @@ background-position: center;
 
 .mid_left_bar {
   background-color: white; 
-  height:95vh;
+  height:100vh;
   bottom: 0;
   width:0px;
   left:0;
