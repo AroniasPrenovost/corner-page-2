@@ -192,6 +192,8 @@ if ($(this).scrollTop() > 1570) {
 });
 })
 
+
+
 setTimeout(function(){ 
   $('.intro-txt-wrap').css('display', 'block');
 }, 2600); // post intro animation transition
@@ -369,4 +371,6 @@ mouseleave: function () {
 }
 });
 
+
+ 
 
