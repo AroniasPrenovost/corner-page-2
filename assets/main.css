@@ -130,8 +130,10 @@ p {
   z-index: -1; }
 
 .footer-arrow {
-  margin-right: 10%;
-  position: relative; }
+  margin-right: 5%;
+  position: relative;
+  float: left;
+  width: 25px; }
 
 .footer-arrow h2 {
   margin-left: 0%; }
@@ -201,11 +203,14 @@ nav {
   height: 5px;
   margin-bottom: 3px;
   margin-left: 16px;
-  background-color: #bdc3c7; }
+  /* background-color: #bdc3c7; */ }
+
+#bar1 {
+  background-color: yellow !important; }
 
 #bar2 {
-  margin-left: 10px;
-  background-color: #efc88b; }
+  margin-left: 25px;
+  background-color: green !important; }
 
 #bar3 {
   margin-left: 30px;
@@ -219,7 +224,7 @@ nav {
   float: left;
   margin-left: 58px;
   margin-top: -7px;
-  background-color: #cf5c36; }
+  background-color: red !important; }
 
 #bar6 {
   margin-left: 30px; }
@@ -530,17 +535,16 @@ a.strikethrough {
   position: relative; }
 
 .image-layer {
-  background: url(../images/testy.jpg) no-repeat;
-  background-size: cover;
-  /* hacky cover up (*see 'post_animation_reveal') */
-  margin: 0% 0% 0% 0%;
-  overflow-y: hidden;
-  overflow-x: hidden;
-  position: relative;
-  /*z-index:99999; */
-  height: 500px;
-  background-attachment: fixed;
-  background-position: center; }
+  /* background: url(../images/testy.jpg)no-repeat;
+background-size: cover;
+margin: 0% 0% 0% 0%;
+overflow-y: hidden;
+overflow-x: hidden;
+position: relative;
+height:500px;
+background-attachment: fixed;
+background-position: center;
+*/ }
 
 .background-color {
   background-color: #ecf0f1;
@@ -572,7 +576,11 @@ a.strikethrough {
   overflow-y: hidden;
   overflow-x: hidden;
   background-attachment: fixed;
-  background-position: center; }
+  background-position: center;
+  transform: translate3d(0, 0, 0);
+  /* safari patch, improves performance by forcing IOS to use hardware-acceleration */
+  -webkit-transform: translate3d(0, 0, 0);
+  /* safari patch, improves performance by forcing IOS to use hardware-acceleration */ }
 
 .content-layer {
   height: 100%;
@@ -635,7 +643,11 @@ a.strikethrough {
   overflow-y: hidden;
   overflow-x: hidden;
   background-attachment: fixed;
-  background-position: center; }
+  background-position: center;
+  transform: translate3d(0, 0, 0);
+  /* safari patch, improves performance by forcing IOS to use hardware-acceleration */
+  -webkit-transform: translate3d(0, 0, 0);
+  /* safari patch, improves performance by forcing IOS to use hardware-acceleration */ }
 
 .panel_6 {
   width: 100%;
@@ -889,7 +901,7 @@ margin-top: 8px;
   background-color: white;
   position: relative;
   color: black;
-  width: 75%; }
+  width: 80%; }
 
 .modal_content_2 {
   float: right;
