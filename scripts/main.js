@@ -1,5 +1,9 @@
 console.log("main.js <--");
 
+// constants 
+var modal_elements = ['#modal_t_1', '#modal_t_2', '#modal_t_3', '#modal_t_4'];
+var modal_elementss = ['#modal_t_4', '#modal_t_3', '#modal_t_2', '#modal_t_1'];
+
 /* smooth scroll */
 $(document).ready(function() {
 
@@ -41,7 +45,7 @@ $(window).on('beforeunload', function() {
 
 // intro masthead animation
 var fullwidth = '100%';
-var smallwidth = '52%';
+var smallwidth = '50%';
 var txtRight = $('.intro-txt-right');
 
 setTimeout(function(){
@@ -119,7 +123,6 @@ function animate() {
 
   }   
 }
-
 
 // four-box div animation 
 $(window).scroll(function(){
@@ -269,6 +272,7 @@ open_modal.addEventListener('click', toggle(function () {
   $('#lower_left').hide();
   $('#nav-button').css('pointer-events', 'none');
   disable_scroll();
+  $('.top-nav p:nth-child(2)').animate({'margin-right': '3.5%'}, 350);
 
 //  $('.modal_content').show();
 $('#rot3').toggleClass('open');
@@ -276,6 +280,7 @@ $('#rot_mid').fadeOut();
 
 // add height to bottom-nav, top nav 
 $('.top-nav p').animate({'margin-left': '20%'}, 350);
+
 $('.bottom-nav').animate({'height': '80px'}, 350);
 $('.top-nav').animate({'height': '80px'}, 350);
 
@@ -295,17 +300,19 @@ $(".right_modal_overlay").animate({'width': '20%'}, 500);
 // elements load in 
 setTimeout(function(){
   setTimeout(function(){
-    var modal_elements = ['#modal_t_1', '#modal_t_2', '#modal_t_3', '#modal_t_4'];
     for (var n = 0; n < modal_elements.length; n++){
       (function(n){
         setTimeout(function(){
           var elem = modal_elements[n];
           $(elem).css('visibility', 'visible');
-        }, 200 * n);
+          $(elem).animate({'line-height': '1.1'}, 90);
+        }, 100 * n);
       }(n));
     }
   }, 250);
 }, 250);
+
+$('.modal_content:nth-child(1)').toggleClass('line-height');
 
 // 2 bottom elements 
 setTimeout(function(){
@@ -315,28 +322,22 @@ setTimeout(function(){
   $('#nav-button').css('pointer-events', 'auto');
 }, 1050);
 }, function () { 
-
   $('#nav-button').css('pointer-events', 'none');
-  var modal_elementss = ['#modal_t_4', '#modal_t_3', '#modal_t_2', '#modal_t_1'];
-  for (var nn = 0; nn < modal_elementss.length; nn++){
-    (function(nn){
-      setTimeout(function(){
-        var elemx = modal_elementss[nn];
-        $(elemx).css('visibility', 'hidden');
-      }, 200 * nn);
-    }(nn));
-  }
+
 
   $('#modal_content_1').fadeOut();
   $('#modal_content_2').fadeOut();
 
   setTimeout(function(){
     $('#rot3').toggleClass('open');
+
     setTimeout(function(){
+
       $('#rot_mid').fadeIn();
     }, 80);
+    $('.modal_content').animate({'margin-right': '20%', 'opacity': '0'}, 200);
     $(".right_modal_overlay").animate({'width': '0%'}, 500);
-
+    $('.top-nav p:nth-child(2)').animate({'margin-right': '3%'}, 350);
 // right and left side 
 $(".mid_left_modal_outline").animate({'width': '0%'}, 80);
 $(".modal-content-shape").animate({'width': '0%'}, 80);
@@ -352,25 +353,37 @@ $('.right-bar').animate({'width': '40px'}, 350);
 $('#mid_right').animate({'margin-right': '0%'}, 350);
 
 
+for (var nn = 0; nn < modal_elementss.length; nn++){
+  (function(nn){
+    setTimeout(function(){
+      var elemx = modal_elementss[nn];
+      $(elemx).animate({'line-height': '3'}, 40);
+      $(elemx).css('visibility', 'hidden');
+    }, 50 * nn);
+  }(nn));
+}
 enable_scroll();
-}, 600)
+}, 400)
+
+  setTimeout(function(){
+    $('.modal_content').css('margin-right', '0%');
+    $('.modal_content').animate({'opacity': '1'}, 400);
+  }, 750)  
 
   setTimeout(function(){
     $('#nav-button').css('pointer-events', 'auto');
-
+    $('#modal_t_1, #modal_t_2, #modal_t_3, #modal_t_4').css('line-height', '3');
+    $('.modal_content:nth-child(1)').toggleClass('line-height');
   }, 1050)
 }));
 
-$(".testbtn").on({
+$(".modal-cta-btn").on({
   mouseenter: function () {
-    $('.footer-arrow h2').animate({'margin-left': '100%'}, 350);
+    $('.footer-arrow h2').animate({'margin-left': '75%'}, 350);
 //   $('h2').animate({'width': '110%'}, 750);
 },
 mouseleave: function () {
   $('.footer-arrow h2').animate({'margin-left': '0%'}, 350);
 }
 });
-
-
- 
 
