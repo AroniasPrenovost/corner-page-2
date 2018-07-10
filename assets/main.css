@@ -445,7 +445,7 @@ nav {
 .mid-txt-right {
   background-color: cyan;
   width: 50%;
-  margin-top: -10%;
+  bottom: -50px;
   color: black;
   /*position:fixed;*/
   font-weight: bold;
@@ -521,7 +521,7 @@ a.strikethrough {
   background: orange; }
 
 .panel_2 {
-  background: url(../images/mobile.jpg) no-repeat center center;
+  background: url(../images/rawpixel-617380-unsplash.jpg) no-repeat center center;
   background-attachment: fixed;
   height: 80vh;
   background-size: cover;
@@ -539,43 +539,13 @@ a.strikethrough {
   overflow-x: hidden;
   position: relative; }
 
-.image-layer {
-  /* background: url(../images/testy.jpg)no-repeat;
-background-size: cover;
-margin: 0% 0% 0% 0%;
-overflow-y: hidden;
-overflow-x: hidden;
-position: relative;
-height:500px;
-background-attachment: fixed;
-background-position: center;
-*/ }
-
-.background-color {
-  background-color: #ecf0f1;
-  width: 100%;
-  height: 300px; }
-
-.background-color-bottom {
-  background-color: green;
-  width: 50%;
-  height: 150px;
-  float: right; }
-
-.background-color-bottom-full {
-  background-color: #ecf0f1;
-  width: 100%;
-  height: 200px;
-  float: right;
-  bottom: 0; }
-
 .panel_3_content {
   margin-top: 20%; }
 
 .panel_4 {
   width: 100%;
   height: 100%;
-  background: url(../images/bag2.jpg) no-repeat;
+  /* background: url(../images/jo-szczepanska-666986-unsplash.jpg)no-repeat; */
   background-size: cover;
   margin: 0% 0% 0% 0%;
   overflow-y: hidden;
@@ -587,6 +557,71 @@ background-position: center;
   -webkit-transform: translate3d(0, 0, 0);
   /* safari patch, improves performance by forcing IOS to use hardware-acceleration */ }
 
+.img-container-1 {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  min-height: 700px;
+  background: url(../images/jo-szczepanska-666986-unsplash.jpg) repeat center;
+  background-size: cover; }
+
+.img-container-2 {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  min-height: 500px;
+  background: url(../images/ben-white-197680-unsplash.jpg) repeat center;
+  background-size: cover; }
+
+.overlay-color-1 {
+  position: absolute;
+  background-color: #ecf0f1;
+  top: 0;
+  height: 500px;
+  width: 100%; }
+
+.overlay-color-1-right {
+  float: right;
+  background-color: #ecf0f1;
+  position: absolute;
+  width: 50%;
+  bottom: 0;
+  right: 0;
+  height: 100%; }
+
+.mid_cta_panel {
+  width: 100%;
+  height: 150px;
+  background-color: #ecf0f1; }
+
+.overlay-color-2 {
+  position: absolute;
+  background-color: #ecf0f1;
+  top: 0;
+  height: 200px;
+  width: 100%; }
+
+.wrapper {
+  position: relative;
+  background-color: transparent; }
+
+.wrapper#demo1, .wrapper#demo2 {
+  overflow: hidden; }
+
+.wrapper > .inner {
+  padding: 0 0 0 0;
+  max-width: 100%;
+  width: 100%; }
+
+.wrapper.fade-up > .inner {
+  transform: translateY(0);
+  transition: opacity 1s ease, transform 1s ease;
+  opacity: 1; }
+
+.wrapper > .inner {
+  margin: 0 auto; }
+
+/* */
 .content-layer {
   height: 100%;
   width: 100%; }
@@ -597,11 +632,11 @@ background-position: center;
   margin-top: 0%;
   overflow-x: hidden;
   bottom: -20%;
+  right: -400px;
   width: 650px;
   margin-right: 3%;
   /* 0 on mobile */
   position: absolute;
-  right: -400px;
   display: block; }
 
 .block {
@@ -639,21 +674,20 @@ background-position: center;
 .block:nth-child(4) {
   margin-left: -1%; }
 
+/*
 .panel_5 {
-  width: 100%;
-  height: 75vh;
-  background: url(../images/testy.jpg) no-repeat;
-  background-size: cover;
-  margin: 0% 0% 0% 0%;
-  overflow-y: hidden;
-  overflow-x: hidden;
-  background-attachment: fixed;
-  background-position: center;
-  transform: translate3d(0, 0, 0);
-  /* safari patch, improves performance by forcing IOS to use hardware-acceleration */
-  -webkit-transform: translate3d(0, 0, 0);
-  /* safari patch, improves performance by forcing IOS to use hardware-acceleration */ }
+width:100%;
+height:75vh;
+background: url(../images/testy.jpg)no-repeat;
+background-size: cover;
+margin: 0% 0% 0% 0%;
+overflow-y: hidden;
+overflow-x: hidden;
+background-attachment: fixed;
+background-position: center;
 
+}
+*/
 .panel_6 {
   width: 100%;
   height: 40vh;
