@@ -126,9 +126,10 @@ function animate() {
 
 // four-box div animation 
 $(window).scroll(function(){
-  var position = Math.min($(window).scrollTop()-2500, 15)
-  $('.four-block').css({ right: position });
+  var four_block_position = Math.min($(window).scrollTop()-2500, 15)
+  $('.four-block').css({ right: four_block_position });
 });
+
 
 // footer margin-top animation 
 var _window = $(window),
@@ -268,14 +269,16 @@ return (togg = !togg) ? a() : b();
 };
 
 open_modal.addEventListener('click', toggle(function () {
+  $('#rot3').toggleClass('open');
+
   $('#lower_right').fadeOut();
   $('#lower_left').hide();
   $('#nav-button').css('pointer-events', 'none');
   disable_scroll();
+
   $('.top-nav p:nth-child(2)').animate({'margin-right': '3.5%'}, 350);
 
 //  $('.modal_content').show();
-$('#rot3').toggleClass('open');
 $('#rot_mid').fadeOut();
 
 // add height to bottom-nav, top nav 
