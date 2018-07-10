@@ -255,7 +255,6 @@
 			</div>
 		</div>
 		<div class="panel_2">
-
 			<!-- image is here --> 
 		</div>
 		<div class="panel_3">
@@ -323,49 +322,19 @@
 				</div>q
 			</div>
 		</div>
+	</div>    
 
-		<div class="panel_4">
-			<div class="content-layer">
-				<div class="row">
-					<div class="background-color">
-						<div class="col-lg-12">
-							<div class="txt-overlay">
-								<div class="content">
-									<h2>_</h2>
-									<h2>DEV<br>
-									ELOP</h2>
-								</div>
-								<div class="mid-txt-right">
-									<div class='right-txt-overlay'>
-										<h4><span style="color:black">Lorem ipsum dolor sit amet.
-										Lorem ipsum dolor sit amet. Dolor, sit amet dolor sit amete.</span></h4> 
 
-										<p>Une expérience utilisateur efficace et immersive, c’est ce qui permet de capter l’attention et de diffuser un message clair. C’est pourquoi nous accordons extrêmement d’importance à ce que l’ergonomie serve le design, et que ce design soit novateur et soigné..</p>
-										<p><a href="#" class="strikethrough">Test link</a></p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div> 
-					<div class="background-color-bottom">
-					</div> 
-					<div class="background-color-bottom-full">
-						<div class="content" style="margin:10px 0 0 0; text-align:right; width:50%; line-height: .8;">
-							<p><strong>test test test</strong></p>
-							<p>test test test </p>
-							<p><a href="#" class="strikethrough">Test link</a></p>
-						</div>
-					</div> 
-				</div>
-			</div> 
-		</div>
-	</div>
 
-	<div class="panel_5">
-		<div class="content-layer">
-			<div class="row">
-				<div class="background-color" style="height:150px;">
-					<div class="col-lg-12">
+	<div id="demo1" class="wrapper fade-up">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="inner">
+					<div class="img-container-1 text-center my-5"
+					data-paroller-factor="-0.5"
+					data-paroller-factor-sm="-0.2"
+					data-paroller-factor-xs="-0.1">
+					<div class="overlay-color-1">
 						<div class="txt-overlay">
 							<div class="content">
 								<h2>_</h2>
@@ -374,10 +343,56 @@
 							</div>
 						</div>
 					</div>
-				</div> 
+				</div>
+				<div class="overlay-color-1-right">
+					<div class="mid-txt-right">
+						<div class='right-txt-overlay'>
+							<h4><span style="color:black">Lorem ipsum dolor sit amet.
+							Lorem ipsum dolor sit amet. Dolor, sit amet dolor sit amete.</span></h4> 
+
+							<p>Une expérience utilisateur efficace et immersive, c’est ce qui permet de capter l’attention et de diffuser un message clair. C’est pourquoi nous accordons extrêmement d’importance à ce que l’ergonomie serve le design, et que ce design soit novateur et soigné..</p>
+							<p><a href="#" class="strikethrough">Test link</a></p>
+						</div>
+					</div>
+				</div>
 			</div>
-		</div> 
-	</div>
+		</div>
+	</div> 
+
+	<div class="mid_cta_panel">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="content" style="margin:10px 0 0 0; text-align:right; width:50%; line-height: .8;">
+					<p><strong>test test test</strong></p>
+					<p>test test test </p>
+					<p><a href="#" class="strikethrough">Test link</a></p>
+				</div>
+			</div>
+		</div>
+	</div>	
+
+
+	<div id="demo2" class="wrapper fade-up">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="inner">
+					<div class="img-container-2 text-center my-5"
+					data-paroller-factor="-0.5"
+					data-paroller-factor-sm="-0.2"
+					data-paroller-factor-xs="-0.1">
+					<div class="overlay-color-2">
+						<div class="txt-overlay">
+							<div class="content">
+								<h2>_</h2>
+								<h2>DEV<br>
+								ELOP</h2>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> 
 
 	<div class="panel_6">
 		<div class="row">
@@ -406,7 +421,7 @@
 				</div>
 			</div>
 			<div class="col-lg-1">
-			</div>
+			</div>		
 		</div>
 	</div>
 
@@ -415,5 +430,24 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
 	<script src="assets/script.js"></script>
 	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<script>
+		$(document)
+		.ready(function () {
+//initialize paroller.js
+$('[data-paroller-factor]').paroller();
+//initialize paroller.js and set options for elements with .paroller class
+$('.paroller-example').paroller({
+	factorXs: 0.1,
+	factorSm: 0.1,
+	factorMd: -0.4,
+	factorLg: -0.5,
+	factorXl: -0.6,
+	factor: -0.4,
+	type: 'foreground',
+	direction: 'horizontal'
+});
+});
+</script>
 </body>
 </html>
