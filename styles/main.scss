@@ -684,19 +684,16 @@ transform: translate3d(0,0,0); 	/* safari patch, improves performance by forcing
 .panel_4 {
   width:100%;
   height:100%;
-/* background: url(../images/jo-szczepanska-666986-unsplash.jpg)no-repeat; */
-background-size: cover;
-margin: 0% 0% 0% 0%;
-overflow-y: hidden;
-overflow-x: hidden;
-background-attachment: fixed;
-background-position: center;
+  margin: 0% 0% 0% 0%;
+  overflow-y: hidden;
+  overflow-x: hidden;
 transform: translate3d(0,0,0);  /* safari patch, improves performance by forcing IOS to use hardware-acceleration */
 -webkit-transform: translate3d(0,0,0); /* safari patch, improves performance by forcing IOS to use hardware-acceleration */
 }
 
 
 .img-container-1 {
+  width:0%;
   background: hsla(0, 0%, 100%, .05);
   padding: 0 0 0 0;
   margin: 0 0 0 0;
@@ -710,11 +707,10 @@ transform: translate3d(0,0,0);  /* safari patch, improves performance by forcing
   background: hsla(0, 0%, 100%, .05);
   padding: 0 0 0 0;
   margin: 0 0 0 0;
-  min-height: 500px;
+  min-height: 0px;
   background: url(../images/ben-white-197680-unsplash.jpg) repeat center; 
-  background-size: cover;
+  background-size: cover
 }
-
 
 .overlay-color-1 {
   position:absolute;
@@ -734,11 +730,12 @@ transform: translate3d(0,0,0);  /* safari patch, improves performance by forcing
   height: 100%;
 }
 
+
+
 .mid_cta_panel {
   width:100%;
   height:150px;
   background-color:#ecf0f1;
-
 }
 
 .overlay-color-2 {
@@ -756,6 +753,10 @@ transform: translate3d(0,0,0);  /* safari patch, improves performance by forcing
 
 }
 
+.inner {
+  background-color:#ecf0f1; 
+}
+
 .wrapper#demo1, .wrapper#demo2 {
   overflow: hidden
 }
@@ -766,48 +767,15 @@ transform: translate3d(0,0,0);  /* safari patch, improves performance by forcing
   width: 100%;
 }
 
-@media screen and (max-width:1680px) {
-
-}
-
-@media screen and (max-width:1280px) {
-
-}
-
-@media screen and (max-width:736px) {
-
-}
-
 .wrapper.fade-up>.inner {
   transform: translateY(0);
   transition: opacity 1s ease, transform 1s ease;
   opacity: 1
 }
 
-
-
 .wrapper>.inner {
   margin: 0 auto
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* */
-
 
 .content-layer {
   height:100%;
@@ -914,11 +882,6 @@ background-position: center;
   font-size: 3em;
 }
 
-
-
-
-
-
 .mid_left_bar {
   background-color: white; 
   height:100vh;
@@ -930,9 +893,6 @@ z-index: 10000000; /* hack to place above all other elements */
 -webkit-transition: width .5s; /* For Safari 3.1 to 6.0 */
 transition: width .5s;
 }
-
-
-
 
 .mid_left:hover .mid_left_bar {
   width: 4%;
@@ -963,8 +923,6 @@ transition: width .5s;
 position: fixed;
 }
 
-
-
 .right_modal_overlay {
   width:0%;
   right:0;
@@ -972,9 +930,9 @@ position: fixed;
   height:100%;
   background-color:orange;
   position:fixed;
-
   opacity:.8;
 }
+
 .modal-right-bar {
   height:100% !important;
   height:0%; 
@@ -1062,16 +1020,13 @@ a, hover {
   padding:0;
   margin:0;
   position:relative;
-/* left:10%;
-margin-top: 8px;
-*/
-top:-2px;
-float: right;
-right:5px;
--webkit-transform: rotate(-90deg);
--moz-transform: rotate(-90deg);
--ms-transform: rotate(-90deg);
--o-transform: rotate(-90deg);
+  top:-2px;
+  float: right;
+  right:5px;
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
 }
 
 #icon {
