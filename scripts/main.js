@@ -193,6 +193,15 @@ if ($(this).scrollTop() > 1570) {
   $('.intro-txt-left').show();
 }
 
+if ($(this).scrollTop() > 3270) {
+  $('.img-container-1').animate({width: '50%'}, 600);
+}
+
+if ($(this).scrollTop() > 3870) {
+  $('.img-container-2').animate({height: '100%'}, 900);
+}
+
+
 });
 })
 
