@@ -1,5 +1,9 @@
 $('#mid_right').hide();
+<<<<<<< HEAD
 $('#mid_left').hide();
+=======
+ $('#mid_left').hide();
+>>>>>>> 0cc52b1426f7726281042d2d2897b82cef05d425
 
 var codeBars = [
 "bar1", "bar2", "bar3", 
@@ -19,12 +23,21 @@ var codeBars = [
 ];
 
 var barLengths = [
+<<<<<<< HEAD
 8, 4, 5, 4, 
 9, 10, 5, 7, 
 11, 9, 5, 6, 
 8, 4, 6, 10, 
 3, 6, 6, 4, 
 12, 6, 6, 7, 
+=======
+8, 12, 17, 15, 
+8, 8, 9, 8, 
+5, 6, 10, 6, 
+10, 6, 5, 8, 
+4, 3, 4, 8, 
+5, 8, 9, 7, 
+>>>>>>> 0cc52b1426f7726281042d2d2897b82cef05d425
 8, 10, 10, 3, 
 12, 3, 4, 11, 
 7, 8, 6, 4, 
@@ -98,7 +111,11 @@ setTimeout(function() {
 $('.right-bar').animate({width: '40px'}, 300);
 $('#mid_right').fadeIn();
 $('.mid_left_bar').animate({width: '40px'}, 300);
+<<<<<<< HEAD
 $('#mid_left').fadeIn();
+=======
+ $('#mid_left').fadeIn();
+>>>>>>> 0cc52b1426f7726281042d2d2897b82cef05d425
 
 $('.top-nav').animate({height: '40px'}, 300);
 $('.bottom-nav').animate({height: '40px'}, 300);
@@ -108,11 +125,20 @@ $('.bottom-nav').animate({height: '40px'}, 300);
 
 
 /*
+<<<<<<< HEAD
 .bottom-nav' 
 .right-bar'
 #mid_right
 
 .navbar 
 .mid_left_bar 
+=======
+    .bottom-nav' 
+    .right-bar'
+        #mid_right
+
+    .navbar 
+    .mid_left_bar 
+>>>>>>> 0cc52b1426f7726281042d2d2897b82cef05d425
 */
 
