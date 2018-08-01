@@ -1,380 +1,405 @@
 console.log("main.js <--");
 
+
+
+// constants 
+var modal_elements = ['#modal_t_1', '#modal_t_2', '#modal_t_3', '#modal_t_4'];
+var modal_elementss = ['#modal_t_4', '#modal_t_3', '#modal_t_2', '#modal_t_1'];
+
+/* smooth scroll */
+$(document).ready(function() {
+
+  var scrollLink = $('.scroll');
+
+// Smooth scrolling
+scrollLink.click(function(e) {
+  e.preventDefault();
+  $('body,html').animate({
+    scrollTop: $(this.hash).offset().top
+  }, 1000 );
+});
+
+// Active link switching
+$(window).scroll(function() {
+  var scrollbarLocation = $(this).scrollTop();
+
+  scrollLink.each(function() {
+
+    var sectionOffset = $(this.hash).offset().top - 20;
+    if ( sectionOffset <= scrollbarLocation ) {
+      $(this).parent().addClass('active');
+      $(this).parent().siblings().removeClass('active');
+    }
+  })
+
+})
+
+})
+/* end smooth scroll */
+
 // Restores elements 
 $('.backpanel-mh').css("display", "block");
+
 // delays the page load on refresh 
 $(window).on('beforeunload', function() {
-    $(window).scrollTop(0);
+  $(window).scrollTop(0);
 });
 
-// Remove all elements except intro animation 
-$(window).load(function(){
-    $('body, html').addClass('hideMyScroll');
-    $('.mid_right_bar').css("display", "none");
-    $('.load_area').css("display", "none");
-    $('.navbar').hide();
-    $('.navbar-default').hide();
-    $('.navbar-fixed-top').hide();
-    $('.navbar-header').hide();  
-    $('.navbar-nav').hide();
-    $('.post_animation_reveal').css("display", "none");
-});
-
-// 
-var codeBars = [
-"bar1", "bar2", "bar3", 
-"bar4", "bar5", "bar6", 
-"bar7", "bar8", "bar9", 
-"bar10", "bar11", "bar12", 
-"bar13", "bar14", "bar15", 
-"bar16", "bar17", "bar18", 
-"bar19", "bar20", "bar21", 
-"bar22", "bar23", "bar24", 
-"bar25", "bar26", "bar27", 
-"bar28", "bar29", "bar30", 
-"bar31", "bar32", "bar33", 
-"bar34", "bar35", "bar36", 
-"bar37", "bar38", "bar39", 
-"bar40", "bar41"
-];
-
-var barLengths = [
-5, 6, 6, 12, 
-5, 5, 6, 8, 
-5, 6, 10, 6, 
-10, 6, 5, 8, 
-4, 7, 4, 8, 
-5, 8, 9, 7, 
-8, 10, 10, 3, 
-12, 3, 4, 11, 
-7, 8, 6, 4, 
-8, 6, 6, 6, 
-6
-];
-
-var lines = [
-"line1", "line2", "line3", "line4",
-"line5", "line6", "line7", "line8",
-"line9", "line10", "line11", "line12",
-"line13", "line14", "line15", "line16",
-"line17", "line18", "line19", "line20",
-"line21", "line22", "line23", "line24",
-"line25", "done"
-];
-
-function setIntervalX(callback, delay, repetitions) {
-    var x = 0;
-    var intervalID = window.setInterval(function () {
-
-        callback();
-
-        if (++x === repetitions) {
-            window.clearInterval(intervalID);
-        }
-    }, delay);
-}
-
-setIntervalX(function () {
-    function move() {
-        var element = document.getElementById(codeBars[0]);
-        var barWidth = barLengths[0];
-        var width = 1;
-        var id = setInterval(frame, 1);
-        function frame() {
-            if (width >= barWidth ) {
-                clearInterval(id);
-            } else {
-                width++;
-                element.style.width = width + '%';
-            }
-        }
-        codeBars.shift();
-        barLengths.shift();
-    }
-    move();
-
-}, 60, 41); // runs every 60 milliseconds, 41 times
-
-// removes div elements
-setTimeout(function() {     
-    setInterval(function() {
-        if (lines[0] === "done") {
-            return;
-        }
-        var element1 = document.getElementById(lines[0]);
-        element1.outerHTML = "";
-        delete element1;
-        lines.shift();
-}, 100); // runs every 50 milliseconds
-}, 720);  // delays start time
-
-/* 
-var s = document.getElementById('code-loader').style;
-s.opacity = 1;
-(function fade(){
-(s.opacity-=.09)<0?s.display="none":setTimeout(fade,500)
-}
-)();
-// removes code-container 
-setTimeout(function() {
-var element = document.getElementById("code-container");
-element.outerHTML = "";
-delete element;
-}, 2850);
-*/
-//
-
-// On scroll animation
+// intro masthead animation
 var fullwidth = '100%';
-var smallwidth = '52%';
-var anibar = $('.ani_bar_right');
+var smallwidth = '50%';
+var txtRight = $('.intro-txt-right');
 
 setTimeout(function(){
-    anibar.addClass("wide").stop().animate({width: '100%'}, 500);
-    anibar.stop().animate({width: smallwidth}, 500, function() {
-        $(this).removeClass('wide');
-    });
+  txtRight.addClass("wide").stop().animate({width: fullwidth}, 500);
+  txtRight.stop().animate({width: smallwidth}, 500, function() {
+    $(this).removeClass('wide');
+  });
 }, 1); 
+
+
+
+// intro animation scrolling glitch prevention
+function preventDefault(e) {
+  e = e || window.event;
+  if (e.preventDefault)
+    e.preventDefault();
+  e.returnValue = false;  
+}
+
+function keydown(e) {
+  for (var i = keys.length; i--;) {
+    if (e.keyCode === keys[i]) {
+      preventDefault(e);
+      return;
+    }
+  }
+}
+
+function wheel(e) {
+  preventDefault(e);
+}
+
+function disable_scroll() {
+  if (window.addEventListener) {
+    window.addEventListener('DOMMouseScroll', wheel, false);
+  }
+  window.onmousewheel = document.onmousewheel = wheel;
+  document.onkeydown = keydown;
+}
+
+function enable_scroll() {
+  if (window.removeEventListener) {
+    window.removeEventListener('DOMMouseScroll', wheel, false);
+  }
+  window.onmousewheel = document.onmousewheel = document.onkeydown = null;  
+}// end intro animation scrolling glitch prevention
 
 $(window).scroll( $.throttle( 425, animate ) )
 function animate() {
-    var frontpanel = $('.frontpanel-mh');
 
-    var intromessage = $('.mm');
-    if (window.pageYOffset > 150 && !frontpanel.hasClass('wide')) {
-        frontpanel.addClass("wide").stop().animate({width: fullwidth}, 1000);
-        $('.intro_animation_2').fadeIn(2000); 
-        $(document).scroll(function () {
-            var t = $(this).scrollTop();   
-            if (t > 1050) {
-                $('.ani_bar_right, .ani_bar_left').fadeOut(500); 
-            } else {
-                $('.ani_bar_right, .ani_bar_left').fadeIn(500); 
-            }
-        });
-        anibar.addClass("wide").stop().animate({width: '95%'}, 1000);
+  var frontpanel = $('.frontpanel-mh');
+  if (window.pageYOffset > 0 && !frontpanel.hasClass('wide')) {
+    disable_scroll();
+    frontpanel.addClass("wide").stop().animate({width: fullwidth}, 1000);
+    $('.left-txt-animation').fadeIn(2000); 
+    txtRight.addClass("wide").stop().animate({width: '95%'}, 1000);
+
+    if (frontpanel.hasClass('wide')) {
+      enable_scroll();
     }
-    if (window.pageYOffset == 0 ) {
-        console.clear();
-        frontpanel.stop().animate({width: smallwidth}, 1000, function() {
-            $(this).removeClass('wide');
-        });
-        $('.intro_animation_2').fadeOut(1000); 
-        anibar.stop().animate({width: smallwidth}, 1000, function() {
-            $(this).removeClass('wide');
-        });
-    }        
+  }
+
+  if (window.pageYOffset == 0) {
+    console.clear();
+    disable_scroll();
+    frontpanel.stop().animate({width: smallwidth}, 1000, function() {
+      $(this).removeClass('wide');
+    });
+
+    $('.left-txt-animation').fadeOut(850); 
+    txtRight.stop().animate({width: smallwidth}, 1000, function() {
+      $(this).removeClass('wide');
+      if (!frontpanel.hasClass('wide')) {
+        enable_scroll();
+      }
+    });
+
+  }   
 }
 
-$(document).scroll(function () {
-    var x = $(this).scrollTop();   
-    if (x > 3000 || x < 200) {
-        $('#lower_right').hide();
-        $('#lower_left').hide();
-    }  else {
-        $('#lower_right').fadeIn();
-        $('#lower_left').fadeIn();
-    }
-
-    if (x < 1000) {
-        $('.bottom_overlay').css("display", 'none');
-    }  else {
-        $('.bottom_overlay').css("display", 'block');
-    }
+// four-box div animation 
+$(window).scroll(function(){
+  var four_block_position = Math.min($(window).scrollTop()-2500, 15)
+  $('.four-block').css({ right: four_block_position });
 });
 
+
+// footer margin-top animation 
+var _window = $(window),
+footerMargin = $('.footer-top-margin'),
+max = 2,
+padding = parseFloat(footerMargin.css('padding-top')),
+currentPadding = padding,
+scrollPos = _window.scrollTop();
+
+_window.scroll(function() {  
+
+  if (scrollPos < _window.scrollTop() && currentPadding < max) {
+    footerMargin.css('padding', ++currentPadding + '% 0');
+  } else if (scrollPos > _window.scrollTop() && currentPadding > padding) {
+    footerMargin.css('padding', --currentPadding + '% 0');
+  }
+
+  if (_window.scrollTop() == 0)
+    footerMargin.css('padding', padding + '% 0');
+
+  scrollPos = _window.scrollTop();
+});
+
+$(function () {
+  $(window).scroll(function () {
+    if ($(this).scrollTop() == 0) {
+      $('#lower_right').fadeOut();
+      $('#lower_left').fadeOut();
+    } 
+
+    if ($(this).scrollTop() > 850 && $(this).scrollTop() < 4000) {
+      $('#lower_left').fadeIn();
+    } 
+
+    if ($(this).scrollTop() > 1650 && $(this).scrollTop() < 4000) {
+      $('#lower_right').fadeIn();
+    } 
+
+    if ($(this).scrollTop() > 4000) {
+      $('#lower_right').fadeOut();
+      $('#lower_left').fadeOut();
+    } 
+
+// middle arrow
+if ($(this).scrollTop() == 0) {
+  setTimeout(function() {
+    $('#middle_left').fadeIn();
+  }, 800);
+
+} 
+if ($(this).scrollTop() > 1) {
+  $('#middle_left').fadeOut();
+} 
+
+// intro txt animations 
+if ($(this).scrollTop() > 1570) {
+  $('.intro-txt-right').hide();
+  $('.intro-txt-left').hide();
+} else {
+  $('.intro-txt-right').show();
+  $('.intro-txt-left').show();
+}
+
+if ($(this).scrollTop() > 3270) {
+  $('.img-container-1').animate({width: '50%'}, 600);
+}
+
+if ($(this).scrollTop() > 3870) {
+  $('.img-container-2').animate({height: '100%'}, 900);
+}
+
+
+});
+})
+
+
+
 setTimeout(function(){ 
-    $('.post_animation_reveal').css('display', 'block');
-    $('.ani_bar_wrap').css('display', 'block');
-},2600); // post intro animation transition
+  $('.intro-txt-wrap').css('display', 'block');
+}, 2600); // post intro animation transition
 
 // intro full screen 
 $(function() {
-    $('.frontpanel-mh').animate({
-        width: '110%',
-        marginLeft: '-4%',
-        marginTop: '-10%',
-        height: '200vh'
-    }, 0);
+  $('.frontpanel-mh').animate({
+    width: '110%',
+    marginLeft: '-4%',
+    marginTop: '-10%',
+    height: '200vh'
+  }, 0);
 });
 
 setTimeout(function(){ 
-    $(function() {
-        $('.frontpanel-mh').animate({
-            opacity: '.8',
-            width: '50%',
-            marginLeft: '0%',
-            marginTop: '-10%',
-            height: '250vh'
+  $(function() {
+    $('.frontpanel-mh').animate({
+      width: '50%',
+      marginLeft: '0%',
+      marginTop: '-10%',
+      height: '250vh'
 }, 650); // left masthead slide in
-    });
+  });
+
+  $('#middle_left').fadeIn();
 }, 2850); // length of full page intro
-
-
-setTimeout(function(){ 
-    $('.mid_right_bar').css("display", "block");
-}, 2750);
 
 // 2nd animation elements to .frontpanel-mh 
 $('.backpanel-mh').css("height", "250vh"); 
 
-// Fade in navigation items 
-setTimeout(function(){ 
-    $('.navbar').fadeIn();
-    $('#bottom_banner').fadeIn();  
-    $('.navbar-header').fadeIn();  
-    $('#mid_left').fadeIn().css("display", "block");     
-    $('#lower_left').fadeIn().css("display", "block");   
-    $('#lower_right').fadeIn().css("display", "block"); 
-    $('#mid_right').fadeIn().css("display", "block");  
-    $('.navbar-nav').fadeIn();
-},2750);
-
 // Initialize vertical scrollbar 
 $(document).ready(function(){
-    $('body, html').removeClass('hideMyScroll');
+  $('body, html').removeClass('hideMyScroll');
 });
 
 setTimeout(function(){ 
-    $(document).ready(function(){  
-        $('body, html').addClass('showMyScroll');
-    });
+  $(document).ready(function(){  
+    $('body, html').addClass('showMyScroll');
+  });
 }, 2350);
 
-// Menu hover animation (previously ('#icon')
-$('#mid_left').hover(function(){   
-    document.getElementById("rot3").innerHTML = "<span style=\"margin-left:-4px; font-size:1.3em\">__</span><br><span style=\"margin-right:-6px; font-size:1.3em\">__</span><br><span style=\"margin-left:-4px; font-size:1.3em\">__</span>";
-    $('.mid_left_bar').css('width', '4%');
-    $('.offset_2').css("verticalAlign", 'bottom'); 
-    $('.offset_1').css("verticalAlign", 'top'); 
+// hamburger, text, and left nav bar hover animation 
+$('#mid_left').hover(function(){  
+  $('#rot3 span:nth-child(2)').animate({marginRight: '10%'}, 10);
+  $('#rot3 span').animate({width: '50%'}, 10);
+  $('.offset_2').css("verticalAlign", 'bottom'); 
+  $('.offset_1').css("verticalAlign", 'top'); 
+  $('.mid_left_bar').css('width', '6%');
 }, function(){
-    $('.mid_left_bar').css('width', '0%');
-    $('.offset_2').css("verticalAlign", 'middle'); 
-    $('.offset_1').css("verticalAlign", 'middle'); 
-    document.getElementById("rot3").innerHTML = "<span style=\"margin-right:0px; font-size:1.3em\">__</span><br><span style=\"margin-left:0px; font-size:1.3em\">__</span><br><span style=\"margin-right:0px; font-size:1.3em\">__</span>";
+  $('#rot3 span:nth-child(2)').animate({marginRight: '0%'}, 10);
+  $('#rot3 span').animate({width: '40%'}, 10);
+  $('.offset_2').css("verticalAlign", 'middle'); 
+  $('.offset_1').css("verticalAlign", 'middle'); 
+  $('.mid_left_bar').css('width', '3%');
 });
 
-var modal = document.getElementById('myModal');
-var icon = document.getElementById("icon");
-var b_banner = document.getElementById('bottom_banner');
-var c_panel = document.getElementById('content-panel');
-var close_modal = document.getElementsByClassName("close")[0];
+var open_modal = document.getElementById("nav-button");
 
-// eliminates overlay bug in modal 
-$('.modal-body, .modal_content, .strike, .footer_arrow, .modal_cta, .arrow_text').css({
-    pointerEvents: 'auto'
-});
-modal.style.pointerEvents = "none";
+// hide the modal content unless the mobile button gets pressed 
+$('#modal_content_1').hide();
+$('#modal_content_2').hide();
 
-// open modal 
-icon.onclick = function() {
-    $('.bottom_slide').css('marginLeft', '0px');
-    $('.modal-body').css('width', '0%');
-// generate modal elements 
-$('.modal_content').css('display', 'block');
+var toggle = function (a, b) {
+  var togg = false;
+  return function () {
+// passreturn value back to caller
+return (togg = !togg) ? a() : b();
+};
+};
+
+open_modal.addEventListener('click', toggle(function () {
+  $('#rot3').toggleClass('open');
+
+  $('#lower_right').fadeOut();
+  $('#lower_left').hide();
+  $('#nav-button').css('pointer-events', 'none');
+  disable_scroll();
+
+  $('.top-nav p:nth-child(2)').animate({'margin-right': '3.5%'}, 350);
+
+//  $('.modal_content').show();
+$('#rot_mid').fadeOut();
+
+// add height to bottom-nav, top nav 
+$('.top-nav p').animate({'margin-left': '20%'}, 350);
+
+$('.bottom-nav').animate({'height': '80px'}, 350);
+$('.top-nav').animate({'height': '80px'}, 350);
+
+// right nav items
+$('.right-bar').animate({'width': '50px'}, 350);
+$('#mid_right').animate({'margin-right': '.5%'}, 350);
+
+// add margin to icon 
+$('#mid_left').animate({'margin-left': '8%'}, 350);
+
+$(".mid_left_modal_outline").animate({'width': '80%'}, 200);
+$(".modal-content-shape").css('width', '80%');
+
+// left side 
+$(".right_modal_overlay").animate({'width': '20%'}, 500);
+
+// elements load in 
 setTimeout(function(){
-    var modal_elements = ['#modal_t_1', '#modal_t_2', '#modal_t_3', '#modal_t_4'];
+  setTimeout(function(){
     for (var n = 0; n < modal_elements.length; n++){
-        (function(n){
-            setTimeout(function(){
-                var elem = modal_elements[n];
-                $(elem).css('visibility', 'visible');
-            }, 200 * n);
-        }(n));
+      (function(n){
+        setTimeout(function(){
+          var elem = modal_elements[n];
+          $(elem).css('visibility', 'visible');
+          $(elem).animate({'line-height': '1.1'}, 90);
+        }, 100 * n);
+      }(n));
     }
+  }, 250);
 }, 250);
 
-setTimeout(function(){
-    $('#modal_t_5').css('visibility', 'visible');
-    $('#modal_t_6, #modal_t_7').css('visibility', 'visible');
-}, 200);
+$('.modal_content:nth-child(1)').toggleClass('line-height');
 
-$('.mid_left_bar').animate({height: '70vh'}, 500); // animates bar down as nav elements fade down 
-$('.backpanel-mh').css('display', 'block');
-$('.backpanel-mh').css('marginLeft', '0%');
-modal.style.backgroundColor = 'white';
-$('.modal').css("background-color", 'white', 'height', '20%');
-$('.bottom_overlay').css("display", 'none');
+// 2 bottom elements 
 setTimeout(function(){
-    $('.close_modal').css("display", "none");
-    $('#lower_right, #lower_left').fadeOut();
-    $('#content-panel').animate({width: '94%', marginLeft: '3%'}, 1000);
-    $('#content-panel').animate({display: 'hidden'}, 1000);
-    $('.container-fluid').animate({paddingTop: '6%', paddingLeft: '6%'}, 500);
-    $('.nav.navbar-nav').animate({marginRight: '6%'}, 500);
-    $('#bottom_banner').animate({minHeight: '60px'}, 500);
-    $('#lower_left').animate({fontSize: '0px'}, 0);
-    icon.style.display = "none";
+
+  $('#modal_content_1').fadeIn();  
+  $('#modal_content_2').fadeIn();  
+  $('#nav-button').css('pointer-events', 'auto');
+}, 1050);
+}, function () { 
+  $('#nav-button').css('pointer-events', 'none');
+
+
+  $('#modal_content_1').fadeOut();
+  $('#modal_content_2').fadeOut();
+
+  setTimeout(function(){
+    $('#rot3').toggleClass('open');
 
     setTimeout(function(){
-        $('.modal-body').animate({width: '84%', paddingLeft: '10%'}, 250);
-        modal.style.display = "block";
-        modal.style.backgroundColor = '#ecf0f1';     
-        c_panel.style.display = "none";
-        modal.style.height = "90vh";
-        document.body.style.overflow = 'hidden';   
-    }, 2);
 
+      $('#rot_mid').fadeIn();
+    }, 80);
+    $('.modal_content').animate({'margin-right': '20%', 'opacity': '0'}, 200);
+    $(".right_modal_overlay").animate({'width': '0%'}, 500);
+    $('.top-nav p:nth-child(2)').animate({'margin-right': '3%'}, 350);
+// right and left side 
+$(".mid_left_modal_outline").animate({'width': '0%'}, 80);
+$(".modal-content-shape").animate({'width': '0%'}, 80);
+$(".mid_left_bar").animate({'width': '3%'}, 200)
+$('#mid_left').animate({'margin-left': '0%'}, 400);
+// remove top and bottom margin overlay 
+$('.top-nav p').animate({'margin-left': '3%'}, 350);
+$('.bottom-nav').animate({'height': '40px'}, 350);
+$('.top-nav').animate({'height': '40px'}, 350);
+
+// right nav items
+$('.right-bar').animate({'width': '40px'}, 350);
+$('#mid_right').animate({'margin-right': '0%'}, 350);
+
+
+for (var nn = 0; nn < modal_elementss.length; nn++){
+  (function(nn){
     setTimeout(function(){
-        close_modal.style.display = "block";
-        $('.close_modal').css("display", "block");
-
-}, 20); // allow elements to fade out behind the scenes 
-}, 0); // modal load delay
+      var elemx = modal_elementss[nn];
+      $(elemx).animate({'line-height': '3'}, 40);
+      $(elemx).css('visibility', 'hidden');
+    }, 50 * nn);
+  }(nn));
 }
+enable_scroll();
+}, 400)
 
-// close the modal 
-close_modal.onclick = function() {
-// fade out nav elements
-$('.bottom_slide').animate({marginLeft: '-400px', top: '0'}, 250);
-var modal_elements = ['#modal_t_4', '#modal_t_3', '#modal_t_2', '#modal_t_1'];
-for (var n = 0; n < modal_elements.length; n++){
-    (function(n){
-        setTimeout(function(){
-            var elem = modal_elements[n];
-            $(elem).css("visibility", "hidden");
-        }, 125 * n);
-    }(n));
+  setTimeout(function(){
+    $('.modal_content').css('margin-right', '0%');
+    $('.modal_content').animate({'opacity': '1'}, 400);
+  }, 750)  
+
+  setTimeout(function(){
+    $('#nav-button').css('pointer-events', 'auto');
+    $('#modal_t_1, #modal_t_2, #modal_t_3, #modal_t_4').css('line-height', '3');
+    $('.modal_content:nth-child(1)').toggleClass('line-height');
+  }, 1050)
+}));
+
+$(".modal-cta-btn").on({
+  mouseenter: function () {
+    $('.footer-arrow h2').animate({'margin-left': '75%'}, 350);
+//   $('h2').animate({'width': '110%'}, 750);
+},
+mouseleave: function () {
+  $('.footer-arrow h2').animate({'margin-left': '0%'}, 350);
 }
+});
 
-setTimeout(function(){
-    $('#modal_t_5').css('visibility', 'visible');
-    $('#modal_t_6, #modal_t_7').css('visibility', 'hidden');
-}, 200);
-
-c_panel.style.marginTop = '0%'; // removes edge case overflow
-$('.ani_bar_wrap').css('margin-top', '20%'); // weird edge case on reload 
-$('.bottom_overlay').css("display", 'none');
-setTimeout(function(){ // restore scroll bar and remove horizontal scrollbar  
-    $('body').css('overflow-x', 'hidden');
-    document.body.style.overflow = 'visible'; 
-},490);
-$('.load_area').css('display', 'none');
-close_modal.style.display = 'block';
-$('.close_modal').css('display', 'none');
-$('.modal-body').animate({paddingLeft: '0%'}, 500);
-$('.modal').animate({backgroundColor: 'white'}, 500);
-$('.modal').css("background-color", 'white');
-$('.modal_content').fadeOut(); //.animate({marginRight: '0%'}, 500);
-$('.container-fluid').animate({paddingTop: '0%', paddingLeft: '0%'}, 500);
-$('.nav.navbar-nav').animate({marginRight: '1%'}, 500);
-$('.navbar-header').animate({paddingLeft: '15px'}, 500);
-$('#content-panel').animate({width: '94%', marginLeft: '3%'}, 0);
-$('#content-panel').fadeIn();
-$('#bottom_banner').animate({minHeight: '40px'}, 550);
-
-setTimeout(function(){
-    $('.mid_left_bar').css("height", '95vh');
-    $('#lower_left, #lower_right').fadeIn();
-    $('#lower_left').animate({fontSize: '14px'}, 0);
-    icon.style.display = "block";
-}, 950);
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = 'none';
-        icon.style.display = 'block';
-    }
-}

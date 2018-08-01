@@ -12,7 +12,6 @@ var coffeeSources = ['scripts/hello.coffee'],
     htmlSources = ['**/*.html'],
     outputDir = 'assets';
 
-
 gulp.task('log', function() {
   gutil.log('== My First Task ==')
 });
