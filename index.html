@@ -10,7 +10,43 @@
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/main.css">
-	<!--<link href="http://fonts.googleapis.com/css?family=Lato:300,400,500,300italic,400italic,700italic" rel="stylesheet" type="text/css">-->
+
+	<!-- skrollr styling --> 
+	<style>
+
+	.skrollable {
+		/*
+		 * First-level skrollables are positioned relative to window
+		 */
+		position:relative;
+
+		/*
+		 * Skrollables by default have a z-index of 100 in order to make it easy to position elements in front/back without changing each skrollable
+		 */
+		z-index:100;
+	}
+
+	.skrollr-mobile .skrollable {
+		/*
+			May cause issues on Android default browser (see #331 on GitHub).
+		*/
+		position:absolute;
+	}
+
+	.skrollable .skrollable {
+		/*
+		 * Second-level skrollables are positioned relative their parent skrollable
+		 */
+		position:absolute;
+	}
+
+	.skrollable .skrollable .skrollable {
+		/*
+		 * Third-level (and below) skrollables are positioned static
+		 */
+		position:static;
+	}
+	</style>
 	<script> location.hash = (location.hash) ? location.hash : " ";</script>
 </head>
 <body>
@@ -270,7 +306,6 @@
 					<div class="content-general">
 						<h3>A vision of global strategy, defined by user experience and accessibility design.</h3>
 						<p>Élément clé de votre transformation, la stratégie digitale nécessite une attention toute particulière. C’est cet accompagnement que l’ensemble de l’équipe vous propose tout au long du projet. À base de workshops, d’échanges et de brainstormings, nous faisons évoluer votre idée initiale vers une solution digitale ambitieuse</p>
-
 						<p><a href="#" class="strikethrough">Test link</a></p>
 					</div>
 					<div class="four-block">
@@ -323,14 +358,6 @@
 			</div>
 		</div>
 	</div>    
-
-<<<<<<< HEAD
-
-
-=======
-
-
->>>>>>> 0cc52b1426f7726281042d2d2897b82cef05d425
 	<div id="demo1" class="wrapper fade-up">
 		<div class="row">
 			<div class="col-lg-12">
@@ -350,22 +377,14 @@
 					</div>
 				</div>
 				<div class="overlay-color-1-right">
-<<<<<<< HEAD
-					<!--<div class="mid-txt-right">-->
-=======
 					<div class="mid-txt-right">
->>>>>>> 0cc52b1426f7726281042d2d2897b82cef05d425
 						<div class='right-txt-overlay'>
 							<h4><span style="color:black">Lorem ipsum dolor sit amet.
 							Lorem ipsum dolor sit amet. Dolor, sit amet dolor sit amete.</span></h4> 
 							<p>Une expérience utilisateur efficace et immersive, c’est ce qui permet de capter l’attention et de diffuser un message clair. C’est pourquoi nous accordons extrêmement d’importance à ce que l’ergonomie serve le design, et que ce design soit novateur et soigné..</p>
 							<p><a href="#" class="strikethrough">Test link</a></p>
 						</div>
-<<<<<<< HEAD
-					<!--</div>-->
-=======
 					</div>
->>>>>>> 0cc52b1426f7726281042d2d2897b82cef05d425
 				</div>
 			</div>
 		</div>
@@ -441,29 +460,75 @@
 		</div>
 	</div>
 
-
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
 	<script src="assets/script.js"></script>
 	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-	<script>
-		$(document)
-		.ready(function () {
-//initialize paroller.js
+	<!-- paroller.js (referenced in local file) --> 
+	<script type="text/javascript">
 $('[data-paroller-factor]').paroller();
-//initialize paroller.js and set options for elements with .paroller class
-$('.paroller-example').paroller({
+$('.paroller').paroller({
 	factorXs: 0.1,
 	factorSm: 0.1,
 	factorMd: -0.4,
 	factorLg: -0.5,
 	factorXl: -0.6,
-	factor: -0.4,
+	factor: -0.7,
 	type: 'foreground',
 	direction: 'horizontal'
 });
+
+$('.mid-txt-right').paroller({ 
+	factor: .2, 
+	type: 'foreground' 
 });
 </script>
+
+<!-- skrollr --> 
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://prinzhorn.github.io/skrollr/dist/skrollr.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+
+
+<script type="text/javascript">
+	var s = skrollr.init({
+		edgeStrategy: 'set',
+		easing: {
+			WTF: Math.random,
+			inverted: function(p) {
+				return 1-p;
+			}
+		}
+	});
+
+	$(function(){
+
+		var $window = $(window);	 
+
+		var scrollTime = .8; 
+		var scrollDistance = 300; // distance - smaller value = shorter scroll 
+
+		$window.on("mousewheel DOMMouseScroll", function(event){
+
+		event.preventDefault();	
+
+		var delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3;
+		var scrollTop = $window.scrollTop();
+		var finalScroll = scrollTop - parseInt(delta*scrollDistance);
+
+		TweenMax.to($window, scrollTime, {
+			scrollTo : { y: finalScroll, autoKill:true, onAutoKill:myAutoKillFunction },
+			ease: Power1.easeOut,	
+			autoKill: true,
+			overwrite: 5							
+		});
+		function myAutoKillFunction(){}
+		});
+	});
+</script>
+
 </body>
 </html>

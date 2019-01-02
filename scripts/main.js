@@ -1,10 +1,5 @@
 console.log("main.js <--");
-
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 0cc52b1426f7726281042d2d2897b82cef05d425
+ 
 // constants 
 var modal_elements = ['#modal_t_1', '#modal_t_2', '#modal_t_3', '#modal_t_4'];
 var modal_elementss = ['#modal_t_4', '#modal_t_3', '#modal_t_2', '#modal_t_1'];
@@ -59,11 +54,7 @@ setTimeout(function(){
     $(this).removeClass('wide');
   });
 }, 1); 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 0cc52b1426f7726281042d2d2897b82cef05d425
+ 
 
 // intro animation scrolling glitch prevention
 function preventDefault(e) {
@@ -144,11 +135,11 @@ $(window).scroll(function(){
 // footer margin-top animation 
 var _window = $(window),
 footerMargin = $('.footer-top-margin'),
-<<<<<<< HEAD
+ 
 max = 2,
-=======
+ 
 max = 8,
->>>>>>> 0cc52b1426f7726281042d2d2897b82cef05d425
+ 
 padding = parseFloat(footerMargin.css('padding-top')),
 currentPadding = padding,
 scrollPos = _window.scrollTop();
@@ -156,23 +147,24 @@ scrollPos = _window.scrollTop();
 _window.scroll(function() {  
 
   if (scrollPos < _window.scrollTop() && currentPadding < max) {
-<<<<<<< HEAD
+ 
     footerMargin.css('padding', ++currentPadding + '% 0');
   } else if (scrollPos > _window.scrollTop() && currentPadding > padding) {
     footerMargin.css('padding', --currentPadding + '% 0');
   }
 
-  if (_window.scrollTop() == 0)
+  if (_window.scrollTop() == 0) {
     footerMargin.css('padding', padding + '% 0');
-=======
+ 
     footerMargin.css('padding', ++currentPadding + 'px 0');
   } else if (scrollPos > _window.scrollTop() && currentPadding > padding) {
     footerMargin.css('padding', --currentPadding + 'px 0');
   }
 
-  if (_window.scrollTop() == 0)
+  if (_window.scrollTop() == 0) {
     footerMargin.css('padding', padding + 'px 0');
->>>>>>> 0cc52b1426f7726281042d2d2897b82cef05d425
+  }
+ 
 
   scrollPos = _window.scrollTop();
 });
