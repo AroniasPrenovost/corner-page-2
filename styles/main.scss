@@ -2,6 +2,8 @@ html, body {
   overflow-x: hidden; 
   overflow: hidden;
   font-family: sans-serif;
+  background-color:white;
+  /* height: 100% in main.js */
 }
 
 p {
@@ -34,8 +36,6 @@ p {
   margin: 0 3% 0 0;
 }
 
-
-
 .bottom-nav {
   width:100%;
   bottom: 0;
@@ -62,10 +62,10 @@ p {
   height: 100%;
   background-color: white;
   position: fixed;
-/* width:50px; */
-z-index: 99999999;
-float: right !important;
-right: 0;
+  /* width:50px; */
+  z-index: 99999999;
+  float: right !important;
+  right: 0;
 }
 
 #mid_right {
@@ -142,24 +142,6 @@ right: 0;
   display:none;
 }
 
-.footer-top-margin {
-  display:block;   
-  width:100%;
-  padding:0px 0;
-  background:transparent;
-  position:relative;
-  top:0;
-  left:0;
-  -webkit-transition: padding .3s linear;
-  -moz-transition: padding .3s linear;
-  -ms-transition: padding .3s linear;
-  -o-transition: padding .3s linear;
-  transition: padding .3s linear;
-}
-
- 
-
-
 #rot.arrow-icon {
   font-weight:300 !important;
 }
@@ -188,13 +170,14 @@ right: 0;
 }
 
  
-.footer-menu {
-  width:100%;display:block;
+.footer {
+  width:100%;
+  display:none;
   position:fixed;
+  top: 0;
   color:black;
- 
-  margin:25% 0% 0% 0%;
-  z-index:-1;
+  margin: 5% 0% 0px 0%;
+  z-index:0;
 }
 
 .footer-arrow {
@@ -207,11 +190,8 @@ right: 0;
 
 .footer-arrow h2 {
   margin-left:0%;
-line-height: 0; /*centers arrow w/ content */
+  line-height: 0; /*centers arrow w/ content */
 }
-
-
-
 
 .navbar {
   margin-top:-2px;
@@ -320,51 +300,6 @@ display:block; /* sometimes it is none */
   overflow:hidden;
 }
 
-.navbar-brand {
-  margin-left: 10% !important;
-}
-
-.navbar-nav {
-  float:right;
-  margin-right: 1%;
-}
-
-nav {
-display:block; /* sometimes it is none */
-}
-
-.fa {
-  font-size: 14px;
-}
-
-/* these are important */
-.hideMyScroll {
-  overflow: hidden;
-}
-
-.showMyScroll {
-  overflow: auto;
-}
-/* these are important */
-
-
-.code-container {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  position: absolute;
-
-}
-.code_load {
-  margin-top:25%;
-  margin-left:45%;
-  width:500px;
-  height:400px;
-  display:block;
-  overflow:hidden;
-}
-
 #bar1, #bar2, #bar3, #bar4, #bar5, #bar6, #bar7, #bar8, #bar9, #bar10, #bar11, #bar12, #bar13, #bar14, #bar15, #bar16, #bar17, #bar18, #bar19, #bar20, #bar21, #bar22, #bar23, #bar24, #bar25, #bar26, #bar27, #bar28, #bar29, 
 #bar30, #bar31, #bar32, #bar33, #bar34, #bar35, 
 #bar36, #bar37, #bar38, #bar39, #bar40, #bar41 {
@@ -372,16 +307,11 @@ display:block; /* sometimes it is none */
   height: 5px;
   margin-bottom:3px;
   margin-left:16px;
- 
   background-color: #fff; 
- 
-/* background-color: #bdc3c7; */
- 
 }
 
 #bar1 {
 
- 
 }
 
 #bar2 {
@@ -431,17 +361,14 @@ display:block; /* sometimes it is none */
 }
 
 #bar7 {
- 
   margin-left:25px;
 }
 
 #bar8 {
   margin-left:52px;
   margin-top:-8px;
- 
   margin-left:30px;
   background-color: #efc88b;
-
 }
 
 #bar8 {
@@ -810,9 +737,8 @@ display:block; /* sometimes it is none */
   text-align: left;
 }
 
-
 .mid-txt-right {
-  margin-top:200px;
+  margin-top:90px;
   background-color:transparent;
   width: 50%;
   color:black;
@@ -924,7 +850,7 @@ transform: translate3d(0,0,0); 	/* safari patch, improves performance by forcing
 
 .panel_3 {
   width:100%;
-  height:155vh;
+  height:130vh;
   margin: 0% 0% 0% 0%;
   background-color: #ecf0f1; 
   overflow-y: hidden;
@@ -1042,7 +968,7 @@ transform: translate3d(0,0,0);  /* safari patch, improves performance by forcing
   float:right;
   margin-top:0%;
   overflow-x:hidden;
-  bottom:-20%;
+  bottom:-10%;
   right: -400px; 
   width:650px;
 margin-right: 3%; /* 0 on mobile */
@@ -1113,13 +1039,16 @@ background-position: center;
 
 .panel_6 {
   width:100%;
-  height:40vh;
+  height:380px;
   margin: 0% 0% 18% 0%;
-  padding-top: 6%;
-  background-color: #ecf0f1; 
+  background-color: #f8f8f8; 
   overflow-y: hidden;
   overflow-x: hidden;
   position: relative;
+}
+
+.row.row-pad {
+  margin-top:75px;
 }
 
 .panel-6-txt {

@@ -49,7 +49,7 @@
 	</style>
 	<script> location.hash = (location.hash) ? location.hash : " ";</script>
 </head>
-<body>
+<body style='height:100%'>
 
 	<!-- left nav overlay -->
 	<div class="mid_left_bar">
@@ -241,10 +241,9 @@
 		<div class="backpanel-mh">
 			<div class="frontpanel-mh">
 				<div class='intro-txt-wrap'>
-					<div class="footer-menu">
+					<!-- footer --> 
+					<div class="footer">
 						<div class="row">
-							<div class="footer-top-margin">
-							</div>
 							<div class="col-lg-2">
 								<div class="footer-arrow" style="float:right">
 									<h2>&#10230;</h2>
@@ -274,7 +273,7 @@
 							</div>
 						</div>
 					</div>
-
+					<!-- footer --> 
 					<div class="intro-txt-right">
 						<h1 class="txt-mh">Aurora<br>Labs</h1>
 					</div>
@@ -430,7 +429,7 @@
 	</div> 
 
 	<div class="panel_6">
-		<div class="row">
+		<div class="row row-pad">
 			<div class="col-lg-1">
 
 			</div>
@@ -460,29 +459,39 @@
 		</div>
 	</div>
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
-	<script src="assets/script.js"></script>
-	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
+<script src="assets/script.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-	<!-- paroller.js (referenced in local file) --> 
-	<script type="text/javascript">
-$('[data-paroller-factor]').paroller();
-$('.paroller').paroller({
-	factorXs: 0.1,
-	factorSm: 0.1,
-	factorMd: -0.4,
-	factorLg: -0.5,
-	factorXl: -0.6,
-	factor: -0.7,
-	type: 'foreground',
-	direction: 'horizontal'
-});
+<!-- paroller.js (referenced in local file) --> 
+<script type="text/javascript">
+	$('[data-paroller-factor]').paroller();
+	$('.paroller').paroller({
+		factorXs: 0.1,
+		factorSm: 0.1,
+		factorMd: -0.4,
+		factorLg: -0.5,
+		factorXl: -0.6,
+		factor: -0.7,
+		type: 'foreground',
+		direction: 'horizontal'
+	});
 
-$('.mid-txt-right').paroller({ 
-	factor: .2, 
-	type: 'foreground' 
-});
+	$('.mid-txt-right').paroller({ 
+		factor: .2, 
+		type: 'foreground' 
+	});
+
+	$('.four-block').paroller({ 
+		factor: .4, 
+		type: 'foreground' 
+	});
+
+	$('.footer').paroller({
+		factor: -.1, 
+		type: 'foreground' 
+	});
 </script>
 
 <!-- skrollr --> 
@@ -508,7 +517,7 @@ $('.mid-txt-right').paroller({
 
 		var $window = $(window);	 
 
-		var scrollTime = .8; 
+		var scrollTime = .7; 
 		var scrollDistance = 300; // distance - smaller value = shorter scroll 
 
 		$window.on("mousewheel DOMMouseScroll", function(event){
