@@ -1,6 +1,5 @@
 html, body {
   overflow-x: hidden;
-  overflow: hidden;
   font-family: sans-serif;
   background-color: white;
   /* height: 100% in main.js */ }
@@ -9,7 +8,7 @@ p {
   color: #606060;
   font-size: 1.6rem; }
 
-.top-nav {
+.top-nav-container {
   width: 100%;
   top: 0;
   position: fixed;
@@ -19,19 +18,19 @@ p {
   z-index: 99999999;
   font-weight: 500; }
 
-.top-nav p:nth-child(1) {
+.top-nav-container p:nth-child(1) {
   position: absolute;
   bottom: 0;
   left: 0;
   margin: 0 0 0 3%; }
 
-.top-nav p:nth-child(2) {
+.top-nav-container p:nth-child(2) {
   position: absolute;
   bottom: 0;
   right: 0;
   margin: 0 3% 0 0; }
 
-.bottom-nav {
+.bottom-nav-bar {
   width: 100%;
   bottom: 0;
   position: fixed;
@@ -39,7 +38,7 @@ p {
   background-color: white;
   z-index: 999999; }
 
-#rot {
+#rotate {
   padding: 0;
   margin: 0;
   position: relative;
@@ -50,7 +49,7 @@ p {
   -ms-transform: rotate(-90deg);
   -o-transform: rotate(-90deg); }
 
-.right-bar {
+.right-nav-container {
   height: 100%;
   background-color: white;
   position: fixed;
@@ -59,27 +58,27 @@ p {
   float: right !important;
   right: 0; }
 
-#mid_right {
+#right-nav-icons {
   position: fixed;
   top: 40%;
   bottom: 0;
   right: 1%;
   z-index: 9; }
 
-#mid_right ul {
+#right-nav-icons ul {
   list-style: none; }
 
-#mid_right ul a {
+#right-nav-icons ul a {
   text-decoration: none; }
 
-#lower_left {
+#left-down-arrow {
   position: fixed;
   bottom: 6%;
   left: 3%;
   z-index: 1;
   display: none; }
 
-#middle_left {
+#mid-intro-masthead {
   position: fixed;
   bottom: 12%;
   left: 46%;
@@ -100,25 +99,25 @@ p {
   text-align: center;
   animation: jump 2s infinite; }
 
-#middle_left p {
+#mid-intro-masthead p {
   font-size: 12px;
   font-weight: 900;
   color: #f5f6fa; }
 
-#rot.arrow-icon {
+#rotate.arrow-icon {
   font-weight: 300 !important; }
 
-#lower_right {
+#right-up-arrow {
   bottom: 6%;
   right: 3%;
   position: fixed;
   z-index: 1;
   display: none; }
 
-#rot.arrow-icon {
+#rotate.arrow-icon {
   font-weight: 300 !important; }
 
-#lower_right {
+#right-up-arrow {
   bottom: 6%;
   right: 3%;
   position: fixed;
@@ -222,22 +221,14 @@ nav {
 .fa {
   font-size: 14px; }
 
-/* these are important */
-.hideMyScroll {
-  overflow: hidden; }
-
-.showMyScroll {
-  overflow: auto; }
-
-/* these are important */
-.code-container {
+.intro-animation-container {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
   position: absolute; }
 
-.code_load {
+.code-load-animation {
   margin-top: 25%;
   margin-left: 45%;
   width: 500px;
@@ -698,7 +689,7 @@ a.strikethrough {
   right: 0;
   height: 100%; }
 
-.mid_cta_panel {
+.right-content-up-container {
   width: 100%;
   height: 150px;
   background-color: #ecf0f1; }
@@ -716,9 +707,6 @@ a.strikethrough {
 
 .inner {
   background-color: #ecf0f1; }
-
-.wrapper#demo1, .wrapper#demo2 {
-  overflow: hidden; }
 
 .wrapper > .inner {
   padding: 0 0 0 0;
@@ -824,7 +812,7 @@ background-position: center;
   text-align: right;
   font-size: 3em; }
 
-.mid_left_bar {
+.left-nav-toggle-container {
   background-color: white;
   height: 100vh;
   bottom: 0;
@@ -837,13 +825,13 @@ background-position: center;
   /* For Safari 3.1 to 6.0 */
   transition: width .5s; }
 
-.mid_left:hover .mid_left_bar {
+.nav-toggle-icon-container:hover .left-nav-toggle-container {
   width: 4%;
   -webkit-transition: width .5s;
   /* For Safari 3.1 to 6.0 */
   transition: width .5s; }
 
-.mid_left_modal_outline {
+.nav-modal-container {
   background-color: white;
   height: 100vh;
   bottom: 0;
@@ -851,9 +839,8 @@ background-position: center;
   left: 0;
   position: fixed;
   z-index: 10000;
-  /* hack to place above all other elements */
   -webkit-transition: width .5s;
-  /* For Safari 3.1 to 6.0 */
+  /* Safari 3.1 - 6.0 */
   transition: width .5s; }
 
 .modal-content-shape {
@@ -862,11 +849,11 @@ background-position: center;
   bottom: 0;
   width: 0%;
   -webkit-transition: width .5s;
-  /* For Safari 3.1 to 6.0 */
+  /* Safari 3.1 - 6.0 */
   transition: width .5s;
   position: fixed; }
 
-.right_modal_overlay {
+.right-modal-overlay {
   width: 0%;
   right: 0;
   top: 0;
@@ -875,7 +862,7 @@ background-position: center;
   position: fixed;
   opacity: .8; }
 
-.modal-right-bar {
+.modal-right-nav-container {
   height: 100% !important;
   height: 0%;
   background-color: green;
@@ -908,7 +895,7 @@ p.modal-cta-btn {
   left: 0;
   z-index: 9999999999999999999999999999999999999999999999999999999999999999999; }
 
-#mid_left {
+#nav-toggle-icon-container {
   position: fixed;
   top: 50%;
   height: 35px;
@@ -943,7 +930,7 @@ a, hover {
   color: black;
   text-decoration: none; }
 
-#rot_mid {
+#icon-label-rotate {
   cursor: default;
   padding: 0;
   margin: 0;
@@ -978,7 +965,7 @@ a, hover {
   -ms-transform: rotate(90deg);
   -o-transform: rotate(90deg); }
 
-#rot3 {
+#icon-rotate {
   width: 40px;
   height: 45px;
   position: relative;
@@ -994,7 +981,7 @@ a, hover {
   transition: .5s ease-in-out;
   cursor: pointer; }
 
-#rot3 span {
+#icon-rotate span {
   display: block;
   position: absolute;
   height: 2px;
@@ -1013,19 +1000,19 @@ a, hover {
   transition: .25s ease-in-out;
   z-index: 99999999999999999999999999999999999999; }
 
-#rot3 span:nth-child(1) {
+#icon-rotate span:nth-child(1) {
   top: 0px;
   z-index: 99999999999999999999999999999999999999; }
 
-#rot3 span:nth-child(2) {
+#icon-rotate span:nth-child(2) {
   top: 6px;
   z-index: 99999999999999999999999999999999999999; }
 
-#rot3 span:nth-child(3) {
+#icon-rotate span:nth-child(3) {
   top: 12px;
   z-index: 99999999999999999999999999999999999999; }
 
-#rot3.open span:nth-child(1) {
+#icon-rotate.open span:nth-child(1) {
   top: 12px;
   -webkit-transform: rotate(135deg);
   -moz-transform: rotate(135deg);
@@ -1033,12 +1020,12 @@ a, hover {
   transform: rotate(135deg);
   z-index: 9999999999999999999999999999999999999; }
 
-#rot3.open span:nth-child(2) {
+#icon-rotate.open span:nth-child(2) {
   opacity: 0;
   left: -60px;
   z-index: 9999999999999999999999999999999999999; }
 
-#rot3.open span:nth-child(3) {
+#icon-rotate.open span:nth-child(3) {
   top: 12px;
   -webkit-transform: rotate(-135deg);
   -moz-transform: rotate(-135deg);
@@ -1060,11 +1047,11 @@ a, hover {
 .modal-body p {
   margin-top: 25%; }
 
-.modal_content:nth-child(1) {
+.nav-modal-content:nth-child(1) {
   font-size: 3rem;
   font-weight: 900; }
 
-.modal_content {
+.nav-modal-content {
   float: right;
   margin-left: 0%;
   background-color: white;
@@ -1072,10 +1059,10 @@ a, hover {
   color: black;
   width: 80%; }
 
-.modal_content:nth-child(1) {
+.nav-modal-content:nth-child(1) {
   margin: 20% 0 0 0; }
 
-.modal_content:nth-child(2) {
+.nav-modal-content:nth-child(2) {
   margin: 5% 0 0 0; }
 
 .modal_content_2 {
@@ -1106,7 +1093,7 @@ a, hover {
   visibility: hidden;
   color: black; }
 
-.modal_content a:hover, a:visited {
+.nav-modal-content a:hover, a:visited {
   text-decoration: none; }
 
 span.strike {

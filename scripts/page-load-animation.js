@@ -1,12 +1,15 @@
-$('#mid_right').hide();
- 
-$('#mid_left').hide();
- 
- $('#mid_left').hide();
+$('#right-nav-icons').hide();
+$('#nav-toggle-icon-container').hide(); 
+$('#nav-toggle-icon-container').hide();
 
-
-
- 
+// disable scroll 
+$('.intro-animation-container').on({
+    'mousewheel': function(e) {
+        if (e.target.id == 'el') return;
+        e.preventDefault();
+        e.stopPropagation();
+    }
+})
 
 var codeBars = [
 "bar1", "bar2", "bar3", 
@@ -61,9 +64,7 @@ var lines = [
 function setIntervalX(callback, delay, repetitions) {
     var x = 0;
     var intervalID = window.setInterval(function () {
-
         callback();
-
         if (++x === repetitions) {
             window.clearInterval(intervalID);
         }
@@ -94,53 +95,22 @@ setIntervalX(function () {
 // removes div elements
 setTimeout(function() {     
     setInterval(function() {
-        if (lines[0] === "done") {
-            return;
-        }
+        if (lines[0] === "done") {return;}
         var element1 = document.getElementById(lines[0]);
         element1.outerHTML = "";
         delete element1;
         lines.shift();
-}, 100); // runs every 100 milliseconds
-}, 720);  // delays start time
-
-
-
+    }, 100);  
+}, 720);  
 
 // navbars fade in 
 setTimeout(function() {  
-
-// right and left
-$('.right-bar').animate({width: '40px'}, 300);
-$('#mid_right').fadeIn();
-$('.mid_left_bar').animate({width: '40px'}, 300);
- 
-$('#mid_left').fadeIn();
- 
- $('#mid_left').fadeIn();
- 
-$('.top-nav').animate({height: '40px'}, 300);
-$('.bottom-nav').animate({height: '40px'}, 300);
-
+    $('.right-nav-container').animate({width: '40px'}, 300);
+    $('#right-nav-icons').fadeIn();
+    $('.left-nav-toggle-container').animate({width: '40px'}, 300);
+    $('#nav-toggle-icon-container').fadeIn(); 
+    $('#nav-toggle-icon-container').fadeIn();
+    $('.top-nav-container').animate({height: '40px'}, 300);
+    $('.bottom-nav-bar').animate({height: '40px'}, 300);
+    $('body').css('overflow-y', 'scroll');
 }, 2000);  
-
-
-
-/*
-<<<<<<< HEAD
-.bottom-nav' 
-.right-bar'
-#mid_right
-
-.navbar 
-.mid_left_bar 
-=======
-    .bottom-nav' 
-    .right-bar'
-        #mid_right
-
-    .navbar 
-    .mid_left_bar 
->>>>>>> 0cc52b1426f7726281042d2d2897b82cef05d425
-*/
-

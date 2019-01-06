@@ -10,58 +10,32 @@
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/main.css">
-
-	<!-- skrollr styling --> 
-	<style>
-
+	<style>/* skrollr styling */
 	.skrollable {
-		/*
-		 * First-level skrollables are positioned relative to window
-		 */
-		position:relative;
-
-		/*
-		 * Skrollables by default have a z-index of 100 in order to make it easy to position elements in front/back without changing each skrollable
-		 */
-		z-index:100;
-	}
-
+	position:relative;
+	z-index:100;}
 	.skrollr-mobile .skrollable {
-		/*
-			May cause issues on Android default browser (see #331 on GitHub).
-		*/
-		position:absolute;
-	}
-
+	position:absolute;}
 	.skrollable .skrollable {
-		/*
-		 * Second-level skrollables are positioned relative their parent skrollable
-		 */
-		position:absolute;
-	}
-
+	position:absolute;}
 	.skrollable .skrollable .skrollable {
-		/*
-		 * Third-level (and below) skrollables are positioned static
-		 */
-		position:static;
-	}
+	position:static;}
 	</style>
 	<script> location.hash = (location.hash) ? location.hash : " ";</script>
 </head>
 <body style='height:100%'>
 
-	<!-- left nav overlay -->
-	<div class="mid_left_bar">
+	<!-- left navigation toggle -->
+	<div class="left-nav-toggle-container">
 		<div id="nav-button" style="z-index:99999999999 !important">
-			<div id="mid_left">
+			<div id="nav-toggle-icon-container">
 				<div id="icon">
-					<div class="icon" id="rot3">
+					<div class="icon" id="icon-rotate">
 						<span></span>
 						<span></span>
 						<span></span>
-					</div></a>
-					<p id="rot_mid">
+					</div>
+					<p id="icon-label-rotate">
 						<span class="offset_1">M</span>
 						<span class="offset_2">e</span>
 						<span class="offset_1">n</span>
@@ -72,10 +46,10 @@
 		</div>
 	</div>
 
-	<div class='code-container'>
-		<div class='code_load'>
+	<div class='intro-animation-container'>
+		<div class='code-load-animation'>
 			<div id="line1">
-				<div  class="bars" id="bar1"></div> 
+				<div class="bars" id="bar1"></div> 
 			</div>
 			<div id="line2">
 				<div  class="bars" id="bar2"></div>
@@ -168,13 +142,14 @@
 		</div>
 	</div>
 
-	<div class="top-nav">
+	<div class="top-nav-container">
 		<p>Aurora Labs</p>
 		<p><a href="#">En.</a> <a href="#">Fr.</a></p>
 	</div>
-	<div class="mid_left_modal_outline"><!-- transparent --> 
+
+	<div class="nav-modal-container"><!-- transparent --> 
 		<div class="modal-content-shape"> 
-			<div class="modal_content">
+			<div class="nav-modal-content">
 				<div class="footer-arrow">
 					<h2 class="disable-arrow">&rarr;</h2>
 				</div>		
@@ -183,7 +158,7 @@
 				<a href="#" id="modal_t_3" class="strikethrough">Testimonials</a><br>
 				<a href="#" id="modal_t_4" class="strikethrough">Contact</a>
 			</div>
-			<div class="modal_content" id="modal_content_1">
+			<div class="nav-modal-content" id="modal_content_1">
 				<div class="footer-arrow">
 					<h2 class='disable-arrow'>&rarr;</h2>
 				</div>
@@ -192,7 +167,7 @@
 					contact@webdesign.com</strong></p>
 				</div>
 
-				<div class="modal_content" id="modal_content_2">
+				<div class="nav-modal-content" id="modal_content_2">
 					<div class="footer-arrow">
 						<h2>&#10230;</h2>
 					</div>
@@ -203,14 +178,14 @@
 						</div>
 					</div>
 				</div>
-				<div class="right_modal_overlay">
+				<div class="right-modal-overlay">
 				</div>
 			</div>
 		</div>
 
 		<!-- right nav overlay --> 
-		<div class="right-bar">
-			<div id="mid_right">
+		<div class="right-nav-container">
+			<div id="right-nav-icons">
 				<ul>
 					<li><h4><a href="#" class="fa fa-facebook"></a></h4></li>
 					<li><h4><a href="#" class="fa fa-pinterest"></a></h4></li>
@@ -218,146 +193,147 @@
 				</ul>
 			</div>	
 		</div>
+	</div>
 
-		<!-- middle nav overlay --> 
-		<div id="middle_left">
-			<p id="rot">scroll</p>
-			<div id="arrow-down">
-				<p id="rot">&larr;</p>
-			</div>
+	<!-- masthead down arrow --> 
+	<div id="mid-intro-masthead">
+		<p id="rotate">scroll</p>
+		<div id="arrow-down">
+			<p id="rotate">&larr;</p>
 		</div>
+	</div>
 
-		<!-- bottom nav overlay --> 
-		<div class="bottom-nav">
-			<div id="lower_left">
-				<p id="rot">&larr; scroll</p>
-			</div>
-			<div id="lower_right">
-				<p id="rot2">&larr; top</p>
-			</div>
+	<!-- nav left down + right up arrow --> 
+	<div class="bottom-nav-bar">
+		<div id="left-down-arrow">
+			<p id="rotate">&larr; scroll</p>
 		</div>
+		<div id="right-up-arrow">
+			<p id="rot2">&larr; top</p>
+		</div>
+	</div>
 
-		<!-- end navigation and menu modal --> 
-		<div class="backpanel-mh">
-			<div class="frontpanel-mh">
-				<div class='intro-txt-wrap'>
-					<!-- footer --> 
-					<div class="footer">
-						<div class="row">
-							<div class="col-lg-2">
-								<div class="footer-arrow" style="float:right">
-									<h2>&#10230;</h2>
-								</div>
+	<!-- end navigation and menu modal --> 
+	<div class="backpanel-mh">
+		<div class="frontpanel-mh">
+			<div class='intro-txt-wrap'>
+				<!-- footer --> 
+				<div class="footer">
+					<div class="row">
+						<div class="col-lg-2">
+							<div class="footer-arrow" style="float:right">
+								<h2>&#10230;</h2>
 							</div>
-							<div class="col-lg-3">
-								<div class="panel-7-txt">
-									<p>Lorem ipsum dolor sit amet amet.</p>
-									<p>Lorem ipsum dolor sit amet amet.</p>
-								</div>
+						</div>
+						<div class="col-lg-3">
+							<div class="panel-7-txt">
+								<p>Lorem ipsum dolor sit amet amet.</p>
+								<p>Lorem ipsum dolor sit amet amet.</p>
 							</div>
-							<div class="col-lg-1">
+						</div>
+						<div class="col-lg-1">
 
-							</div>
-							<div class="col-lg-3">
-								<p class="modal-address">Downtown Seattle, WA<br>
-									<strong>+1(232) 453-2832<br>
-									contact@webdesign.com</strong>	
-								</p>
-							</div>
-							<div class="col-lg-2">
-								<div class="panel-7-txt">
-									<img src="images/tigers.png">
-								</div>
-							</div>
-							<div class="col-lg-1">
+						</div>
+						<div class="col-lg-3">
+							<p class="modal-address">Downtown Seattle, WA<br>
+								<strong>+1(232) 453-2832<br>
+								contact@webdesign.com</strong>	
+							</p>
+						</div>
+						<div class="col-lg-2">
+							<div class="panel-7-txt">
+								<img src="images/tigers.png">
 							</div>
 						</div>
-					</div>
-					<!-- footer --> 
-					<div class="intro-txt-right">
-						<h1 class="txt-mh">Aurora<br>Labs</h1>
-					</div>
-					<div class="intro-txt-left">
-						<div class='left-txt-animation'>
-							<h5>__ since 2013</h5>
-							<br>
-							<h4><span style="color:black">Lorem ipsum dolor sit amet.</span><br>
-							Lorem ipsum dolor sit amet. Dolor, sit amet dolor sit amete. This is just the start of the complete digital marketing package.</h4>
+						<div class="col-lg-1">
 						</div>
 					</div>
+				</div>
+				<!-- footer --> 
+				<div class="intro-txt-right">
+					<h1 class="txt-mh">Aurora<br>Labs</h1>
+				</div>
+				<div class="intro-txt-left">
+					<div class='left-txt-animation'>
+						<h5>__ since 2013</h5>
+						<br>
+						<h4><span style="color:black">Lorem ipsum dolor sit amet.</span><br>
+						Lorem ipsum dolor sit amet. Dolor, sit amet dolor sit amete. This is just the start of the complete digital marketing package.</h4>
+					</div>
+				</div>
 
-				</div> 
-			</div>
+			</div> 
 		</div>
-		<div class="panel_2">
-			<!-- image is here --> 
-		</div>
-		<div class="panel_3">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="txt-overlay">
-						<div class="content">
-							<h2>_</h2>
-							<h2>DEV<br>
-							ELOP</h2>
+	</div>
+	<div class="panel_2">
+		<!-- image is here --> 
+	</div>
+	<div class="panel_3">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="txt-overlay">
+					<div class="content">
+						<h2>_</h2>
+						<h2>DEV<br>
+						ELOP</h2>
+					</div>
+				</div>
+				<div class="content-general">
+					<h3>A vision of global strategy, defined by user experience and accessibility design.</h3>
+					<p>Élément clé de votre transformation, la stratégie digitale nécessite une attention toute particulière. C’est cet accompagnement que l’ensemble de l’équipe vous propose tout au long du projet. À base de workshops, d’échanges et de brainstormings, nous faisons évoluer votre idée initiale vers une solution digitale ambitieuse</p>
+					<p><a href="#" class="strikethrough">Test link</a></p>
+				</div>
+				<div class="four-block">
+					<div class="block">
+						<div class="block-content">
+							<h3>_</h3>
+							<h4>Design</h4>
+							<p>Sites web
+								Responsive design
+								Mobile & Tablette
+							Applications mobile (iOS, Android)</p>
 						</div>
 					</div>
-					<div class="content-general">
-						<h3>A vision of global strategy, defined by user experience and accessibility design.</h3>
-						<p>Élément clé de votre transformation, la stratégie digitale nécessite une attention toute particulière. C’est cet accompagnement que l’ensemble de l’équipe vous propose tout au long du projet. À base de workshops, d’échanges et de brainstormings, nous faisons évoluer votre idée initiale vers une solution digitale ambitieuse</p>
-						<p><a href="#" class="strikethrough">Test link</a></p>
+					<div class="block">
+						<div class="block-content">
+							<h3>_</h3>
+							<h4>Brand Messaging</h4>
+							<p>Sites web
+								Responsive design
+								Mobile & Tablette
+							Applications mobile (iOS, Android)</p>
+						</div>
 					</div>
-					<div class="four-block">
-						<div class="block">
-							<div class="block-content">
-								<h3>_</h3>
-								<h4>Design</h4>
-								<p>Sites web
-									Responsive design
-									Mobile & Tablette
-								Applications mobile (iOS, Android)</p>
-							</div>
+					<div class="block">
+						<div class="block-content">
+							<h3>_</h3>
+							<h4>Web Development</h4>
+							<p>Sites web
+								Responsive design
+								Mobile & Tablette
+							Applications mobile (iOS, Android)</p>
 						</div>
-						<div class="block">
-							<div class="block-content">
-								<h3>_</h3>
-								<h4>Brand Messaging</h4>
-								<p>Sites web
-									Responsive design
-									Mobile & Tablette
-								Applications mobile (iOS, Android)</p>
-							</div>
-						</div>
-						<div class="block">
-							<div class="block-content">
-								<h3>_</h3>
-								<h4>Web Development</h4>
-								<p>Sites web
-									Responsive design
-									Mobile & Tablette
-								Applications mobile (iOS, Android)</p>
-							</div>
-						</div>
-						<div class="block">
-							<div class="block-content">
-								<h3>_</h3>
-								<h4>SEO</h4>
-								<p>Sites web
-									Responsive design
-									Mobile & Tablette
-								Applications mobile (iOS, Android)</p>
-							</div>
-						</div>
-					</div><!-- four-block -->
-				</div>	
-				<div class="col-lg-12">
-					<div class="txt-overlay">
 					</div>
-				</div>q
-			</div>
+					<div class="block">
+						<div class="block-content">
+							<h3>_</h3>
+							<h4>SEO</h4>
+							<p>Sites web
+								Responsive design
+								Mobile & Tablette
+							Applications mobile (iOS, Android)</p>
+						</div>
+					</div>
+				</div><!-- four-block -->
+			</div>	
+			<div class="col-lg-12">
+				<div class="txt-overlay">
+				</div>
+			</div>q
 		</div>
-	</div>    
-	<div id="demo1" class="wrapper fade-up">
+	</div>
+
+	<div class="wrapper fade-up">
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="inner">
@@ -389,7 +365,7 @@
 		</div>
 	</div> 
 
-	<div class="mid_cta_panel">
+	<div class="right-content-up-container">
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="content" style="margin:10px 0 0 0; text-align:right; width:50%; line-height: .8;">
@@ -401,8 +377,7 @@
 		</div>
 	</div>	
 
-
-	<div id="demo2" class="wrapper fade-up">
+	<div class="wrapper fade-up">
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="paroller-overlay-effect-2">
@@ -459,85 +434,83 @@
 		</div>
 	</div>
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
-<script src="assets/script.js"></script>
-<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-throttle-debounce/1.1/jquery.ba-throttle-debounce.min.js"></script>
+	<script src="assets/script.js"></script>
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
-<!-- paroller.js (referenced in local file) --> 
-<script type="text/javascript">
-	$('[data-paroller-factor]').paroller();
-	$('.paroller').paroller({
-		factorXs: 0.1,
-		factorSm: 0.1,
-		factorMd: -0.4,
-		factorLg: -0.5,
-		factorXl: -0.6,
-		factor: -0.7,
-		type: 'foreground',
-		direction: 'horizontal'
-	});
+	<!-- paroller.js (referenced in local file) --> 
+	<script type="text/javascript">
+		$('[data-paroller-factor]').paroller();
+		$('.paroller').paroller({
+			factorXs: 0.1,
+			factorSm: 0.1,
+			factorMd: -0.4,
+			factorLg: -0.5,
+			factorXl: -0.6,
+			factor: -0.7,
+			type: 'foreground',
+			direction: 'horizontal'
+		});
 
-	$('.mid-txt-right').paroller({ 
-		factor: .2, 
-		type: 'foreground' 
-	});
+		$('.mid-txt-right').paroller({ 
+			factor: .2, 
+			type: 'foreground' 
+		});
 
-	$('.four-block').paroller({ 
-		factor: .4, 
-		type: 'foreground' 
-	});
+		$('.four-block').paroller({ 
+			factor: .4, 
+			type: 'foreground' 
+		});
 
-	$('.footer').paroller({
-		factor: -.1, 
-		type: 'foreground' 
-	});
-</script>
+		$('.footer').paroller({
+			factor: -.1, 
+			type: 'foreground' 
+		});
+	</script>
 
-<!-- skrollr --> 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://prinzhorn.github.io/skrollr/dist/skrollr.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
+	<!-- skrollr --> 
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://prinzhorn.github.io/skrollr/dist/skrollr.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/ScrollToPlugin.min.js"></script>
 
-
-<script type="text/javascript">
-	var s = skrollr.init({
-		edgeStrategy: 'set',
-		easing: {
-			WTF: Math.random,
-			inverted: function(p) {
-				return 1-p;
+	<script type="text/javascript">
+		var s = skrollr.init({
+			edgeStrategy: 'set',
+			easing: {
+				WTF: Math.random,
+				inverted: function(p) {
+					return 1-p;
+				}
 			}
-		}
-	});
-
-	$(function(){
-
-		var $window = $(window);	 
-
-		var scrollTime = .7; 
-		var scrollDistance = 300; // distance - smaller value = shorter scroll 
-
-		$window.on("mousewheel DOMMouseScroll", function(event){
-
-		event.preventDefault();	
-
-		var delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3;
-		var scrollTop = $window.scrollTop();
-		var finalScroll = scrollTop - parseInt(delta*scrollDistance);
-
-		TweenMax.to($window, scrollTime, {
-			scrollTo : { y: finalScroll, autoKill:true, onAutoKill:myAutoKillFunction },
-			ease: Power1.easeOut,	
-			autoKill: true,
-			overwrite: 5							
 		});
-		function myAutoKillFunction(){}
-		});
+
+		$(function(){
+
+			var $window = $(window);	 
+
+			var scrollTime = .7; 
+var scrollDistance = 300; // distance - smaller value = shorter scroll 
+
+$window.on("mousewheel DOMMouseScroll", function(event){
+
+	event.preventDefault();	
+
+	var delta = event.originalEvent.wheelDelta/120 || -event.originalEvent.detail/3;
+	var scrollTop = $window.scrollTop();
+	var finalScroll = scrollTop - parseInt(delta*scrollDistance);
+
+	TweenMax.to($window, scrollTime, {
+		scrollTo : { y: finalScroll, autoKill:true, onAutoKill:myAutoKillFunction },
+		ease: Power1.easeOut,	
+		autoKill: true,
+		overwrite: 5							
 	});
+	function myAutoKillFunction(){}
+});
+});
 </script>
-
 </body>
 </html>
