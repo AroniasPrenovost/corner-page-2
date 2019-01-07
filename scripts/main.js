@@ -127,11 +127,11 @@ $(function () {
       $('.intro-txt-left').show();
     }
 
-    if ($(this).scrollTop() > 3270) {
+    if ($(this).scrollTop() > 3170) {
       $('.img-container-1').animate({width: '50%'}, 600);
     }
 
-    if ($(this).scrollTop() > 3870) {
+    if ($(this).scrollTop() > 3570) {
       $('.img-container-2').animate({height: '100%'}, 900);
     }
 
@@ -176,14 +176,8 @@ setTimeout(function(){
 // 2nd animation elements to .frontpanel-mh 
 $('.backpanel-mh').css("height", "250vh"); 
 
-// Initialize vertical scrollbar 
-$(document).ready(function(){
-  $('body, html').removeClass('hideMyScroll');
-});
-
 setTimeout(function(){ 
   $(document).ready(function(){  
-   $('body, html').addClass('showMyScroll');
    $('body').css("height", "100%"); // overwrite paroller style 
   });
 }, 2350);
