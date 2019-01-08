@@ -451,10 +451,11 @@ nav {
   background-color: transparent;
   display: none; }
 
-.txt-mh {
+.intro-txt {
   float: right;
   font-size: 8em;
-  font-weight: 900; }
+  font-weight: 900;
+  color: black; }
 
 .intro-txt-right {
   width: 50%;

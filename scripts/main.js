@@ -152,8 +152,9 @@ $(function () {
 })
 
 setTimeout(function(){ 
+  $('#intro-txt').hide().fadeIn('slow');
   $('.intro-txt-wrap').css('display', 'block');
-}, 2600); // post intro animation transition
+}, 3000); // post intro animation transition
 
 // intro full screen 
 $(function() {
