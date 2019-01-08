@@ -229,7 +229,7 @@ open_modal.addEventListener('click', toggle(function () {
   })
 
   $('#right-up-arrow').fadeOut();
-  $('#left-down-arrow').hide();
+  $('#left-down-arrow').fadeOut();
   $('#nav-button').css('pointer-events', 'none');
   $('.top-nav-container p:nth-child(2)').animate({'margin-right': '3.5%'}, 350);
 
