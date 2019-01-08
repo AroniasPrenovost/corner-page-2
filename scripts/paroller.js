@@ -12,6 +12,11 @@ $('.paroller').paroller({
 	direction: 'horizontal'
 });
 
+$('.img-container-1').paroller({ 
+	factor: .2, 
+	type: 'foreground' 
+});
+
 $('.mid-txt-right').paroller({ 
 	factor: .2, 
 	type: 'foreground' 

@@ -666,7 +666,7 @@ display:block; /* sometimes it is none */
 }
 
 .mid-txt-right {
-  margin-top:90px;
+  margin-top:50px;
   background-color:transparent;
   width: 50%;
   color:black;
@@ -768,7 +768,7 @@ position: relative;
 
 
 .panel_2 {
-  background: url(../images/rawpixel-617380-unsplash.jpg)no-repeat center center;
+  background: url('https://source.unsplash.com/5LqilHen4Po/1600x900')no-repeat center center; /* url(../images/rawpixel-617380-unsplash.jpg)no-repeat center center; */
   background-attachment: fixed;
   height:80vh;
   background-size: cover;
@@ -800,24 +800,23 @@ transform: translate3d(0,0,0);  /* safari patch, improves performance by forcing
 -webkit-transform: translate3d(0,0,0); /* safari patch, improves performance by forcing IOS to use hardware-acceleration */
 }
 
-
 .img-container-1 {
   width:0%;
-  background: hsla(0, 0%, 100%, .05);
-  padding: 0 0 0 0;
+  padding: 0px 0 0 0;
   margin: 0 0 0 0;
-  min-height: 600px;
-  background: url(../images/jo-szczepanska-666986-unsplash.jpg) repeat center;
-  background-size: cover
+  height: 600px;
+  min-height: 250px;
+  background: url('https://source.unsplash.com/tZc3vjPCk-Q/1600x900') no-repeat center;
+  background-color: #ecf0f1; 
+  background-size: cover;
 }
 
-
 .img-container-2 {
-  background: hsla(0, 0%, 100%, .05);
   padding: 0 0 0 0;
   margin: 0 0 0 0;
   min-height: 0px;
-  background: url(../images/ben-white-197680-unsplash.jpg) repeat center; 
+  background: url('https://source.unsplash.com/Kc-OBw1fMJg/1600x900') no-repeat center;
+  background-color: #ecf0f1; 
   background-size: cover
 }
 
@@ -977,16 +976,16 @@ display: block;
   bottom: 0;
   width:0px;
   left:0;
-  position: fixed;
-z-index: 10000000; /* hack to place above all other elements */
--webkit-transition: width .5s; /* For Safari 3.1 to 6.0 */
-transition: width .5s;
+    position: fixed;
+  z-index: 10000000; /* hack to place above all other elements */
+  -webkit-transition: width .5s; /* For Safari 3.1 to 6.0 */
+  transition: width .5s;
 }
 
 .nav-toggle-icon-container:hover .left-nav-toggle-container {
   width: 4%;
--webkit-transition: width .5s; /* For Safari 3.1 to 6.0 */
-transition: width .5s;
+  -webkit-transition: width .5s; /* For Safari 3.1 to 6.0 */
+  transition: width .5s;
 }
 
 .nav-modal-container {
@@ -996,9 +995,9 @@ transition: width .5s;
   width:0%;
   left:0;
   position: fixed;
-z-index: 10000;  
--webkit-transition: width .5s; /* Safari 3.1 - 6.0 */
-transition: width .5s;
+  z-index: 10000;  
+  -webkit-transition: width .5s; /* Safari 3.1 - 6.0 */
+  transition: width .5s;
 }
 
 
@@ -1007,9 +1006,9 @@ transition: width .5s;
   height:100vh;
   bottom: 0;
   width:0%;
--webkit-transition: width .5s; /* Safari 3.1 - 6.0 */
-transition: width .5s;
-position: fixed;
+  -webkit-transition: width .5s; /* Safari 3.1 - 6.0 */
+  transition: width .5s;
+  position: fixed;
 }
 
 .right-modal-overlay {
@@ -1102,8 +1101,6 @@ a, hover {
   text-decoration: none; 
 }
 
-
-
 #icon-label-rotate {
   cursor:default;
   padding:0;
@@ -1129,7 +1126,6 @@ a, hover {
   width:6px; 
   height:0px;
   line-height:5px;
-
 }
 
 #rot2 {
@@ -1147,19 +1143,18 @@ a, hover {
 #icon-rotate {
   width: 40px;
   height: 45px;
-
   position: relative;
   margin: 0px auto;
-/* margin-top:5%; */
--webkit-transform: rotate(0deg);
--moz-transform: rotate(0deg);
--o-transform: rotate(0deg);
-transform: rotate(0deg);
--webkit-transition: .5s ease-in-out;
--moz-transition: .5s ease-in-out;
--o-transition: .5s ease-in-out;
-transition: .5s ease-in-out;
-cursor: pointer;
+  /* margin-top:5%; */
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
 }
 
 #icon-rotate span {
@@ -1182,11 +1177,9 @@ cursor: pointer;
   z-index:99999999999999999999999999999999999999;
 }
 
-
 #icon-rotate span:nth-child(1) {
   top: 0px;
   z-index:99999999999999999999999999999999999999;
-
 }
 
 #icon-rotate span:nth-child(2) {
@@ -1197,7 +1190,6 @@ cursor: pointer;
 #icon-rotate span:nth-child(3) {
   top: 12px;
   z-index:99999999999999999999999999999999999999;
-
 }
 
 #icon-rotate.open span:nth-child(1) {

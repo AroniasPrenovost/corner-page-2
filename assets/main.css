@@ -519,7 +519,7 @@ nav {
   text-align: left; }
 
 .mid-txt-right {
-  margin-top: 90px;
+  margin-top: 50px;
   background-color: transparent;
   width: 50%;
   color: black;
@@ -596,7 +596,8 @@ a.strikethrough {
   background: orange; }
 
 .panel_2 {
-  background: url(../images/rawpixel-617380-unsplash.jpg) no-repeat center center;
+  background: url("https://source.unsplash.com/5LqilHen4Po/1600x900") no-repeat center center;
+  /* url(../images/rawpixel-617380-unsplash.jpg)no-repeat center center; */
   background-attachment: fixed;
   height: 80vh;
   background-size: cover;
@@ -630,19 +631,20 @@ a.strikethrough {
 
 .img-container-1 {
   width: 0%;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 0 0 0 0;
+  padding: 0px 0 0 0;
   margin: 0 0 0 0;
-  min-height: 600px;
-  background: url(../images/jo-szczepanska-666986-unsplash.jpg) repeat center;
+  height: 600px;
+  min-height: 250px;
+  background: url("https://source.unsplash.com/tZc3vjPCk-Q/1600x900") no-repeat center;
+  background-color: #ecf0f1;
   background-size: cover; }
 
 .img-container-2 {
-  background: rgba(255, 255, 255, 0.05);
   padding: 0 0 0 0;
   margin: 0 0 0 0;
   min-height: 0px;
-  background: url(../images/ben-white-197680-unsplash.jpg) repeat center;
+  background: url("https://source.unsplash.com/Kc-OBw1fMJg/1600x900") no-repeat center;
+  background-color: #ecf0f1;
   background-size: cover; }
 
 .overlay-color-1 {

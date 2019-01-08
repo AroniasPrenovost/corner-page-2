@@ -20,7 +20,7 @@ for (var x = 0; x < scripts.length; x++) {
 $(function(){
 	var $window = $(window);	 
 
-	var scrollTime = 1.9; 
+	var scrollTime = .8; 
 	var scrollDistance = 300; // distance - smaller value = shorter scroll 
 
 	$window.on("mousewheel DOMMouseScroll", function(event){

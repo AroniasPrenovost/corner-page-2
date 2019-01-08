@@ -127,6 +127,11 @@ $(function () {
       $('.intro-txt-left').show();
     }
 
+    // background to 'img-container-1'
+    /*
+    if ($(this).scrollTop() > 0) {
+      $('.img-container-1-bg').animate({width: '50%'}, 1);
+    }*/
     if ($(this).scrollTop() > 3170) {
       $('.img-container-1').animate({width: '50%'}, 600);
     }
