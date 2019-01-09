@@ -4,6 +4,20 @@ html, body {
   background-color: white;
   /* height: 100% in main.js */ }
 
+/* skrollr styling */
+.skrollable {
+  position: relative;
+  z-index: 100; }
+
+.skrollr-mobile .skrollable {
+  position: absolute; }
+
+.skrollable .skrollable {
+  position: absolute; }
+
+.skrollable .skrollable .skrollable {
+  position: static; }
+
 p {
   color: #606060;
   font-size: 1.6rem; }
