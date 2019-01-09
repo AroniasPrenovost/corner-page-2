@@ -1,86 +1,55 @@
-[  
-   {  
-      "task_name":"wewe",
-      "project_name":"testProject3",
-      "time_stamp":"5:50 pm - 6:10 pm",
-      "digital_time":"00 : 20 : 00",
-      "total_seconds":1200,
-      "date_stamp":"12/18/2018",
-      "alternate_date":"2018-12-18",
-      "short_date":"Tues, 18 Dec, 2018",
-      "billable":false,
-      "created_on":"12/18/2018",
-      "current_year":2018,
-      "entry_time":1545185427247
-   },
-   {  
-      "task_name":"wewe",
-      "project_name":"testProject2",
-      "time_stamp":"6:11 pm - 6:11 pm",
-      "digital_time":"24 : 00 : 00",
-      "total_seconds":86400,
-      "date_stamp":"12/12/2018",
-      "alternate_date":"2018-12-12",
-      "short_date":"Wed, 12 Dec, 2018",
-      "billable":false,
-      "created_on":"12/18/2018",
-      "current_year":2018,
-      "entry_time":1545185475340
-   },
-   {  
-      "task_name":"gmmm",
-      "project_name":"testProject1",
-      "time_stamp":"1:11 pm - 2:01 pm",
-      "digital_time":"00 : 50 : 00",
-      "total_seconds":3000,
-      "date_stamp":"12/06/2018",
-      "alternate_date":"2018-12-06",
-      "short_date":"Thur, 06 Dec, 2018",
-      "billable":false,
-      "created_on":"12/18/2018",
-      "current_year":2018,
-      "entry_time":1545185490572
-   },
-   {  
-      "task_name":"ewew",
-      "project_name":"testProject1",
-      "time_stamp":"4:10 pm - 6:12 pm",
-      "digital_time":"02 : 02 : 00",
-      "total_seconds":7320,
-      "date_stamp":"12/02/2018",
-      "alternate_date":"2018-12-02",
-      "short_date":"Sun, 02 Dec, 2018",
-      "billable":false,
-      "created_on":"12/18/2018",
-      "current_year":2018,
-      "entry_time":1545185449730
-   },
-   {  
-      "task_name":"sdssd",
-      "project_name":"testProject2",
-      "time_stamp":"3:10 pm - 6:11 pm",
-      "digital_time":"03 : 01 : 00",
-      "total_seconds":10860,
-      "date_stamp":"12/02/2018",
-      "alternate_date":"2018-12-02",
-      "short_date":"Sun, 02 Dec, 2018",
-      "billable":false,
-      "created_on":"12/18/2018",
-      "current_year":2018,
-      "entry_time":1545185467331
-   },
-   {  
-      "task_name":"wewe",
-      "project_name":"testProject1",
-      "time_stamp":"3:10 pm - 6:10 pm",
-      "digital_time":"03 : 00 : 00",
-      "total_seconds":10800,
-      "date_stamp":"12/02/2018",
-      "alternate_date":"2018-12-02",
-      "short_date":"Sun, 02 Dec, 2018",
-      "billable":false,
-      "created_on":"12/18/2018",
-      "current_year":2018,
-      "entry_time":1545185434686
-   }
-]
+{ 
+    "intro_masthead": {
+        "header": [
+         {"id":1,"content":"Aurora"},
+         {"id":2,"content":"Labs"},
+         {"id":3,"content":"__ since 2013"},
+         {"id":4,"content":"Lorem ipsum dolor sit amet."},
+         {"id":5,"content":"Lorem ipsum dolor sit amet. Dolor, sit amet dolor sit amete. This is just the start of the complete digital marketing package."}
+        ]
+    }, 
+   "panel_2": {
+        "header": [
+            {"id":1,"content":"intro 1"},
+            {"id":2,"content":"intro 2"}
+        ],
+         "header": [
+            {"id":1,"content":"intro 1"},
+            {"id":2,"content":"intro 2"}
+        ],
+        "othertype": {"id":2,"company":"ACME"}
+    },
+   "panel_3": {
+        "header": [
+            {"id":1,"content":"intro 1"},
+            {"id":2,"content":"intro 2"}
+        ],
+         "header": [
+            {"id":1,"content":"intro 1"},
+            {"id":2,"content":"intro 2"}
+        ],
+        "othertype": {"id":2,"company":"ACME"}
+    },
+   "panel_4": {
+        "header": [
+            {"id":1,"content":"intro 1"},
+            {"id":2,"content":"intro 2"}
+        ],
+         "header": [
+            {"id":1,"content":"intro 1"},
+            {"id":2,"content":"intro 2"}
+        ],
+        "othertype": {"id":2,"company":"ACME"}
+    },
+   "panel_5": {
+        "header": [
+            {"id":1,"content":"intro 1"},
+            {"id":2,"content":"intro 2"}
+        ],
+         "header": [
+            {"id":1,"content":"intro 1"},
+            {"id":2,"content":"intro 2"}
+        ],
+        "othertype": {"id":2,"company":"ACME"}
+    }
+}
