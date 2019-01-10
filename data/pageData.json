@@ -50,15 +50,23 @@
                 {"id":2,"content":"intro 2"}
             ],
             "othertype": {"id":2,"company":"ACME"}
+        },
+        "footer": {
+                "content":"<p>Lorem ipsum dolor sit amet amet.</p><p>Lorem ipsum dolor sit amet amet.</p>",
+                "content":"Downtown Seattle, WA<br><strong>+1(232) 453-2832<br>contact@webdesign.com<\/strong>"
         }
     },
     "about" : {
         "intro_masthead": {
             "header": [
-                {"content":"______"},
-                {"content":"+++++++++"},
-                {"content":"<span style='color:cyan'>______ipsum dolor sit amet.<\/span><br>Lorem ipsum dolor sit amet. Dolor, sit amet dolor sit amete. This is just the start of the complete digital marketing package."}
+                {"content":"About<br>Us"},
+                {"content":"__ Founded in Seattle"},
+                {"content":"<span style='color:black'>A<\/span><br>Lorem ipsum dolor sit amet. Dolor, sit amet dolor sit amete. This is just the start of the complete digital marketing package."}
             ]
+        }, 
+        "footer": {
+                "content":"<p>Lorem ipsum dolor sit amet amet.</p><p>Lorem ipsum dolor sit amet amet.</p>",
+                "content":"Downtown Seattle, WA<br><strong>+1(232) 453-2832<br>contact@webdesign.com<\/strong>"
         }
     },
     "staff" : {
@@ -68,6 +76,23 @@
                 {"content":"ooooo"},
                 {"content":"<span style='color:yellow'>______ipsum dolor sit amet.<\/span><br>Lorem ipsum dodsssdsddsset dolor sit amete. This is just the start of the complete digital marketing package."}
             ]
+        },
+        "footer": {
+                "content":"<p>Lorem ipsum dolor sit amet amet.</p><p>Lorem ipsum dolor sit amet amet.</p>",
+                "content":"Downtown Seattle, WA<br><strong>+1(232) 453-2832<br>contact@webdesign.com<\/strong>"
+        }
+    },
+    "projects" : {
+        "intro_masthead": {
+            "header": [
+                {"content":"ooooo"},
+                {"content":"ooooo"},
+                {"content":"<span style='color:yellow'>______ipsum dolor sit amet.<\/span><br>Lorem ipsum dodsssdsddsset dolor sit amete. This is just the start of the complete digital marketing package."}
+            ]
+        },
+        "footer": {
+                "content":"<p>Lorem ipsum dolor sit amet amet.</p><p>Lorem ipsum dolor sit amet amet.</p>",
+                "content":"Downtown Seattle, WA<br><strong>+1(232) 453-2832<br>contact@webdesign.com<\/strong>"
         }
     }
 }
