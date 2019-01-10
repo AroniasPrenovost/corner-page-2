@@ -1049,7 +1049,7 @@ a, hover {
 .line-height {
   line-height: 1.1; }
 
-#modal_t_1, #modal_t_2, #modal_t_3, #modal_t_4 {
+#home, #about, #staff, #projects {
   line-height: 3;
   visibility: hidden;
   color: black; }

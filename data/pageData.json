@@ -1,55 +1,73 @@
 { 
-    "intro_masthead": {
-        "header": [
-         {"id":1,"content":"Aurora"},
-         {"id":2,"content":"Labs"},
-         {"id":3,"content":"__ since 2013"},
-         {"id":4,"content":"Lorem ipsum dolor sit amet."},
-         {"id":5,"content":"Lorem ipsum dolor sit amet. Dolor, sit amet dolor sit amete. This is just the start of the complete digital marketing package."}
-        ]
-    }, 
-   "panel_2": {
-        "header": [
-            {"id":1,"content":"intro 1"},
-            {"id":2,"content":"intro 2"}
-        ],
-         "header": [
-            {"id":1,"content":"intro 1"},
-            {"id":2,"content":"intro 2"}
-        ],
-        "othertype": {"id":2,"company":"ACME"}
+    "home" : {
+        "intro_masthead": {
+            "header": [
+                {"content":"Aurora<br>Labs"},
+                {"content":"__ since 2013"},
+                {"content":"<span style='color:black'>Lorem ipsum dolor sit amet.<\/span><br>Lorem ipsum dolor sit amet. Dolor, sit amet dolor sit amete. This is just the start of the complete digital marketing package."}
+            ]
+        }, 
+        "panel_2": {
+            "header": [
+                {"id":1,"content":"intro 1"},
+                {"id":2,"content":"intro 2"}
+            ],
+            "header": [
+                {"id":1,"content":"intro 1"},
+                {"id":2,"content":"intro 2"}
+            ],
+            "othertype": {"id":2,"company":"ACME"}
+        },
+        "panel_3": {
+            "header": [
+                {"id":1,"content":"intro 1"},
+                {"id":2,"content":"intro 2"}
+            ],
+            "header": [
+                {"id":1,"content":"intro 1"},
+                {"id":2,"content":"intro 2"}
+            ],
+            "othertype": {"id":2,"company":"ACME"}
+        },
+        "panel_4": {
+            "header": [
+                {"id":1,"content":"intro 1"},
+                {"id":2,"content":"intro 2"}
+            ],
+            "header": [
+                {"id":1,"content":"intro 1"},
+                {"id":2,"content":"intro 2"}
+            ],
+            "othertype": {"id":2,"company":"ACME"}
+        },
+        "panel_5": {
+            "header": [
+                {"id":1,"content":"intro 1"},
+                {"id":2,"content":"intro 2"}
+            ],
+            "header": [
+                {"id":1,"content":"intro 1"},
+                {"id":2,"content":"intro 2"}
+            ],
+            "othertype": {"id":2,"company":"ACME"}
+        }
     },
-   "panel_3": {
-        "header": [
-            {"id":1,"content":"intro 1"},
-            {"id":2,"content":"intro 2"}
-        ],
-         "header": [
-            {"id":1,"content":"intro 1"},
-            {"id":2,"content":"intro 2"}
-        ],
-        "othertype": {"id":2,"company":"ACME"}
+    "about" : {
+        "intro_masthead": {
+            "header": [
+                {"content":"______"},
+                {"content":"+++++++++"},
+                {"content":"<span style='color:cyan'>______ipsum dolor sit amet.<\/span><br>Lorem ipsum dolor sit amet. Dolor, sit amet dolor sit amete. This is just the start of the complete digital marketing package."}
+            ]
+        }
     },
-   "panel_4": {
-        "header": [
-            {"id":1,"content":"intro 1"},
-            {"id":2,"content":"intro 2"}
-        ],
-         "header": [
-            {"id":1,"content":"intro 1"},
-            {"id":2,"content":"intro 2"}
-        ],
-        "othertype": {"id":2,"company":"ACME"}
-    },
-   "panel_5": {
-        "header": [
-            {"id":1,"content":"intro 1"},
-            {"id":2,"content":"intro 2"}
-        ],
-         "header": [
-            {"id":1,"content":"intro 1"},
-            {"id":2,"content":"intro 2"}
-        ],
-        "othertype": {"id":2,"company":"ACME"}
+    "staff" : {
+        "intro_masthead": {
+            "header": [
+                {"content":"ooooo"},
+                {"content":"ooooo"},
+                {"content":"<span style='color:yellow'>______ipsum dolor sit amet.<\/span><br>Lorem ipsum dodsssdsddsset dolor sit amete. This is just the start of the complete digital marketing package."}
+            ]
+        }
     }
 }

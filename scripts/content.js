@@ -9,7 +9,11 @@ function loadJSON(callback) {
     }
   };
   xobj.send(null);  
-}  
+}
+
+var introTxt = document.getElementById('intro-txt');
+var introH5 = document.getElementById('intro-h5');
+var introH4 = document.getElementById('intro-h4');
 
 var toggle = document.getElementsByClassName('toggleContent');
 for (var i = 0; i < toggle.length; i++) {
@@ -17,16 +21,20 @@ for (var i = 0; i < toggle.length; i++) {
         var id = this.id; 
         var data;
         loadJSON(function(json) {
-            data = json; 
-            console.log(data);
-            console.log(id);
+
+            data = json;
+            // select JSON page id 
+            // data[0] = home, [1] = about, [2] = staff, [3] = projects
+            data = data[id];
+
+            // intro masthead 
+            introTxt.innerHTML = data.intro_masthead.header[0].content;
+            introH5.innerHTML = data.intro_masthead.header[1].content;  
+            introH4.innerHTML = data.intro_masthead.header[2].content;
+
+            // panel 2
             // to do... 
+            
         });
     };
 }
-
-/*
-obj.intro_masthead.header[0].content
-obj.intro_masthead.othertype.id
-obj.otherstuff.thing[0][1] 
-*/

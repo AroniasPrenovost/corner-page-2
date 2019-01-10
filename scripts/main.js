@@ -1,5 +1,5 @@
-var modal_elements = ['#modal_t_1', '#modal_t_2', '#modal_t_3', '#modal_t_4'];
-var modal_elementss = ['#modal_t_4', '#modal_t_3', '#modal_t_2', '#modal_t_1'];
+var modal_elements = ['#home', '#about', '#staff', '#projects'];
+var modal_elementss = ['#projects', '#staff', '#about', '#home'];
 
 // smooth scrolling
 $(document).ready(function() {
@@ -336,7 +336,7 @@ setTimeout(function(){
 
   setTimeout(function(){
     $('#nav-button').css('pointer-events', 'auto');
-    $('#modal_t_1, #modal_t_2, #modal_t_3, #modal_t_4').css('line-height', '3');
+    $('#home, #about, #staff, #projects').css('line-height', '3');
     $('.nav-modal-content:nth-child(1)').toggleClass('line-height');
   }, 1050)
 }));
