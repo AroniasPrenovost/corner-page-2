@@ -11,16 +11,10 @@ function loadJSON(callback) {
   xobj.send(null);  
 }
 
-
-
 var open_modal = document.getElementById('nav-button');
 var introTxt = document.getElementById('intro-txt');
 var introH5 = document.getElementById('intro-h5');
 var introH4 = document.getElementById('intro-h4');
-var mhColor = document.getElementsByClassName('frontpanel-mh')[0];
-// footer 
-var leftFooterContent = document.getElementById('panel-7-txt');
-var rightFooterContent = document.getElementById('modal-address');
 
 var toggleNav = document.getElementsByClassName('toggleNavigation');
 for (var i = 0; i < toggleNav.length; i++) {
