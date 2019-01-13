@@ -534,11 +534,10 @@ a.strikethrough {
   font-weight: 900;
   text-decoration: none;
   font-size: 22px;
-  /*  letter-spacing: 5px; */
   position: relative; }
   a.strikethrough::before, a.strikethrough::after {
     content: '';
-    background: cyan;
+    background: #28A1CC;
     opacity: .6;
     position: absolute;
     top: 44%;
@@ -553,6 +552,114 @@ a.strikethrough {
     width: 100%;
     transition: width 500ms ease; }
   a.strikethrough:hover::after {
+    width: 100%;
+    background: transparent;
+    transition: 0; }
+
+a.strikethrough-nav-1 {
+  color: black;
+  font-weight: 900;
+  text-decoration: none;
+  font-size: 22px;
+  position: relative; }
+  a.strikethrough-nav-1::before, a.strikethrough-nav-1::after {
+    content: '';
+    background: #28A1CC;
+    opacity: .6;
+    position: absolute;
+    top: 44%;
+    height: 6px;
+    width: 0; }
+  a.strikethrough-nav-1::before {
+    left: 0; }
+  a.strikethrough-nav-1::after {
+    right: 0;
+    transition: width 500ms ease; }
+  a.strikethrough-nav-1:hover::before {
+    width: 100%;
+    transition: width 500ms ease; }
+  a.strikethrough-nav-1:hover::after {
+    width: 100%;
+    background: transparent;
+    transition: 0; }
+
+a.strikethrough-nav-2 {
+  color: black;
+  font-weight: 900;
+  text-decoration: none;
+  font-size: 22px;
+  position: relative; }
+  a.strikethrough-nav-2::before, a.strikethrough-nav-2::after {
+    content: '';
+    background: #FFBA49;
+    opacity: .6;
+    position: absolute;
+    top: 44%;
+    height: 6px;
+    width: 0; }
+  a.strikethrough-nav-2::before {
+    left: 0; }
+  a.strikethrough-nav-2::after {
+    right: 0;
+    transition: width 500ms ease; }
+  a.strikethrough-nav-2:hover::before {
+    width: 100%;
+    transition: width 500ms ease; }
+  a.strikethrough-nav-2:hover::after {
+    width: 100%;
+    background: transparent;
+    transition: 0; }
+
+a.strikethrough-nav-3 {
+  color: black;
+  font-weight: 900;
+  text-decoration: none;
+  font-size: 22px;
+  position: relative; }
+  a.strikethrough-nav-3::before, a.strikethrough-nav-3::after {
+    content: '';
+    background: #56E39F;
+    opacity: .6;
+    position: absolute;
+    top: 44%;
+    height: 6px;
+    width: 0; }
+  a.strikethrough-nav-3::before {
+    left: 0; }
+  a.strikethrough-nav-3::after {
+    right: 0;
+    transition: width 500ms ease; }
+  a.strikethrough-nav-3:hover::before {
+    width: 100%;
+    transition: width 500ms ease; }
+  a.strikethrough-nav-3:hover::after {
+    width: 100%;
+    background: transparent;
+    transition: 0; }
+
+a.strikethrough-nav-4 {
+  color: black;
+  font-weight: 900;
+  text-decoration: none;
+  font-size: 22px;
+  position: relative; }
+  a.strikethrough-nav-4::before, a.strikethrough-nav-4::after {
+    content: '';
+    background: #FF8552;
+    opacity: .6;
+    position: absolute;
+    top: 44%;
+    height: 6px;
+    width: 0; }
+  a.strikethrough-nav-4::before {
+    left: 0; }
+  a.strikethrough-nav-4::after {
+    right: 0;
+    transition: width 500ms ease; }
+  a.strikethrough-nav-4:hover::before {
+    width: 100%;
+    transition: width 500ms ease; }
+  a.strikethrough-nav-4:hover::after {
     width: 100%;
     background: transparent;
     transition: 0; }

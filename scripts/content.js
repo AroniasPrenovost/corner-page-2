@@ -11,12 +11,13 @@ function loadJSON(callback) {
   xobj.send(null);  
 }
 
-var open_modal = document.getElementById('nav-button');
 
+
+var open_modal = document.getElementById('nav-button');
 var introTxt = document.getElementById('intro-txt');
 var introH5 = document.getElementById('intro-h5');
 var introH4 = document.getElementById('intro-h4');
-
+var mhColor = document.getElementsByClassName('frontpanel-mh')[0];
 // footer 
 var leftFooterContent = document.getElementById('panel-7-txt');
 var rightFooterContent = document.getElementById('modal-address');
@@ -28,65 +29,28 @@ for (var i = 0; i < toggleNav.length; i++) {
         var data;
         loadJSON(function(json) {
 
+            // select JSON page id - data[0] = home, [1] = about, [2] = staff, [3] = projects
             data = json;
-            // select JSON page id 
-            // data[0] = home, [1] = about, [2] = staff, [3] = projects
             data = data[id];
-
-            /*
+            
             switch (id) {
               case 'home':
-              // if id = home
-                // ...generate page elements 
-                  // ...import content
-
-                  // masthead = .backpanel-mh 
-                    // import = .frontpanel-mh 
-
-                  console.log('test');
+              // to do... 
 
               break;
               case 'about':
-              // if id = about 
-                // ...generate page elements 
-                  // ...import content
-
-                  // masthead = .backpanel-mh 
-                    // import = .frontpanel-mh
-
-                  console.log('test');
-
+                introTxt.innerHTML = data.intro_masthead.header[0].content;
+                introH5.innerHTML = data.intro_masthead.header[1].content;  
+                introH4.innerHTML = data.intro_masthead.header[2].content;
               break;
               case 'projects':
-              // if id = projects 
-                // ...generate page elements 
-                  // ...import content
-
-                  console.log('test');
+              // to do... 
 
               break;
               case 'contact':
-              // if id = contact 
-                // ...generate page elements 
-                  // ...import content 
+              // to do... 
 
-                  console.log('test');
             }
-            */
-
-            // intro masthead 
-            introTxt.innerHTML = data.intro_masthead.header[0].content;
-            introH5.innerHTML = data.intro_masthead.header[1].content;  
-            introH4.innerHTML = data.intro_masthead.header[2].content;
-
-            // panel 2
-            // to do... 
-
-            // footer 
-            /*
-            leftFooterContent = data.footer[0].content;
-            rightFooterContent = data.footer[1].content;
-            */
 
             // close nav modal
             open_modal.click();

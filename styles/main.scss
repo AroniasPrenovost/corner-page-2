@@ -579,7 +579,6 @@ display:block; /* sometimes it is none */
   display:none;
 }
 
-
 .frontpanel-mh {
   height:110vh;
   background-color:#28A1CC;
@@ -679,13 +678,12 @@ a.strikethrough {
   font-weight: 900;
   text-decoration: none;
   font-size: 22px;
-/*  letter-spacing: 5px; */
-position: relative;
+  position: relative;
 
 &::before,
 &::after {
   content: '';
-  background: cyan;
+  background: #28A1CC;
   opacity:.6;
   position: absolute;
   top: 44%;
@@ -702,18 +700,183 @@ position: relative;
   transition: width 500ms ease;
 }
 
-&:hover {
-  &::before {
-    width: 100%;  
-    transition: width 500ms ease;
-  }
+  &:hover {
+    &::before {
+      width: 100%;  
+      transition: width 500ms ease;
+    }
 
-  &::after {
-    width: 100%;
-    background: transparent;
-    transition: 0;
+    &::after {
+      width: 100%;
+      background: transparent;
+      transition: 0;
+    }
   }
 }
+
+
+a.strikethrough-nav-1 {
+  color: black;
+  font-weight: 900;
+  text-decoration: none;
+  font-size: 22px;
+  position: relative;
+
+&::before,
+&::after {
+  content: '';
+  background: #28A1CC;
+  opacity:.6;
+  position: absolute;
+  top: 44%;
+  height: 6px;
+  width: 0;
+}
+
+&::before {
+  left: 0;
+}
+
+&::after {
+  right: 0;
+  transition: width 500ms ease;
+}
+
+  &:hover {
+    &::before {
+      width: 100%;  
+      transition: width 500ms ease;
+    }
+
+    &::after {
+      width: 100%;
+      background: transparent;
+      transition: 0;
+    }
+  }
+}
+
+a.strikethrough-nav-2 {
+  color: black;
+  font-weight: 900;
+  text-decoration: none;
+  font-size: 22px;
+  position: relative;
+
+&::before,
+&::after {
+  content: '';
+  background: #FFBA49;
+  opacity:.6;
+  position: absolute;
+  top: 44%;
+  height: 6px;
+  width: 0;
+}
+
+&::before {
+  left: 0;
+}
+
+&::after {
+  right: 0;
+  transition: width 500ms ease;
+}
+
+  &:hover {
+    &::before {
+      width: 100%;  
+      transition: width 500ms ease;
+    }
+
+    &::after {
+      width: 100%;
+      background: transparent;
+      transition: 0;
+    }
+  }
+}
+
+a.strikethrough-nav-3 {
+  color: black;
+  font-weight: 900;
+  text-decoration: none;
+  font-size: 22px;
+  position: relative;
+
+&::before,
+&::after {
+  content: '';
+  background: #56E39F;
+  opacity:.6;
+  position: absolute;
+  top: 44%;
+  height: 6px;
+  width: 0;
+}
+
+&::before {
+  left: 0;
+}
+
+&::after {
+  right: 0;
+  transition: width 500ms ease;
+}
+
+  &:hover {
+    &::before {
+      width: 100%;  
+      transition: width 500ms ease;
+    }
+
+    &::after {
+      width: 100%;
+      background: transparent;
+      transition: 0;
+    }
+  }
+}
+
+a.strikethrough-nav-4 {
+  color: black;
+  font-weight: 900;
+  text-decoration: none;
+  font-size: 22px;
+  position: relative;
+
+&::before,
+&::after {
+  content: '';
+  background: #FF8552;
+  opacity:.6;
+  position: absolute;
+  top: 44%;
+  height: 6px;
+  width: 0;
+}
+
+&::before {
+  left: 0;
+}
+
+&::after {
+  right: 0;
+  transition: width 500ms ease;
+}
+
+  &:hover {
+    &::before {
+      width: 100%;  
+      transition: width 500ms ease;
+    }
+
+    &::after {
+      width: 100%;
+      background: transparent;
+      transition: 0;
+    }
+  }
 }
 
 .default-strikethrough {
@@ -735,8 +898,6 @@ position: relative;
   width: 100%;
   background: #28A1CC;
 }
-
-
 
 .panel_2 {
   background: url('https://source.unsplash.com/5LqilHen4Po/1600x900')no-repeat center center; /* url(../images/rawpixel-617380-unsplash.jpg)no-repeat center center; */

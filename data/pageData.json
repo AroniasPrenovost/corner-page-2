@@ -5,6 +5,9 @@
                 {"content":"Aurora<br>Labs"},
                 {"content":"__ since 2013"},
                 {"content":"<span style='color:black'>Lorem ipsum dolor sit amet.<\/span><br>Lorem ipsum dolor sit amet. Dolor, sit amet dolor sit amete. This is just the start of the complete digital marketing package."}
+            ],
+            "style": [
+                {"background-color":"red"}
             ]
         }, 
         "panel_2": {
@@ -61,7 +64,10 @@
             "header": [
                 {"content":"About<br>Us"},
                 {"content":"__ Founded in Seattle"},
-                {"content":"<span style='color:black'>A<\/span><br>Lorem ipsum dolor sit amet. Dolor, sit amet dolor sit amete. This is just the start of the complete digital marketing package."}
+                {"content":"<span style='color:black'>This is the about page<\/span><br>Lorem ipsum dolor sit amet. Dolor, sit amet dolor sit amete. This is just the start of the complete digital marketing package."}
+            ],
+            "style": [
+                {"background-color":"red"}
             ]
         }, 
         "footer": {
